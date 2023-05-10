@@ -1,59 +1,5 @@
 # 模块接口
 
-## EX
-
-### ALU
-
-#### 接口
-
-``` verilog
-module ALU (
-    output  wire    [31:0]  alu_res ,
-    output  wire    [31:0]  zero    ,
-
-    input   wire    [31:0]  data1   ,
-    input   wire    [31:0]  data2   ,
-    input   wire    [3:0]   alu_ctrl
-);
-```
-
-#### 例化
-
-``` verilog
-ALU xxx (
-    .alu_res (   ),
-    .zero    (   ),
-
-    .data1   (   ),
-    .data2   (   ),
-    .alu_ctrl(   )
-);
-```
-
-### ALUCTRL
-
-#### 接口
-
-``` verilog
-module ALUCTRL (
-    output  wire    [3:0]   alu_ctrl,
-
-    input   wire    [1:0]   aluop   ,
-    input   wire    [5:0]   inst    
-);
-```
-
-#### 例化
-
-``` verilog
-module ALUCTRL (
-    .alu_ctrl(   ),
-
-    .aluop   (   ),
-    .inst    (   )
-);
-```
-
 ## ID
 
 ### CTRL
@@ -153,5 +99,59 @@ module PC (
 PC xxx (
     .pc      (   ),
     .pc_next (   )
+);
+```
+
+## EX
+
+### ALU
+
+#### 接口
+
+``` verilog
+module ALU (
+    output  wire    [31:0]  alu_res ,
+    output  wire    [31:0]  zero    ,
+
+    input   wire    [31:0]  data1   ,
+    input   wire    [31:0]  data2   ,
+    input   wire    [3:0]   alu_ctrl
+);
+```
+
+#### 例化
+
+``` verilog
+ALU xxx (
+    .alu_res (   ),
+    .zero    (   ),
+
+    .data1   (   ),
+    .data2   (   ),
+    .alu_ctrl(   )
+);
+```
+
+### ALUCTRL
+
+#### 接口
+
+``` verilog
+module ALUCTRL (
+    output  wire    [3:0]   alu_ctrl,
+
+    input   wire    [1:0]   aluop   ,
+    input   wire    [5:0]   inst    
+);
+```
+
+#### 例化
+
+``` verilog
+module ALUCTRL (
+    .alu_ctrl(   ),
+
+    .aluop   (   ),
+    .inst    (   )
 );
 ```
