@@ -18,3 +18,9 @@
 ## 流水线
 
 ![png](./material/流水线.png)
+
+## 控制编码
+
+<https://www.elsevier.com/__data/assets/pdf_file/0011/1191377/Appendix-D.PDF>
+![png](./material/ALUctrl.png)
+![png](./material/ctrl.png)
