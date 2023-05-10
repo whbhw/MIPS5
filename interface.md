@@ -1,5 +1,27 @@
 # 模块接口
 
+## IF
+
+### PC
+
+#### 接口
+
+``` verilog
+module PC (
+    output  wire    [31:0]  pc      ,
+    input   wire    [31:0]  pc_next 
+);
+```
+
+#### 例化
+
+``` verilog
+PC xxx (
+    .pc      (   ),
+    .pc_next (   )
+);
+```
+
 ## ID
 
 ### CTRL
@@ -77,28 +99,6 @@ RF xxx (
 
     .clk     (   ),
     .rst_n   (   )
-);
-```
-
-## IF
-
-### PC
-
-#### 接口
-
-``` verilog
-module PC (
-    output  wire    [31:0]  pc      ,
-    input   wire    [31:0]  pc_next 
-);
-```
-
-#### 例化
-
-``` verilog
-PC xxx (
-    .pc      (   ),
-    .pc_next (   )
 );
 ```
 
