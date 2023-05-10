@@ -4,13 +4,12 @@
 
 | | | | | | |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| lw | sw | | | | |
-| add | addi | addiu | sub | | |
+| lw | sw |
+| add | addi | addiu | sub |
 | and | or | xor | andi | ori | xori|
-| lui | slt | sll | srl | | |
-
-beq     bne
-j       jal     jr
+| lui | slt | sll | srl |
+| beq | bne |
+| j | jal | jr |
 
 ## 单周期
 
