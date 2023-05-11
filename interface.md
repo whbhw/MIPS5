@@ -49,6 +49,7 @@ module CTRL (
     output  wire            regdst  ,
 
     output  wire            branch  ,
+    output  wire            branchne,
     output  wire            jump    ,
     output  wire            jumpr   ,
     output  wire            link    ,
@@ -75,6 +76,7 @@ CTRL xxx (
     .regdst  (   ),
 
     .branch  (   ),
+    .branchne(   ),
     .jump    (   ),
     .jumpr   (   ),
     .link    (   ),
@@ -86,16 +88,17 @@ CTRL xxx (
 
 #### 真值表
 
-|inst    |opcode  ||signext |aluop   |alusrc  |memread |memwrite|memtoreg|regwrite|regdst  |branch  |jump    |jumpr   |link    |
-|:--:|:--:|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-|lw |23 ||
-|sw |2b ||
-|beq|04 ||
-|bne|05 ||
-|j  |02 ||
-|jal|03 ||
-|R* |00*||
-|jr*|00*||
+|inst    |opcode  ||signext |aluop   |alusrc  |memread |memwrite|memtoreg*|regwrite|regdst  |branch  |branchne*|jump    |jumpr   |link    |
+|:--:|:--:|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|lw |23 ||1 |00 |1  |1  |0  |1  |1  |0  |0  |X  |0  |X  |0  |
+|sw |2b ||1 |00 |1  |0  |1  |X  |0  |X  |0  |X  |0  |X  |X  |
+|beq|04 ||X |01 |0  |0  |0  |X  |0  |X  |1  |0  |0  |X  |0  |
+|bne|05 ||X |01 |0  |0  |0  |X  |0  |X  |1  |1  |0  |X  |0  |
+|j  |02 ||X |XX |X  |0  |0  |X  |0  |X  |0  |X  |1  |0  |0  |
+|jal|03 ||X |XX |X  |0  |0  |X  |1  |X  |0  |X  |1  |0  |1  |
+|jr*|00*||X |XX |X  |0  |0  |X  |0  |X  |0  |X  |1  |1  |0  |
+|R* |00*||X |10 |0  |0  |0  |0  |1  |1  |0  |X  |0  |X  |0  |
+|I* |*  ||? |10 |1  |0  |0  |0  |1  |0  |0  |X  |0  |X  |0  |
 
 ### RF
 
