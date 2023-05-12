@@ -143,6 +143,11 @@ RF xxx (
 ## EX
 
 ### ALU
+#### 功能简介：
+
+完成的任务包括（共9种）：ADD、SUB、AND、OR、XOR、LUI、SLT、SLL、SRL
+
+
 
 #### 接口
 
@@ -152,7 +157,7 @@ module ALU (
     output  wire    [31:0]  zero    ,
 
     input   wire    [31:0]  data1   ,
-    input   wire    [31:0]  data2   ,
+    input   wire    [31:0]  data2   , //立即数通道
     input   wire    [5:0]   shamt   ,
     input   wire    [3:0]   alu_ctrl
 );
