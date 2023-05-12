@@ -20,11 +20,11 @@ module PC (
 
 ```verilog
 PC xxx (
-    .pc      (   ),
-    .pc_next (   ),
+    .pc         (   ),
+    .pc_next    (   ),
 
-    .clk     (   ),
-    .rst_n   (   )
+    .clk        (   ),
+    .rst_n      (   )
 );
 ```
 
@@ -63,26 +63,26 @@ module CTRL (
 
 ```verilog
 CTRL xxx (
-    .signext (   ),
+    .signext    (   ),
 
-    .aluop   (   ),
-    .alusrc  (   ),
+    .aluop      (   ),
+    .alusrc     (   ),
 
-    .memread (   ),
-    .memwrite(   ),
-    .memtoreg(   ),
+    .memread    (   ),
+    .memwrite   (   ),
+    .memtoreg   (   ),
 
-    .regwrite(   ),
-    .regdst  (   ),
+    .regwrite   (   ),
+    .regdst     (   ),
 
-    .branch  (   ),
-    .branchne(   ),
-    .jump    (   ),
-    .jumpr   (   ),
-    .link    (   ),
+    .branch     (   ),
+    .branchne   (   ),
+    .jump       (   ),
+    .jumpr      (   ),
+    .link       (   ),
 
-    .opcode  (   ),
-    .funct   (   )
+    .opcode     (   ),
+    .funct      (   )
 );
 ```
 
@@ -125,18 +125,18 @@ module RF (
 
 ```verilog
 RF xxx (
-    .rd1addr (   ),
-    .rd1data (   ),
+    .rd1addr    (   ),
+    .rd1data    (   ),
 
-    .rd2addr (   ),
-    .rd2data (   ),
+    .rd2addr    (   ),
+    .rd2data    (   ),
 
-    .wraddr  (   ),
-    .wrdata  (   ),
-    .wren    (   ),
+    .wraddr     (   ),
+    .wrdata     (   ),
+    .wren       (   ),
 
-    .clk     (   ),
-    .rst_n   (   )
+    .clk        (   ),
+    .rst_n      (   )
 );
 ```
 
@@ -153,6 +153,7 @@ module ALU (
 
     input   wire    [31:0]  data1   ,
     input   wire    [31:0]  data2   ,
+    input   wire    [5:0]   shamt   ,
     input   wire    [3:0]   alu_ctrl
 );
 ```
@@ -161,12 +162,13 @@ module ALU (
 
 ```verilog
 ALU xxx (
-    .alu_res (   ),
-    .zero    (   ),
+    .alu_res    (   ),
+    .zero       (   ),
 
-    .data1   (   ),
-    .data2   (   ),
-    .alu_ctrl(   )
+    .data1      (   ),
+    .data2      (   ),
+    .shamt      (   ),
+    .alu_ctrl   (   )
 );
 ```
 
@@ -187,9 +189,9 @@ module ALUCTRL (
 
 ```verilog
 module ALUCTRL (
-    .alu_ctrl(   ),
-
-    .aluop   (   ),
-    .funct   (   )
+    .alu_ctrl   (   ),
+    
+    .aluop      (   ),
+    .funct      (   )
 );
 ```
