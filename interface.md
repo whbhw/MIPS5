@@ -36,26 +36,26 @@ PC xxx (
 
 ```verilog
 module CTRL (
-    output  wire            signext ,
+    output  wire            signext ,   // 符号扩展(1符号,0无符号)
 
-    output  wire    [1:0]   aluop   ,
-    output  wire            alusrc  ,
+    output  wire    [1:0]   aluop   ,   // alu初步控制编码
+    output  wire            alusrc  ,   // alu输入来源选择
 
-    output  wire            memread ,
-    output  wire            memwrite,
-    output  wire            memtoreg,
+    output  wire            memread ,   // 数据内存读取控制
+    output  wire            memwrite,   // 数据内存写入控制
+    output  wire            memtoreg,   // 数据寄存器写入来源选择
 
-    output  wire            regwrite,
-    output  wire            regdst  ,
+    output  wire            regwrite,   // 数据寄存器写入控制
+    output  wire            regdst  ,   // 数据寄存器写入地址来源选择
 
-    output  wire            branch  ,
-    output  wire            branchne,
-    output  wire            jump    ,
-    output  wire            jumpr   ,
-    output  wire            link    ,
+    output  wire            branch  ,   // 分支指令标志
+    output  wire            branchne,   // bne(1)/beq(0)标志,前提branch有效
+    output  wire            jump    ,   // 跳转指令标志
+    output  wire            jumpr   ,   // jr标志,前提jump有效
+    output  wire            link    ,   // jal标志,前提jump有效
 
-    input   wire    [5:0]   opcode  ,
-    input   wire    [5:0]   funct   
+    input   wire    [5:0]   opcode  ,   // 指令opcode部分输入
+    input   wire    [5:0]   funct       // 指令funct部分输入
 );
 ```
 
@@ -63,26 +63,26 @@ module CTRL (
 
 ```verilog
 CTRL xxx (
-    .signext    (   ),
-
-    .aluop      (   ),
-    .alusrc     (   ),
-
-    .memread    (   ),
-    .memwrite   (   ),
-    .memtoreg   (   ),
-
-    .regwrite   (   ),
-    .regdst     (   ),
-
-    .branch     (   ),
-    .branchne   (   ),
-    .jump       (   ),
-    .jumpr      (   ),
-    .link       (   ),
-
-    .opcode     (   ),
-    .funct      (   )
+    .signext    (   ),  // 符号扩展(1符号,0无符号)
+    
+    .aluop      (   ),  // alu初步控制编码
+    .alusrc     (   ),  // alu输入来源选择
+    
+    .memread    (   ),  // 数据内存读取控制
+    .memwrite   (   ),  // 数据内存写入控制
+    .memtoreg   (   ),  // 数据寄存器写入来源选择
+    
+    .regwrite   (   ),  // 数据寄存器写入控制
+    .regdst     (   ),  // 数据寄存器写入地址来源选择
+    
+    .branch     (   ),  // 分支指令标志
+    .branchne   (   ),  // bne(1)/beq(0)标志,前提branch有效
+    .jump       (   ),  // 跳转指令标志
+    .jumpr      (   ),  // jr标志,前提jump有效
+    .link       (   ),  // jal标志,前提jump有效
+    
+    .opcode     (   ),  // 指令opcode部分输入
+    .funct      (   )   // 指令funct部分输入
 );
 ```
 
@@ -90,15 +90,35 @@ CTRL xxx (
 
 |inst    |opcode  ||signext |aluop   |alusrc  |memread |memwrite|memtoreg*|regwrite|regdst  |branch  |branchne*|jump    |jumpr   |link    |
 |:--:|:--:|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-|lw |23 ||1 |00 |1  |1  |0  |1  |1  |0  |0  |X  |0  |X  |0  |
-|sw |2b ||1 |00 |1  |0  |1  |X  |0  |X  |0  |X  |0  |X  |X  |
-|beq|04 ||X |01 |0  |0  |0  |X  |0  |X  |1  |0  |0  |X  |0  |
-|bne|05 ||X |01 |0  |0  |0  |X  |0  |X  |1  |1  |0  |X  |0  |
-|j  |02 ||X |XX |X  |0  |0  |X  |0  |X  |0  |X  |1  |0  |0  |
-|jal|03 ||X |XX |X  |0  |0  |X  |1  |X  |0  |X  |1  |0  |1  |
-|jr*|00*||X |XX |X  |0  |0  |X  |0  |X  |0  |X  |1  |1  |0  |
-|R* |00*||X |10 |0  |0  |0  |0  |1  |1  |0  |X  |0  |X  |0  |
-|I* |*  ||? |10 |1  |0  |0  |0  |1  |0  |0  |X  |0  |X  |0  |
+|lw |23 ||1 |000    |1  |1  |0  |1  |1  |0  |0  |X  |0  |X  |0  |
+|sw |2b ||1 |000    |1  |0  |1  |X  |0  |X  |0  |X  |0  |X  |X  |
+|beq|04 ||X |001    |0  |0  |0  |X  |0  |X  |1  |0  |0  |X  |0  |
+|bne|05 ||X |001    |0  |0  |0  |X  |0  |X  |1  |1  |0  |X  |0  |
+|j  |02 ||X |XXX    |X  |0  |0  |X  |0  |X  |0  |X  |1  |0  |0  |
+|jal|03 ||X |XXX    |X  |0  |0  |X  |1  |X  |0  |X  |1  |0  |1  |
+|jr*|00*||X |XXX    |X  |0  |0  |X  |0  |X  |0  |X  |1  |1  |0  |
+|R* |00*||X |010    |0  |0  |0  |0  |1  |1  |0  |X  |0  |X  |0  |
+|I* |*  ||? |???    |1  |0  |0  |0  |1  |0  |0  |X  |0  |X  |0  |
+
+**注：** jr和R指令须通过funct区分，jr的funct为6'h08
+
+**I型指令表**
+|inst    |opcode  ||signext |aluop   |
+|:--:|:--:|--|:--:|:--:|
+|addi   |08 ||1 |000    |
+|addiu  |09 ||1 |000    |
+|andi   |0c ||0 |100    |
+|ori    |0d ||0 |101    |
+|xori   |0e ||0 |110    |
+|lui    |0f ||0 |111    |
+
+**aluop编码表**
+|aluop  |alu    |
+|:-----:|:---:|
+|000    |add    |
+|001    |sub    |
+|010    |R      |
+|100    |and    |
 
 ### RF
 
