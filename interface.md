@@ -173,7 +173,7 @@ RF xxx (
 ```verilog
 module ALU (
     output  wire    [31:0]  alu_res ,
-    output  wire    [31:0]  zero    ,
+    output  wire            zero    ,
 
     input   wire    [31:0]  data1   ,
     input   wire    [31:0]  data2   , //立即数通道
