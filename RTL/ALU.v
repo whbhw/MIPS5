@@ -7,15 +7,15 @@ module ALU (
     input   wire    [5:0]   shamt   ,
     input   wire    [3:0]   alu_ctrl
 );
-parameter ADD = 4'b0001;
-parameter SUB = 4'b0010;
-parameter AND = 4'b0011;
-parameter OR  = 4'b0100;
-parameter XOR = 4'b0101;
-parameter LUI = 4'b0110;
-parameter SLT = 4'b0111;
-parameter SLL = 4'b1000;
-parameter SRL = 4'b1001;
+localparam ADD = 4'b0001;
+localparam SUB = 4'b0010;
+localparam AND = 4'b0011;
+localparam OR  = 4'b0100;
+localparam XOR = 4'b0101;
+localparam LUI = 4'b0110;
+localparam SLT = 4'b0111;
+localparam SLL = 4'b1000;
+localparam SRL = 4'b1001;
 
 always @(*) begin
     alu_res =   0;
@@ -26,7 +26,7 @@ always @(*) begin
         AND:    alu_res =   data1   &   data2;
         OR :    alu_res =   data1   |   data2;
         XOR:    alu_res =   data1   ^   data2;
-        LUI:    alu_res =   {data2{15:0} , 16'b0};
+        LUI:    alu_res =   {data2[15:0] , 16'b0};
         SLT:    begin
             if (data1 < data2) begin
                 alu_res =   1;
