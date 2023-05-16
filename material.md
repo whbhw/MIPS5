@@ -2,7 +2,7 @@
 
 ## 指令
 
-|inst   |codehex|codebin|   |inst   |codehex|codebin|
+|inst   |functhex|functbin|   |inst   |functhex|functbin|
 |------:|------:|------:|---|------:|------:|------:|
 |lw     |23     |100011 |   |sw     |2b     |101011 |
 ||
