@@ -1,21 +1,21 @@
 module ALU (
-    output  wire    [31:0]  alu_res ,
-    output  wire            zero    ,
+    output          wire    [31:0]  alu_res ,
+    output          wire            zero    ,
 
-    input   wire    [31:0]  data1   ,
-    input   wire    [31:0]  data2   ,
-    input   wire    [5:0]   shamt   ,
-    input   wire    [3:0]   alu_ctrl
+    input   signed  wire    [31:0]  data1   ,
+    input   signed  wire    [31:0]  data2   ,
+    input           wire    [5:0]   shamt   ,
+    input           wire    [3:0]   alu_ctrl
 );
 localparam ADD = 4'b0001;
 localparam SUB = 4'b0010;
-localparam AND = 4'b0011;
-localparam OR  = 4'b0100;
-localparam XOR = 4'b0101;
-localparam LUI = 4'b0110;
-localparam SLT = 4'b0111;
-localparam SLL = 4'b1000;
-localparam SRL = 4'b1001;
+localparam AND = 4'b0100;
+localparam OR  = 4'b0101;
+localparam XOR = 4'b0110;
+localparam LUI = 4'b0111;
+localparam SLT = 4'b1010;
+localparam SLL = 4'b0000;
+localparam SRL = 4'b1111;
 
 always @(*) begin
     alu_res =   0;
