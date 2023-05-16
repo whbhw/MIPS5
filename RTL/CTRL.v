@@ -40,7 +40,7 @@ module CTRL (
     
     localparam [5:0]    funct_jr        =   6'h08;
     
-    wire [13:0] ctrlsignals;
+    reg [13:0] ctrlsignals;
     assign {
         signext     ,aluop      ,alusrc     ,memread    ,
         memwrite    ,memtoreg   ,regwrite   ,regdst     ,branch     ,
@@ -77,5 +77,5 @@ module CTRL (
                 ctrlsignals = 14'b0;
         endcase
     end
-    
+
 endmodule

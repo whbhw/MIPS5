@@ -1,0 +1,25 @@
+F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TB_ALU_SENDER
+-- Compiling module TB_ALU_RECEIVER
+-- Compiling module TB_ALU_CLKGEN
+-- Compiling module TB_ALU_
+
+Top level modules:
+	TB_ALU_
+
+} {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CTRL.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CTRL.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module CTRL
+
+Top level modules:
+	CTRL
+
+} {} {}}
