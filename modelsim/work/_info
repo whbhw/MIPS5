@@ -10,7 +10,7 @@ z2
 cModel Technology
 dF:/Users/whb/Documents/MyPrograms/Verilog/UART
 vALU
-Z0 !s110 1684243108
+Z0 !s110 1684249286
 !i10b 1
 !s100 >KiHB]220TzNW<m^jcm@:1
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -20,13 +20,13 @@ Z3 dF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/modelsim
 w1684241636
 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v
 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v
-!i122 53
+!i122 57
 L0 1 44
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1684243108.000000
+Z5 !s108 1684249286.000000
 !s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v|
 !i113 1
@@ -44,7 +44,7 @@ R3
 w1684241671
 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALUCTRL.v
 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALUCTRL.v
-!i122 54
+!i122 58
 L0 1 33
 R4
 r1
@@ -68,7 +68,7 @@ R3
 w1684239665
 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CTRL.v
 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CTRL.v
-!i122 52
+!i122 56
 L0 1 81
 R4
 r1
@@ -89,10 +89,10 @@ R1
 ILX[3Eh_zbR3d>hg]MCf=P3
 R2
 R3
-Z8 w1684243108
+Z8 w1684249286
 Z9 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v
 Z10 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v
-!i122 55
+!i122 59
 L0 74 56
 R4
 r1
@@ -116,7 +116,7 @@ R3
 R8
 R9
 R10
-!i122 55
+!i122 59
 L0 62 11
 R4
 r1
@@ -140,7 +140,7 @@ R3
 R8
 R9
 R10
-!i122 55
+!i122 59
 L0 48 13
 R4
 r1
@@ -164,7 +164,7 @@ R3
 R8
 R9
 R10
-!i122 55
+!i122 59
 L0 7 40
 R4
 r1
