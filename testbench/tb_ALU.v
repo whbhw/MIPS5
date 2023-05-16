@@ -54,7 +54,7 @@ module `MODULENAMETB(_RECEIVER) (
     always @(posedge clk, negedge rst_n) begin
         if (!rst_n) begin
         end else begin
-            $display("%h %b\n",alu_res,zero);
+            $display("%H %B\n",alu_res,zero);
         end
     end
 endmodule
@@ -85,7 +85,7 @@ module `MODULENAMETB(_) ();
     wire    [5:0]   funct   ;
 
     wire    [3:0]   alu_ctrl;
-    assign alu_ctrl = 4'b0001;
+    // assign alu_ctrl = 4'b0001;
     
     `MODULENAMETB(_SENDER)   stimuli(
         clk     ,
@@ -112,12 +112,12 @@ module `MODULENAMETB(_) ();
         .shamt      (shamt  ),
         .alu_ctrl   (alu_ctrl)
     );
-    // ALUCTRL uut2 (
-    //     .alu_ctrl   (alu_ctrl),
+    ALUCTRL uut2 (
+        .alu_ctrl   (alu_ctrl),
 
-    //     .aluop      (aluop  ),
-    //     .funct      (funct  )
-    // );
+        .aluop      (aluop  ),
+        .funct      (funct  )
+    );
     
     initial begin
         #0   rst_n=0;

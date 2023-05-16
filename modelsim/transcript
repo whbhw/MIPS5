@@ -1,141 +1,26 @@
-# Compile of CTRL.v was successful.
-# Compile of tb_ALU.v was successful.
-# Compile of ALU.v was successful.
-# 3 compiles, 0 failed with no errors.
 vsim work.TB_ALU_
 # vsim work.TB_ALU_ 
-# Start time: 20:37:42 on May 16,2023
+# Start time: 21:18:21 on May 16,2023
 # Loading work.TB_ALU_
 # Loading work.TB_ALU_SENDER
 # Loading work.TB_ALU_RECEIVER
 # Loading work.TB_ALU_CLKGEN
 # Loading work.ALU
-# Trace back: Error QStructure::sort: invalid command name ""
-#   <6:E:/mtitcl/vsim/qstructure.tc_:2478: ::QStructure::sort .main_pane.structure 2 ascending
-#   <5:eval:1: ::QStructure::structsort .main_pane.structure 2 ascending
-#   <4:eval:1: ::namespace inscope ::QStructure {structsort .main_pane.structure} 2 ascending
-#   >3:proc:26: ::.main_pane.structure.interior.cs.body.struct sort 2 ascending
-#   >2:proc:10: ::.main_pane.structure.interior.cs.body.struct _initializeSortColumn
-#   <1:eval:1: ::namespace inscope ::vsimwidgets::Hierarchy {::.main_pane.structure.interior.cs.body.struct _initializeSortColumn}
-add wave -position insertpoint  \
-sim:/TB_ALU_/clk \
-sim:/TB_ALU_/rst_n \
-sim:/TB_ALU_/alu_res \
-sim:/TB_ALU_/zero \
-sim:/TB_ALU_/data1 \
-sim:/TB_ALU_/data2 \
-sim:/TB_ALU_/shamt \
-sim:/TB_ALU_/aluop \
-sim:/TB_ALU_/funct \
-sim:/TB_ALU_/alu_ctrl
+# Loading work.ALUCTRL
+# Compile of CTRL.v was successful.
+# Compile of ALU.v was successful.
+# Compile of ALUCTRL.v was successful.
+# Compile of tb_ALU.v was successful.
+# 4 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB_ALU_
+# Loading work.TB_ALU_SENDER
+# Loading work.TB_ALU_RECEIVER
+# Loading work.TB_ALU_CLKGEN
+# Loading work.ALU
+# Loading work.ALUCTRL
 run
-#          0 x
-# 
-#          0 x
-# 
-#          0 x
-# 
-# ** Warning: (vsim-7) Failed to open readmem file "tb_ALU_vec.txt" in read mode.
-# No such file or directory. (errno = ENOENT)    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(32)
-#    Time: 40 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
-# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(43)
-#    Time: 70 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
-# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 43
-# Compile of CTRL.v was successful.
-# Compile of tb_ALU.v was successful.
-# Compile of ALU.v was successful.
-# 3 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.TB_ALU_
-# Loading work.TB_ALU_SENDER
-# Loading work.TB_ALU_RECEIVER
-# Loading work.TB_ALU_CLKGEN
-# Loading work.ALU
-run
-#          0 x
-# 
-#          0 x
-# 
-#          0 x
-# 
-# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(43)
-#    Time: 90 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
-# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 43
-# Compile of CTRL.v was successful.
-# Compile of tb_ALU.v was successful.
-# Compile of ALU.v was successful.
-# 3 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.TB_ALU_
-# Loading work.TB_ALU_SENDER
-# Loading work.TB_ALU_RECEIVER
-# Loading work.TB_ALU_CLKGEN
-# Loading work.ALU
-run -all
-#          0    x
-# 
-#          0    x
-# 
-#          0    x
-# 
-# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(43)
-#    Time: 90 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
-# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 43
-# Compile of CTRL.v was successful.
-# Compile of tb_ALU.v was successful.
-# Compile of ALU.v was successful.
-# 3 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.TB_ALU_
-# Loading work.TB_ALU_SENDER
-# Loading work.TB_ALU_RECEIVER
-# Loading work.TB_ALU_CLKGEN
-# Loading work.ALU
-run -all
-# 00000000    x
-# 
-# 00000000    x
-# 
-# 00000000    x
-# 
-# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(43)
-#    Time: 90 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
-# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 43
-# Compile of CTRL.v was successful.
-# Compile of tb_ALU.v was successful.
-# Compile of ALU.v was successful.
-# 3 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.TB_ALU_
-# Loading work.TB_ALU_SENDER
-# Loading work.TB_ALU_RECEIVER
-# Loading work.TB_ALU_CLKGEN
-# Loading work.ALU
-run -all
-# 00000000    x
-# 
-# 99999999    x
-# 
-# 99999999    x
-# 
-# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(43)
-#    Time: 90 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
-# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 43
-# Compile of CTRL.v was successful.
-# Compile of tb_ALU.v was successful.
-# Compile of ALU.v was successful.
-# 3 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.TB_ALU_
-# Loading work.TB_ALU_SENDER
-# Loading work.TB_ALU_RECEIVER
-# Loading work.TB_ALU_CLKGEN
-# Loading work.ALU
 run -all
 # 00000000 x
 # 
@@ -143,8 +28,91 @@ run -all
 # 
 # 99999999 x
 # 
+# 8acf1357 x
+# 
+# 02244220 x
+# 
+# 97755779 x
+# 
+# 95511559 x
+# 
+# 43210000 x
+# 
+# 00000001 x
+# 
+# 00000000 x
+# 
+# 00000000 x
+# 
+# 00000001 x
+# 
+# 23456780 x
+# 
+# 01234567 x
+# 
+# 99999999 x
+# 
+# 8acf1357 x
+# 
+# 00000000 x
+# 
+# 00000000 x
+# 
 # ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(43)
-#    Time: 90 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
+#    Time: 390 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
 # Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 43
-# End time: 20:48:35 on May 16,2023, Elapsed time: 0:10:53
+add wave -position insertpoint  \
+sim:/TB_ALU_/stimuli/clk \
+sim:/TB_ALU_/stimuli/rst_n \
+sim:/TB_ALU_/stimuli/data1 \
+sim:/TB_ALU_/stimuli/data2 \
+sim:/TB_ALU_/stimuli/shamt \
+sim:/TB_ALU_/stimuli/aluop \
+sim:/TB_ALU_/stimuli/funct \
+sim:/TB_ALU_/stimuli/data3 \
+sim:/TB_ALU_/stimuli/nu \
+sim:/TB_ALU_/stimuli/counter \
+sim:/TB_ALU_/stimuli/message
+restart
+run -all
+# 00000000 x
+# 
+# 99999999 x
+# 
+# 99999999 x
+# 
+# 8acf1357 x
+# 
+# 02244220 x
+# 
+# 97755779 x
+# 
+# 95511559 x
+# 
+# 43210000 x
+# 
+# 00000001 x
+# 
+# 00000000 x
+# 
+# 00000000 x
+# 
+# 00000001 x
+# 
+# 23456780 x
+# 
+# 01234567 x
+# 
+# 99999999 x
+# 
+# 8acf1357 x
+# 
+# 00000000 x
+# 
+# 00000000 x
+# 
+# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(43)
+#    Time: 390 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
+# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 43
+# End time: 21:20:46 on May 16,2023, Elapsed time: 0:02:25
 # Errors: 0, Warnings: 1

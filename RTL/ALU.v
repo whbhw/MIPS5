@@ -1,11 +1,11 @@
 module ALU (
-    output          reg     [31:0]  alu_res ,
-    output          reg             zero    ,
+    output  reg             [31:0]  alu_res ,
+    output  reg                     zero    ,
 
-    input   signed  wire    [31:0]  data1   ,
-    input   signed  wire    [31:0]  data2   ,
-    input           wire    [5:0]   shamt   ,
-    input           wire    [3:0]   alu_ctrl
+    input   wire    signed  [31:0]  data1   ,
+    input   wire    signed  [31:0]  data2   ,
+    input   wire            [5:0]   shamt   ,
+    input   wire            [3:0]   alu_ctrl
 );
 localparam ADD = 4'b0001;
 localparam SUB = 4'b0010;

@@ -1,5 +1,5 @@
 module ALUCTRL (
-    output  wire    [3:0]   alu_ctrl,
+    output  reg     [3:0]   alu_ctrl,
 
     input   wire    [1:0]   aluop   ,
     input   wire    [5:0]   funct   
