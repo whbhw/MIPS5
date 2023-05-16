@@ -212,7 +212,7 @@ module ALUCTRL (
 #### 例化
 
 ```verilog
-module ALUCTRL (
+ALUCTRL xxx (
     .alu_ctrl   (   ),
 
     .aluop      (   ),
