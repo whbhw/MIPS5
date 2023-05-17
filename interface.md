@@ -166,7 +166,7 @@ RF xxx (
 
 #### 功能简介
 
-完成的任务包括（共9种）：ADD、SUB、AND、OR、XOR、LUI、SLT、SLL、SRL
+完成的任务包括（共9种）：ADD、SUB、AND、OR、XOR、LUI、SLT、SLL、SRL、BEQ
 
 #### 接口
 

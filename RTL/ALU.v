@@ -31,7 +31,7 @@ always @(*) begin
         LUI:    alu_res =   {data2[15:0] , 16'b0};
         SLT:    begin
             if (data1 < data2) begin
-                alu_res =   1;
+                alu_res =   0;
             end 
             else               begin
                 alu_res =   0;
