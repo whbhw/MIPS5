@@ -16,15 +16,23 @@ localparam LUI = 4'b0111;
 localparam SLT = 4'b1010;
 localparam SLL = 4'b0000;
 localparam SRL = 4'b1111;
-localparam BEQ = 4'b1110;
 
 always @(*) begin
     alu_res =   0;
-    zeros   =   1;
+    zeros   =   0;
 
     case (alu_ctrl)
         ADD:    alu_res =   data1   +   data2;
-        SUB:    alu_res =   data1   -   data2;
+        SUB:    begin
+            alu_res =   data1   -   data2;
+            if (alu_res==0) begin
+                zero    =   1;
+            end
+            else begin
+                zero    =   0;
+            end
+        end
+
         AND:    alu_res =   data1   &   data2;
         OR :    alu_res =   data1   |   data2;
         XOR:    alu_res =   data1   ^   data2;
@@ -39,14 +47,6 @@ always @(*) begin
         end
         SLL:    alu_res =   data1   <<  shamt;
         SRL:    alu_res =   data1   >>  shamt;
-        BEQ:    begin
-            if (data1   ==  data2) begin
-                zero    =   0;
-            end
-            else    begin
-                zero    =   1;
-            end
-        end
         
         default:        alu_res =   0;
     endcase
