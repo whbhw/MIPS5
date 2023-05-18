@@ -1,0 +1,609 @@
+# Compile of CTRL.v was successful.
+# Compile of ALU.v failed with 1 errors.
+# Compile of ALUCTRL.v was successful.
+# Compile of tb_ALU.v failed with 1 errors.
+# 4 compiles, 2 failed with 2 errors.
+# Compile of CTRL.v was successful.
+# Compile of ALU.v failed with 1 errors.
+# Compile of ALUCTRL.v was successful.
+# Compile of tb_ALU.v was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of CTRL.v was successful.
+# Compile of ALU.v was successful.
+# Compile of ALUCTRL.v was successful.
+# Compile of tb_ALU.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.TB_ALU_
+# vsim work.TB_ALU_ 
+# Start time: 11:47:35 on May 18,2023
+# Loading work.TB_ALU_
+# Loading work.TB_ALU_SENDER
+# Loading work.TB_ALU_RECEIVER
+# Loading work.TB_ALU_CLKGEN
+# Loading work.ALU
+# Loading work.ALUCTRL
+add wave -position insertpoint  \
+sim:/TB_ALU_/monitor/alu_res_ans \
+sim:/TB_ALU_/monitor/zero_ans
+add wave -position insertpoint  \
+sim:/TB_ALU_/clk \
+sim:/TB_ALU_/rst_n \
+sim:/TB_ALU_/alu_res \
+sim:/TB_ALU_/zero \
+sim:/TB_ALU_/data1 \
+sim:/TB_ALU_/data2 \
+sim:/TB_ALU_/shamt \
+sim:/TB_ALU_/aluop \
+sim:/TB_ALU_/funct \
+sim:/TB_ALU_/alu_ctrl
+run -all
+# 99999999 0
+# 
+# 99999999 0
+# 
+# 8acf1357 0
+# 
+# 02244220 0
+# 
+# 97755779 0
+# 
+# 95511559 0
+# 
+# 43210000 0
+# 
+# 00000000 0
+# 
+# 00000000 0
+# 
+# 00000000 0
+# 
+# 00000000 0
+# 
+# 23456780 0
+# 
+# 01234567 0
+# 
+# 99999999 0
+# 
+# 8acf1357 0
+# 
+# 00000000 1
+# 
+# 00000000 1
+# 
+# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(44)
+#    Time: 390 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
+# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 44
+add wave -position insertpoint  \
+sim:/TB_ALU_/stimuli/message
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Compile of CTRL.v was successful.
+# Compile of ALU.v was successful.
+# Compile of ALUCTRL.v was successful.
+# Compile of tb_ALU.v was successful.
+# 4 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB_ALU_
+# Loading work.TB_ALU_SENDER
+# Loading work.TB_ALU_RECEIVER
+# Loading work.TB_ALU_CLKGEN
+# Loading work.ALU
+# Loading work.ALUCTRL
+run -all
+# 99999999 0
+# 
+# 99999999 0
+# 
+# 8acf1357 0
+# 
+# 02244220 0
+# 
+# 97755779 0
+# 
+# 95511559 0
+# 
+# 43210000 0
+# 
+# 00000000 0
+# 
+# 00000000 0
+# 
+# 00000000 0
+# 
+# 00000000 0
+# 
+# 23456780 0
+# 
+# 01234567 0
+# 
+# 99999999 0
+# 
+# 8acf1357 0
+# 
+# 00000000 1
+# 
+# 00000000 1
+# 
+# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(44)
+#    Time: 390 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
+# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 44
+add wave -position insertpoint  \
+sim:/TB_ALU_/monitor/messageans
+restart
+run
+run -all
+# 99999999 0
+# 
+# 99999999 0
+# 
+# 8acf1357 0
+# 
+# 02244220 0
+# 
+# 97755779 0
+# 
+# 95511559 0
+# 
+# 43210000 0
+# 
+# 00000000 0
+# 
+# 00000000 0
+# 
+# 00000000 0
+# 
+# 00000000 0
+# 
+# 23456780 0
+# 
+# 01234567 0
+# 
+# 99999999 0
+# 
+# 8acf1357 0
+# 
+# 00000000 1
+# 
+# 00000000 1
+# 
+# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(44)
+#    Time: 390 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
+# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 44
+# Compile of CTRL.v was successful.
+# Compile of ALU.v was successful.
+# Compile of ALUCTRL.v was successful.
+# Compile of tb_ALU.v was successful.
+# 4 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB_ALU_
+# Loading work.TB_ALU_SENDER
+# Loading work.TB_ALU_RECEIVER
+# Loading work.TB_ALU_CLKGEN
+# Loading work.ALU
+# Loading work.ALUCTRL
+run -all
+# 99999999 0
+# 
+# 99999999 0
+# 
+# 8acf1357 0
+# 
+# 02244220 0
+# 
+# 97755779 0
+# 
+# 95511559 0
+# 
+# 43210000 0
+# 
+# 00000000 0
+# 
+# 00000000 0
+# 
+# 00000000 0
+# 
+# 00000000 0
+# 
+# 23456780 0
+# 
+# 01234567 0
+# 
+# 99999999 0
+# 
+# 8acf1357 0
+# 
+# 00000000 1
+# 
+# 00000000 1
+# 
+# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(44)
+#    Time: 390 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
+# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 44
+# Compile of CTRL.v was successful.
+# Compile of ALU.v was successful.
+# Compile of ALUCTRL.v was successful.
+# Compile of tb_ALU.v was successful.
+# 4 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB_ALU_
+# Loading work.TB_ALU_SENDER
+# Loading work.TB_ALU_RECEIVER
+# Loading work.TB_ALU_CLKGEN
+# Loading work.ALU
+# Loading work.ALUCTRL
+run -all
+# 999999990    1
+# 
+# 999999990    1
+# 
+# 8acf13570    1
+# 
+# 022442200    1
+# 
+# 977557790    1
+# 
+# 955115590    1
+# 
+# 432100000    1
+# 
+# 000000000    0
+# 
+# 000000000    0
+# 
+# 000000000    0
+# 
+# 000000000    0
+# 
+# 234567800    1
+# 
+# 012345670    1
+# 
+# 999999990    1
+# 
+# 8acf13570    1
+# 
+# 000000001    1
+# 
+# 000000001    0
+# 
+# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(44)
+#    Time: 390 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
+# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 44
+# Compile of CTRL.v was successful.
+# Compile of ALU.v was successful.
+# Compile of ALUCTRL.v was successful.
+# Compile of tb_ALU.v was successful.
+# 4 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB_ALU_
+# Loading work.TB_ALU_SENDER
+# Loading work.TB_ALU_RECEIVER
+# Loading work.TB_ALU_CLKGEN
+# Loading work.ALU
+# Loading work.ALUCTRL
+run -all
+# 999999990    1    999999990
+# 
+# 999999990    1    999999990
+# 
+# 8acf13570    1    8acf13570
+# 
+# 022442200    1    022442200
+# 
+# 977557790    1    977557790
+# 
+# 955115590    1    955115590
+# 
+# 432100000    1    432100000
+# 
+# 000000000    0    000000010
+# 
+# 000000000    0    000000001
+# 
+# 000000000    0    000000001
+# 
+# 000000000    0    000000010
+# 
+# 234567800    1    234567800
+# 
+# 012345670    1    012345670
+# 
+# 999999990    1    999999990
+# 
+# 8acf13570    1    8acf13570
+# 
+# 000000001    1    000000001
+# 
+# 000000001    0    00000e0fx
+# 
+# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(44)
+#    Time: 390 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
+# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 44
+# Compile of CTRL.v was successful.
+# Compile of ALU.v was successful.
+# Compile of ALUCTRL.v was successful.
+# Compile of tb_ALU.v was successful.
+# 4 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB_ALU_
+# Loading work.TB_ALU_SENDER
+# Loading work.TB_ALU_RECEIVER
+# Loading work.TB_ALU_CLKGEN
+# Loading work.ALU
+# Loading work.ALUCTRL
+run -all
+# 999999990    1    999999990
+# 
+# 999999990    1    999999990
+# 
+# 8acf13570    1    8acf13570
+# 
+# 022442200    1    022442200
+# 
+# 977557790    1    977557790
+# 
+# 955115590    1    955115590
+# 
+# 432100000    1    432100000
+# 
+# 000000000    0    000000010
+# 
+# 000000000    0    000000001
+# 
+# 000000000    0    000000001
+# 
+# 000000000    0    000000010
+# 
+# 234567800    1    234567800
+# 
+# 012345670    1    012345670
+# 
+# 999999990    1    999999990
+# 
+# 8acf13570    1    8acf13570
+# 
+# 000000001    1    000000001
+# 
+# 0
+# 
+# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(44)
+#    Time: 390 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
+# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 44
+restart
+run -all
+# 999999990    1    999999990
+# 
+# 999999990    1    999999990
+# 
+# 8acf13570    1    8acf13570
+# 
+# 022442200    1    022442200
+# 
+# 977557790    1    977557790
+# 
+# 955115590    1    955115590
+# 
+# 432100000    1    432100000
+# 
+# 000000000    0    000000010
+# 
+# 000000000    0    000000001
+# 
+# 000000000    0    000000001
+# 
+# 000000000    0    000000010
+# 
+# 234567800    1    234567800
+# 
+# 012345670    1    012345670
+# 
+# 999999990    1    999999990
+# 
+# 8acf13570    1    8acf13570
+# 
+# 000000001    1    000000001
+# 
+# 0
+# 
+# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(44)
+#    Time: 390 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
+# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 44
+# Compile of CTRL.v was successful.
+# Compile of ALU.v was successful.
+# Compile of ALUCTRL.v was successful.
+# Compile of tb_ALU.v was successful.
+# 4 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB_ALU_
+# Loading work.TB_ALU_SENDER
+# Loading work.TB_ALU_RECEIVER
+# Loading work.TB_ALU_CLKGEN
+# Loading work.ALU
+# Loading work.ALUCTRL
+run -all
+# 999999990    1    999999990
+# 
+# 999999990    1    999999990
+# 
+# 8acf13570    1    8acf13570
+# 
+# 022442200    1    022442200
+# 
+# 977557790    1    977557790
+# 
+# 955115590    1    955115590
+# 
+# 432100000    1    432100000
+# 
+# 000000000    0    000000010
+# 
+# 000000000    0    000000001
+# 
+# 000000000    0    000000001
+# 
+# 000000000    0    000000010
+# 
+# 234567800    1    234567800
+# 
+# 012345670    1    012345670
+# 
+# 999999990    1    999999990
+# 
+# 8acf13570    1    8acf13570
+# 
+# 000000001    1    000000001
+# 
+# 0
+# 
+# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(44)
+#    Time: 390 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
+# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 44
+restart
+run -all
+# 999999990    1    999999990
+# 
+# 999999990    1    999999990
+# 
+# 8acf13570    1    8acf13570
+# 
+# 022442200    1    022442200
+# 
+# 977557790    1    977557790
+# 
+# 955115590    1    955115590
+# 
+# 432100000    1    432100000
+# 
+# 000000000    0    000000010
+# 
+# 000000000    1    00000000x
+# 
+# 000000000    1    00000000x
+# 
+# 000000000    0    000000010
+# 
+# 234567800    1    234567800
+# 
+# 012345670    1    012345670
+# 
+# 999999990    1    999999990
+# 
+# 8acf13570    1    8acf13570
+# 
+# 000000001    1    00000000x
+# 
+# 0
+# 
+# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(44)
+#    Time: 390 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
+# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 44
+restart
+# Compile of CTRL.v was successful.
+# Compile of ALU.v was successful.
+# Compile of ALUCTRL.v was successful.
+# Compile of tb_ALU.v was successful.
+# 4 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB_ALU_
+# Loading work.TB_ALU_SENDER
+# Loading work.TB_ALU_RECEIVER
+# Loading work.TB_ALU_CLKGEN
+# Loading work.ALU
+# Loading work.ALUCTRL
+run -all
+# 99999999x    0    999999990
+# 
+# 99999999x    0    999999990
+# 
+# 8acf13570    1    8acf13570
+# 
+# 022442200    1    022442200
+# 
+# 977557790    1    977557790
+# 
+# 955115590    1    955115590
+# 
+# 432100000    1    432100000
+# 
+# 000000000    0    000000010
+# 
+# 000000000    0    000000001
+# 
+# 000000000    0    000000001
+# 
+# 000000000    0    000000010
+# 
+# 234567800    1    234567800
+# 
+# 012345670    1    012345670
+# 
+# 999999990    1    999999990
+# 
+# 8acf13570    1    8acf13570
+# 
+# 000000001    1    000000001
+# 
+# 0
+# 
+# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(44)
+#    Time: 390 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
+# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 44
+# Compile of CTRL.v was successful.
+# Compile of ALU.v was successful.
+# Compile of ALUCTRL.v was successful.
+# Compile of tb_ALU.v was successful.
+# 4 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB_ALU_
+# Loading work.TB_ALU_SENDER
+# Loading work.TB_ALU_RECEIVER
+# Loading work.TB_ALU_CLKGEN
+# Loading work.ALU
+# Loading work.ALUCTRL
+run -all
+# 999999990    1    999999990
+# 
+# 999999990    1    999999990
+# 
+# 8acf13570    1    8acf13570
+# 
+# 022442200    1    022442200
+# 
+# 977557790    1    977557790
+# 
+# 955115590    1    955115590
+# 
+# 432100000    1    432100000
+# 
+# 000000000    0    000000010
+# 
+# 000000000    0    000000001
+# 
+# 000000000    0    000000001
+# 
+# 000000000    0    000000010
+# 
+# 234567800    1    234567800
+# 
+# 012345670    1    012345670
+# 
+# 999999990    1    999999990
+# 
+# 8acf13570    1    8acf13570
+# 
+# 000000001    1    000000001
+# 
+# 0
+# 
+# ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(44)
+#    Time: 390 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
+# Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 44
