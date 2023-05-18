@@ -10,23 +10,23 @@ z2
 cModel Technology
 dF:/Users/whb/Documents/MyPrograms/Verilog/UART
 vALU
-Z0 !s110 1684249286
+Z0 !s110 1684383373
 !i10b 1
-!s100 >KiHB]220TzNW<m^jcm@:1
+!s100 l[KE]7<j_Pol^dQhI23z42
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-Ihjb=fC60Y=KL<SIYn4f7P0
+IRWhAL1WLGnJ9NaV2aU[YG3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 dF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/modelsim
-w1684241636
+w1684383367
 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v
 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v
-!i122 57
-L0 1 44
+!i122 99
+L0 1 54
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1684249286.000000
+Z5 !s108 1684383373.000000
 !s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v|
 !i113 1
@@ -44,7 +44,7 @@ R3
 w1684241671
 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALUCTRL.v
 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALUCTRL.v
-!i122 58
+!i122 100
 L0 1 33
 R4
 r1
@@ -68,7 +68,7 @@ R3
 w1684239665
 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CTRL.v
 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CTRL.v
-!i122 56
+!i122 98
 L0 1 81
 R4
 r1
@@ -84,16 +84,16 @@ n@c@t@r@l
 vTB_ALU_
 R0
 !i10b 1
-!s100 0D?4QEE2nUQnM6l=<hMD<3
+!s100 AAX54IlUBVNGc<K[BBXm91
 R1
-ILX[3Eh_zbR3d>hg]MCf=P3
+IH?h?@`_^4HkNLa0i1>ibj0
 R2
 R3
-Z8 w1684249286
+Z8 w1684383373
 Z9 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v
 Z10 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v
-!i122 59
-L0 74 56
+!i122 101
+L0 110 56
 R4
 r1
 !s85 0
@@ -108,16 +108,16 @@ n@t@b_@a@l@u_
 vTB_ALU_CLKGEN
 R0
 !i10b 1
-!s100 RCS^h[[UM:Sl@9XoC9keh1
+!s100 UWT[LX><FK5eDgf1^jB4R0
 R1
-I3ciTM6Hf[W`EfL3gI78h72
+I1EQT[67BWjoomiZNXLPS^0
 R2
 R3
 R8
 R9
 R10
-!i122 59
-L0 62 11
+!i122 101
+L0 98 11
 R4
 r1
 !s85 0
@@ -132,16 +132,16 @@ n@t@b_@a@l@u_@c@l@k@g@e@n
 vTB_ALU_RECEIVER
 R0
 !i10b 1
-!s100 ;VR;bBF[iNB`n<07DfCmM1
+!s100 @STkGWloNB67nJnHK4Nk`1
 R1
-I<ic=F6Dk1LHf2jGA8k?SL3
+I;E3VIijogd=mW>Nl6:_NF3
 R2
 R3
 R8
 R9
 R10
-!i122 59
-L0 48 13
+!i122 101
+L0 49 48
 R4
 r1
 !s85 0
@@ -156,16 +156,16 @@ n@t@b_@a@l@u_@r@e@c@e@i@v@e@r
 vTB_ALU_SENDER
 R0
 !i10b 1
-!s100 JEKzDM2:Z?GLFE]Dn28?53
+!s100 8j;KUM^i7J_1Z0TeNki>b2
 R1
-I=K_c6883WREa49f>0=R@;0
+IgS]9Bo>b]DzB3L4GTCOIi1
 R2
 R3
 R8
 R9
 R10
-!i122 59
-L0 7 40
+!i122 101
+L0 8 40
 R4
 r1
 !s85 0
