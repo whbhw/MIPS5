@@ -607,3 +607,5 @@ run -all
 # ** Note: $stop    : F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v(44)
 #    Time: 390 ns  Iteration: 1  Instance: /TB_ALU_/stimuli
 # Break in Module TB_ALU_SENDER at F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v line 44
+# End time: 16:34:49 on May 18,2023, Elapsed time: 4:47:14
+# Errors: 0, Warnings: 2
