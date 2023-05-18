@@ -19,7 +19,7 @@ localparam SRL = 4'b1111;
 
 always @(*) begin
     alu_res =   0;
-    zeros   =   0;
+    zero    =   0;
 
     case (alu_ctrl)
         ADD:    alu_res =   data1   +   data2;
