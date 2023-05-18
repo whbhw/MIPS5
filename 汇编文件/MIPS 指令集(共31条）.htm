@@ -1,0 +1,1750 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="360doc" name="classification" />
+    
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="http://www.360doc.cn/article/2415113_46631439.html"/>
+    <meta content="rt,rs,rd" name=keywords>
+    <meta content="MIPS 指令集(共31条）" name=description>
+    <meta name="mobile-agent" content="format=html5;url=http://www.360doc.cn/article/2415113_46631439.html"/>
+
+    <meta content="www.360doc.com" name="author" />
+
+    <title>
+        MIPS 指令集(共31条）
+    </title>
+    <link href="http://bdimg.share.baidu.com/static/css/bdsstyle.css?cdnversion=20130704" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://www.360doc.com/js/jquery1.js?t=2015041801"></script>
+    <script type="text/javascript" src="http://www.360doc.com/js/jQuery.md5.js?t=2013121101"></script>
+    
+    <script type="text/javascript" language="javascript">
+        window.onerror = ignoreError;
+        function ignoreError() {
+            return true;
+        }
+    </script>
+
+    <link href="http://css.360doc.com/wzhead-cleaned.css?t=2014082004" rel="stylesheet" type="text/css" />
+    <link href="http://css.360doc.com/wz20130912-cleaned.css?t=2014102301" rel="stylesheet" type="text/css" />
+
+
+    
+
+    <script type="text/javascript" src="/js/indexhead.js?t=2014082801"></script>
+    <script type="text/javascript" src="/js/showarticlefollow20130912.js?t=2014101805"></script>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif;" onmouseup="setDragEnd()"
+    onmousemove="DragDiv();" onclick="delAllDiv(event)">
+
+
+    <span id="LayerLogin"></span>
+    <div style="position: fixed; width: 100%; z-index: 1000;">
+        <div class="mainnav">
+            <div class="mainnav1">
+                <div class="lf360" style="padding-left: 5px;">
+                    <img src="http://pubimage.360doc.com/newsite/logoo.gif" />
+                </div>
+                <div style="width: 625px; padding-top: 0px; padding-left: 4px; position: absolute;">
+                    <table height="34" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr id="daohangtr">
+                                <td style="width: 185px; _width: 0px; *width: 0px !important;"></td>
+                                <td class="navwz1" width="95">
+                                    <a href="http://www.360doc.com/index.html">首&nbsp;页</a>
+                                </td>
+                                <td width="100" class="  navwz1">
+                                    <a href="http://www.360doc.com/readroom.html">阅览室</a>
+                                </td>
+                                <td width="88" class="  navwz1">
+                                    <a href="http://www.360doc.com/weekstar.html">馆友</a>
+                                </td>
+                                <td width="132" class="  navwz1">
+                                    <a href="http://www.360doc.com/my360doc.aspx">我的图书馆</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="rt360" style="padding-top: 6px; width: 133px; padding-left: 38px;" id="outerdiv">
+                </div>
+                <div class=" rt360" style="padding-top: 6px; padding-right: 0px;">
+                    <div class="lf360 serch">
+                        <input name="input2" class="serchpt" id="txtSearchword" onkeydown="ongosearch()"
+                            onkeyup="showIntelliSense()" onfocus="if(this.value=='搜文章 找馆友') this.value='';this.style.color='#272727'"
+                            onblur="if(!this.value) {this.value='搜文章 找馆友';this.style.color='#b2b2b2';}" onpaste="showIntelliSense1()"
+                            type="text" value="搜文章 找馆友">
+                    </div>
+                    <div class="lf360 ssuo">
+                        <a id="searchlinkid" href="javascript:gosearch();"></a>
+                    </div>
+                    <div id="divsearch" style="margin-top: 25px; margin-left: 1px; display: block; position: absolute; z-index: 100;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navxt">
+        </div>
+    </div>
+    <div style="height: 44px; _height: 0px; width: 100%;"></div>
+
+    <div class="both">
+    </div>
+    <div id="docTotalInfo" class="mainzt">
+        <table class="index_main" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td align="left" valign="top" width="727px">
+                        <div id='ADAboveArtContent'>
+                        </div>
+                        <div style="height: 7px;">
+                        </div>
+                        <table border="0" cellpadding="0" cellspacing="0" class="mainbj" id="docArtClass">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; text-align: center;">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <table style="width: 100%; text-align: left;" border="0" cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="biaoti">
+                                                                        <div class="biaoti2 lf360">
+                                                                            MIPS 指令集(共31条）
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="height: 32px;">
+
+
+                                                                        <div style="width: 670px; height: 28px; padding-left: 26px; color: #777b7a;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td>收藏人：<span class="name" onclick="wzhitnew(1);"><A href="http://www.360doc.com/userhome/2415113" target="_blank">满天星斗2010</A></span>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="btzctsg" id="spanfollowstatus">
+                                                                                        </div>
+                                                                                        <script>isfollow(2415113);</script>
+
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="ytdh1"><a onclick="doctalk();wzhitnew(106);" href="javascript:void(0)"></a></div>
+
+                                                                                    </td>
+
+                                                                                </tr>
+                                                                            </table>
+                                                                        </div>
+
+
+
+
+                                                                        <div class="wztopxx">
+                                                                            <div style="float: left; height: 28px; padding-top: 7px;">
+                                                                                <table cellpadding="0" cellspacing="0" style="position: relative; z-index: 4">
+                                                                                    <tbody>
+                                                                                        <tr>
+
+                                                                                            <td>
+                                                                                                2010-08-17&nbsp;|&nbsp;阅：<span id="360doc_Readnum"></span>&nbsp;&nbsp;<span
+                                                                                                    style="position: relative;">转：<span onclick="wzhitnew(3)" id="360doc_saverNum"></span><span
+                                                                                                        id="360doc_saverUser"></span></span>&nbsp;&nbsp;
+
+
+
+                                                                                            </td>
+
+                                                                                            <td>
+                                                                                                <div style="position: relative;">
+                                                                                                    &nbsp;|&nbsp;<span id="docsource"></span>
+                                                                                                </div>
+                                                                                                <div class="sekuaibox" style="display: none; margin-left: 48px;" id="zihaoboxID">
+                                                                                                    <div style="padding-top: 10px; padding-left: 5px;">
+                                                                                                        <div class="lf360 danxunbt">
+                                                                                                            <input id="artdocfont3" onclick="ChangeArtSize(3, this); wzhitnew(15); " name="radio"
+                                                                                                                type="radio" value="1" />
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunwz" onclick="ChangeArtSize(3,this);wzhitnew(15); " style="cursor: pointer;">
+                                                                                                            大
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunbt">
+                                                                                                            <input id="artdocfont2" onclick="ChangeArtSize(2, this); wzhitnew(16); " name="radio"
+                                                                                                                type="radio" value="2" />
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunwz" onclick="ChangeArtSize(2,this);wzhitnew(16); " style="cursor: pointer;">
+                                                                                                            中
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunbt">
+                                                                                                            <input id="artdocfont1" onclick="ChangeArtSize(1, this); wzhitnew(17); " name="radio"
+                                                                                                                type="radio" value="3" />
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunwz" onclick="ChangeArtSize(1,this);wzhitnew(17); " style="cursor: pointer;">
+                                                                                                            小
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="sekuaibox" style="margin-left: 76px; display: none;" id="sekuaiboxID">
+                                                                                                    <div style="padding-top: 10px; padding-left: 5px;">
+                                                                                                        <img src="http://pubimage.360doc.com/wz/cr1.gif" id="docArtC1" onclick="ChangeArtClass(1,this);wzhitnew(18);"
+                                                                                                            style="cursor: pointer;" /><img src="http://pubimage.360doc.com/wz/cr2.gif" id="docArtC2"
+                                                                                                                onclick="ChangeArtClass(2,this);wzhitnew(19);" style="cursor: pointer;" /><img src="http://pubimage.360doc.com/wz/cr3.gif"
+                                                                                                                    id="docArtC3" onclick="ChangeArtClass(3,this);wzhitnew(20);" style="cursor: pointer;" /><img
+                                                                                                                        src="http://pubimage.360doc.com/wz/cr4.gif" id="docArtC4" onclick="ChangeArtClass(4,this);wzhitnew(21);"
+                                                                                                                        style="cursor: pointer;" /><img src="http://pubimage.360doc.com/wz/cr5.gif" id="docArtC5"
+                                                                                                                            onclick="ChangeArtClass(5,this);wzhitnew(22);" style="cursor: pointer;" /><img src="http://pubimage.360doc.com/wz/cr6.gif"
+                                                                                                                                id="docArtC6" onclick="ChangeArtClass(6,this);wzhitnew(23);" style="cursor: pointer;" />
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                <div style="padding-left: 10px;">
+                                                                                                    <a href="javascript:void(0)">
+                                                                                                        <img onmouseover="changedivdisplay(1);" src="http://pubimage.360doc.com/wz/wz1.gif" /></a>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                <div style="padding-left: 10px;" onmouseover="changedivdisplay(2);">
+                                                                                                    <a href="javascript:void(0)">
+                                                                                                        <img src="http://pubimage.360doc.com/wz/wz2.gif" /></a>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" onclick=" setTimeout(showShareLayer, 10);wzhitnew(4);">分享</a>&nbsp;</td>
+                                                                                            <td>
+                                                                                                <a href="#" onclick="  setTimeout(showShareLayer, 10);wzhitnew(5);">
+                                                                                                    <img style="cursor: pointer;" src="http://pubimage.360doc.com/wz/tb10.gif"></a><div
+                                                                                                        class="fenxiang" id="fenxiangLayer" style="display: none; border: none; width: 110px; margin-left: -28px; _margin-left: -40px;">
+                                                                                                    </div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                            <div id="resavelayer1" class="rt360">
+                                                                            </div>
+
+
+                                                                            <div id="shareweixinabove" class="rt360">
+                                                                            </div>
+
+
+                                                                            <table cellpadding="0" cellspacing="0" style="text-align: center; margin: 0px auto;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <div id="AlertArt1" style="display: none; position: absolute;">
+                                                                                            </div>
+                                                                                            <div id="SendToFriends1" style="display: none; position: absolute; z-index: 100;">
+                                                                                            </div>
+                                                                                            <div class="lf360 zcbutton" style="margin-left: 100px;">
+                                                                                            </div>
+                                                                                            <div class="lf360">
+                                                                                                &nbsp;&nbsp;
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        
+                                                        <table class="wenzhangcss" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="xiantao">
+                                                                        </div>
+
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left" valign="top" width="670px" style="height: 200px;">
+                                                                        <span id="articlecontent" onmousedown="newhighlight = true;" onmouseup="NewHighlight(event)">
+                                                                            <table>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td width="670px" style="position: relative;">
+
+                                                                                            MIPS&nbsp;指令集(共31条）
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; text-align: center;" align="center"><strong><span style="font-size: 14pt; font-family: 宋体;"></span></strong></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><font size="2"><span style="font-family: 宋体;">
+<table align="center" bgcolor="#ffffff" border="0" bordercolor="#cccccc" cellpadding="0" cellspacing="0" width="95%">
+    <tbody>
+        <tr>
+            <td>
+            <table class="MsoNormalTable" border="1" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% #00c0c0;" colspan="10">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><strong><span style="font-size: 12pt;" lang="EN-US">MIPS 指令集(共31条）<o:p></o:p></span></strong></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% #00c0c0;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><strong><span style="font-size: 12pt; color: white;">助记符</span></strong><strong><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></strong></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% #00c0c0;" colspan="6">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><strong><span style="font-size: 12pt; color: white;">指令格式</span></strong><strong><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></strong></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% #00c0c0;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><strong><span style="font-size: 12pt; color: white;">示例</span></strong><strong><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></strong></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% #00c0c0;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><strong><span style="font-size: 12pt; color: white;">示例含义</span></strong><strong><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></strong></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% #00c0c0;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><strong><span style="font-size: 12pt; color: white;">操作及其解释</span></strong><strong><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></strong></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% #7f7fff; width: 36.75pt;" width="49">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">Bit #<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% #ff7f7f; width: 31.5pt;" width="42">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">31..26<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% #ff7f7f; width: 31.5pt;" width="42">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">25..21<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% #ff7f7f; width: 31.5pt;" width="42">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">20..16<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% #ff7f7f; width: 31.5pt;" width="42">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">15..11<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% #ff7f7f; width: 30.75pt;" width="41">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">10..6<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% #ff7f7f; width: 31.5pt;" width="42">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">5..0<o:p></o:p></span></p>
+                        </td>
+                        <td style="border: medium none; padding: 0cm; background: none repeat scroll 0% 0% #ff7f7f;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-family: 'times new roman';" lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+                        </td>
+                        <td style="border: medium none; padding: 0cm; background: none repeat scroll 0% 0% #ff7f7f;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-family: 'times new roman';" lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+                        </td>
+                        <td style="border: medium none; padding: 0cm; background: none repeat scroll 0% 0% #ff7f7f;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-family: 'times new roman';" lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% #7f7fff;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">R-type<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">op<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rd<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">shamt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">func<o:p></o:p></span></p>
+                        </td>
+                        <td style="border: medium none; padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-family: 'times new roman';" lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+                        </td>
+                        <td style="border: medium none; padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-family: 'times new roman';" lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+                        </td>
+                        <td style="border: medium none; padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-family: 'times new roman';" lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">add<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rd<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">100000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue; width: 78.75pt;" width="105">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: yellow;" lang="EN-US">&nbsp;add $1,$2,$3</span><span style="font-size: 12pt;" lang="EN-US"> <o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue; width: 75pt;" width="100">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: aqua;" lang="EN-US">&nbsp;$1=$2+$3</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue; width: 302.25pt;" width="403">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;rd &lt;- rs + rt&nbsp;&nbsp;&nbsp;；其中rs＝$2，rt=$3, rd=$1</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">addu<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rd<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">100001<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">addu $1,$2,$3</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: aqua;">$1=$2+$3</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: #e0e0e0;">rd &lt;- rs + rt&nbsp;&nbsp;&nbsp;；其中rs＝$2，rt=$3, rd=$1,无符号数</span><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">sub<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rd<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">100010<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: yellow;" lang="EN-US">&nbsp;sub $1,$2,$3 </span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: aqua;" lang="EN-US">&nbsp;$1=$2-$3</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;rd &lt;- rs - rt&nbsp;&nbsp;&nbsp;；其中rs＝$2，rt=$3, rd=$1</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">subu<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rd<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">100011<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: yellow;" lang="EN-US">&nbsp;subu $1,$2,$3</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: aqua;" lang="EN-US">&nbsp;$1=$2-$3</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;rd &lt;- rs - rt&nbsp;&nbsp;&nbsp;；其中rs＝$2，rt=$3, rd=$1,无符号数</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">and<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rd<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">100100<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: yellow;" lang="EN-US">&nbsp;and $1,$2,$3</span><span style="font-size: 12pt;" lang="EN-US"> <o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: aqua;" lang="EN-US">&nbsp;$1=$2&nbsp;&amp;&nbsp;$3</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;rd &lt;- rs &amp; rt&nbsp;&nbsp;&nbsp;；其中rs＝$2，rt=$3, rd=$1</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">or<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rd<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">100101<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: yellow;" lang="EN-US">&nbsp;or $1,$2,$3</span><span style="font-size: 12pt;" lang="EN-US"> <o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: aqua;" lang="EN-US">&nbsp;$1=$2&nbsp;|&nbsp;$3</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;rd &lt;- rs | rt&nbsp;&nbsp;&nbsp;；其中rs＝$2，rt=$3, rd=$1</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">xor<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rd<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">100110<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">xor $1,$2,$3</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: aqua;">$1=$2&nbsp;^&nbsp;$3</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;rd &lt;- rs xor rt&nbsp;&nbsp;&nbsp;；其中rs＝$2，rt=$3, rd=$1(异或）</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">nor<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rd<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">100111<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">nor $1,$2,$3</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: aqua;">$1=~($2&nbsp;|&nbsp;$3)</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: #e0e0e0;">rd &lt;- not(rs | rt)&nbsp;&nbsp;&nbsp;；其中rs＝$2，rt=$3, rd=$1(或非）</span><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">slt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rd<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">101010<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">slt $1,$2,$3</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: aqua;">if($2&lt;$3)&nbsp;<br>&nbsp;&nbsp;$1=1&nbsp;else<br>&nbsp;&nbsp;&nbsp;$1=0</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: #e0e0e0;">if (rs &lt; rt) rd=1&nbsp;else&nbsp;rd=0 ；其中rs＝$2，rt=$3, rd=$1</span><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">sltu<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rd<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">101011<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">sltu $1,$2,$3</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: aqua;">if($2&lt;$3)&nbsp;<br>&nbsp;&nbsp;$1=1&nbsp;else<br>&nbsp;&nbsp;&nbsp;$1=0</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: #e0e0e0;">if (rs &lt; rt) rd=1&nbsp;else&nbsp;rd=0 ；其中rs＝$2，rt=$3, rd=$1<br>&nbsp;&nbsp;(无符号数）</span><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">sll<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rd<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">shamt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: yellow;" lang="EN-US">&nbsp;sll $1,$2,10</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: aqua;">$1=$2&lt;&lt;10</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;rd &lt;- rt &lt;&lt; shamt&nbsp;&nbsp;；shamt存放移位的位数，<br>&nbsp; 也就是指令中的立即数，其中rt=$2, rd=$1 </span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">srl<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rd<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">shamt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000010<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">srl $1,$2,10</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: aqua;">$1=$2&gt;&gt;10</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;rd &lt;- rt &gt;&gt; shamt ；(logical) ，其中rt=$2, rd=$1 </span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">sra<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rd<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">shamt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000011<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: yellow;" lang="EN-US">&nbsp;sra $1,$2,10</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: aqua;">$1=$2&gt;&gt;10</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;rd &lt;- rt &gt;&gt; shamt &nbsp;；(arithmetic)&nbsp;注意符号位保留<br>&nbsp;其中rt=$2, rd=$1 </span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">sllv<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rd<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000100<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">sllv $1,$2,$3</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: aqua;" lang="EN-US">&nbsp;$1=$2&lt;&lt;$3</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;rd &lt;- rt&nbsp;&lt;&lt; rs&nbsp;&nbsp;；其中rs＝$3，rt=$2, rd=$1</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">srlv<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rd<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000110<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">srlv $1,$2,$3</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: aqua;">$1=$2&gt;&gt;$3</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;rd &lt;- rt&nbsp;&gt;&gt; rs&nbsp;&nbsp;；(logical)其中rs＝$3，rt=$2, rd=$1</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">srav<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rd<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000111<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: yellow;" lang="EN-US">&nbsp;srav $1,$2,$3</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: aqua;" lang="EN-US">&nbsp;$1=$2&gt;&gt;$3</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;rd &lt;- rt&nbsp;&gt;&gt; rs&nbsp;&nbsp;；(arithmetic)&nbsp;注意符号位保留<br>&nbsp;其中rs＝$3，rt=$2, rd=$1 </span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height: 15pt;">
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% lime; height: 15pt;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">jr<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver; height: 15pt;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver; height: 15pt;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver; height: 15pt;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver; height: 15pt;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver; height: 15pt;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver; height: 15pt;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">001000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue; height: 15pt;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">jr&nbsp;$31</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue; height: 15pt;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: aqua;">goto&nbsp;$31</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue; height: 15pt;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: #e0e0e0;">PC &lt;-&nbsp;rs</span><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% #7f7fff;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">I-type<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">op<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% yellow;" colspan="3">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">immediate<o:p></o:p></span></p>
+                        </td>
+                        <td style="border: medium none; padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-family: 'times new roman';" lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+                        </td>
+                        <td style="border: medium none; padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-family: 'times new roman';" lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+                        </td>
+                        <td style="border: medium none; padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-family: 'times new roman';" lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">addi<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">001000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;" colspan="3">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">immediate<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">addi&nbsp;$1,$2,100</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: aqua;">$1=$2+100</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;rt &lt;- rs + (sign-extend)immediate&nbsp;；其中rt=$1,rs=$2</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">addiu<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">001001<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;" colspan="3">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">immediate<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: yellow;" lang="EN-US">addiu&nbsp;$1,$2,100</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: aqua;">$1=$2+100</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;rt &lt;- rs + (zero-extend)immediate&nbsp;；其中rt=$1,rs=$2</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">andi<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">001100<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;" colspan="3">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">immediate<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">andi&nbsp;$1,$2,10</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: aqua;">$1=$2 &amp; 10</span> <o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;rt &lt;- rs &amp; (zero-extend)immediate&nbsp;；其中rt=$1,rs=$2</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">ori<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">001101<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;" colspan="3">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">immediate<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: yellow;" lang="EN-US">&nbsp;andi&nbsp;$1,$2,10</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: aqua;">$1=$2 | 10</span> <o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;rt &lt;- rs | (zero-extend)immediate&nbsp;；其中rt=$1,rs=$2</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">xori<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">001110<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;" colspan="3">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">immediate<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">andi&nbsp;$1,$2,10</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: aqua;" lang="EN-US">&nbsp;$1=$2 ^ 10</span><span style="font-size: 12pt;" lang="EN-US"> <o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: #e0e0e0;">rt &lt;- rs xor (zero-extend)immediate&nbsp;；其中rt=$1,rs=$2</span><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">lui<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">001111<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">00000<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;" colspan="3">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">immediate<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">lui&nbsp;$1,100</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: aqua;" lang="EN-US">&nbsp;$1=100*65536</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: #e0e0e0;">rt &lt;- immediate*65536&nbsp;；将16位立即数放到目标寄存器高16<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位，目标寄存器的低16位填0 </span><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">lw<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">100011<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;" colspan="3">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">immediate<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">lw&nbsp;$1,10($2)</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: aqua;" lang="EN-US">&nbsp;$1=memory[$2<br>&nbsp;+10]</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;rt &lt;- memory[rs + (sign-extend)immediate]&nbsp;；rt=$1,rs=$2</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">sw<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">101011<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;" colspan="3">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">immediate<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">sw&nbsp;$1,10($2)</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: aqua;" lang="EN-US">&nbsp;memory[$2+10]<br>&nbsp;=$1 </span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;memory[rs + (sign-extend)immediate] &lt;- rt&nbsp;；rt=$1,rs=$2</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">beq<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000100<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;" colspan="3">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">immediate<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">beq&nbsp;$1,$2,10</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: aqua;" lang="EN-US">&nbsp;if($1==$2)&nbsp;</span><span style="font-size: 12pt;" lang="EN-US"><br><span style="color: aqua;">&nbsp;goto&nbsp;PC+4+40</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;if (rs == rt) PC &lt;- PC+4 + (sign-extend)immediate&lt;&lt;2&nbsp;</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">bne<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000101<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;" colspan="3">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">immediate<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">bne&nbsp;$1,$2,10</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: aqua;">if($1!=$2)</span><br>&nbsp;<span style="color: aqua;">goto&nbsp;PC+4+40</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;if (rs != rt) PC &lt;- PC+4 + (sign-extend)immediate&lt;&lt;2&nbsp;</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">slti<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">001010<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;" colspan="3">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">immediate<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">slti $1,$2,10</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: aqua;" lang="EN-US">&nbsp;if($2&lt;10)&nbsp;<br>&nbsp;&nbsp;$1=1&nbsp;else<br>&nbsp;&nbsp;&nbsp;$1=0</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: #e0e0e0;">if (rs &lt;(sign-extend)immediate) rt=1&nbsp;else&nbsp;rt=0 ；<br>&nbsp;&nbsp; 其中rs＝$2，rt=$1</span><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% yellow;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">sltiu<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">001011<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rs<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">rt<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver;" colspan="3">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">immediate<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">sltiu $1,$2,10</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: aqua;" lang="EN-US">&nbsp;if($2&lt;10)&nbsp;<br>&nbsp;&nbsp;$1=1&nbsp;else<br>&nbsp;&nbsp;&nbsp;$1=0</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: #e0e0e0;">if (rs &lt;(zero-extend)immediate) rt=1&nbsp;else&nbsp;rt=0 ；<br>&nbsp; 其中rs＝$2，rt=$1</span><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% #7f7fff;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">J-type<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% fuchsia;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">op<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% fuchsia;" colspan="5">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">address<o:p></o:p></span></p>
+                        </td>
+                        <td style="border: medium none; padding: 0cm; background: none repeat scroll 0% 0% fuchsia;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-family: 'times new roman';" lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+                        </td>
+                        <td style="border: medium none; padding: 0cm; background: none repeat scroll 0% 0% fuchsia;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-family: 'times new roman';" lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+                        </td>
+                        <td style="border: medium none; padding: 0cm; background: none repeat scroll 0% 0% fuchsia;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-family: 'times new roman';" lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height: 13.5pt;">
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% fuchsia; height: 13.5pt;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">j<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver; height: 13.5pt;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000010<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver; height: 13.5pt;" colspan="5">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">address<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue; height: 13.5pt;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: yellow;" lang="EN-US">&nbsp;j&nbsp;10000</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue; height: 13.5pt;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: aqua;">goto&nbsp;10000</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue; height: 13.5pt;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;PC &lt;- (PC+4)[31..28],address,0,0&nbsp;&nbsp;&nbsp;；address=10000/4</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height: 14.25pt;">
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% fuchsia; height: 14.25pt;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">jal<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver; height: 14.25pt;">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">000011<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% silver; height: 14.25pt;" colspan="5">
+                        <p class="MsoNormal" style="line-height: normal; text-align: center;" align="center"><span style="font-size: 12pt;" lang="EN-US">address<o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue; height: 14.25pt;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt;" lang="EN-US">&nbsp;<span style="color: yellow;">jal&nbsp;10000</span><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue; height: 14.25pt;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: aqua;" lang="EN-US">&nbsp;$31&lt;-PC+4;<br>&nbsp;goto&nbsp;10000 </span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                        <td style="padding: 0cm; background: none repeat scroll 0% 0% blue; height: 14.25pt;">
+                        <p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; color: #e0e0e0;" lang="EN-US">&nbsp;$31&lt;-PC+4；PC &lt;- (PC+4)[31..28],address,0,0<br>&nbsp;&nbsp;&nbsp;；address=10000/4</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+注意：因为MIPS16只有16个16位的寄存器，所以JAL指令中$31改成$15, 所有立即数均无需扩展，LUI指令直接就是将立即数付给RT寄存器。</span></font></p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                            <div id="viewerPlaceHolder" style="width: 717px; height: 700px; display: none;">
+                                                                            </div>
+                                                                        </span>
+                                                                        <table>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td></td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left">
+                                                                        <a name="anchordoc1" id="anchordoc1"></a>
+                                                                        <div style="height: 28px">
+                                                                            <div style="font-size: 14px; color: #797b7a; float: left;">
+                                                                                来自：<span class="name" onclick="wzhitnew(59)"><A href="http://www.360doc.com/userhome/2415113" target="_blank">满天星斗2010</A></span>&nbsp;>&nbsp;<span
+                                                                                    id="cname" onclick="wzhitnew(60)"></span>
+                                                                            </div>
+                                                                            <div style="float: left;">
+                                                                                <div class="btzctsg" id="spanfollowstatus1">
+                                                                                </div>
+                                                                                <script>isfollow(2415113);</script>
+
+                                                                            </div>
+                                                                            <div style="float: left;">
+                                                                                <div class="ytdh1"><a onclick="doctalk();wzhitnew(107);" href="javascript:void(0)"></a></div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div>
+                                                                            <div class="modlist lf360 list" style="padding-top: 0px;">
+                                                                                <ul>
+                                                                                    <div id='lastart'>
+                                                                                    </div>
+                                                                                    <div id='nextart'>
+                                                                                    </div>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left">
+                                                                        <div style="padding-top: 12px;">
+                                                                            <div id='docAdBelowContent'>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: left;">
+                                                                        <div style="padding-top: 15px; width: 670px;">
+                                                                            <table style="width: 670px;" cellpadding="0" cellspacing="0">
+                                                                                <tbody>
+                                                                                    <tr>
+
+                                                                                        <td style="width: 530px;">
+                                                                                            <div class=" lf360" style="cursor: pointer" onmouseover="ChangeBtnStyle(1);" onmouseout="ChangeBtnStyle(2);">
+                                                                                                <div class="zscbt">
+                                                                                                    <a href="javascript:void(0);" onclick="SaveArt();wzhitnew(26);">
+                                                                                                        <div id="zscbtword" class="lf360 xianhua" style="padding-left: 38px;">
+                                                                                                            转藏到我的图书馆
+                                                                                                        </div>
+                                                                                                    </a>
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                            <div style="margin-left: 10px; cursor: pointer;" class="lf360 xhmainbox" id="sendflowerdiv"
+                                                                                                onclick='Showflowerlayer("sendedLayer1");wzhitnew(27)' onmouseover="ChangeFlowerBtnStyle(1);"
+                                                                                                onmouseout="ChangeFlowerBtnStyle(2);">
+
+                                                                                                <div id="flowimg2" class="lf360">
+                                                                                                    <div style="padding-left: 10px; padding-top: 10px;">
+                                                                                                        <img id="flowimg3" src="http://pubimage.360doc.com/wz/huahuanew.gif">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div id="flowimg5" class=" lf360 xianhua">
+                                                                                                    献花(<span id="articleflowernum">0</span>)<div id='flowernumadd' class="addtionone">
+                                                                                                        +1
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </div>
+
+
+
+
+                                                                                            <div class="lf360" style="cursor: pointer; padding-left: 10px;" onmouseover="ChangeBtnStyle(3);" onmouseout="ChangeBtnStyle(4);">
+                                                                                                <div class="fxwxbt">
+
+                                                                                                    <a href="javascript:void(0);" onclick="shareWeixin();wzhitnew(64);">
+                                                                                                        <div id="fxwxword" class="lf360 xianhua" style="padding-left: 38px;">
+                                                                                                            分享到微信
+                                                                                                        </div>
+                                                                                                    </a>
+                                                                                                </div>
+                                                                                            </div>
+
+
+
+
+
+                                                                                            <div class="lf360" style="cursor: pointer; padding-left: 10px;" onmouseover="ChangeBtnStyle(5);" onmouseout="ChangeBtnStyle(6);">
+                                                                                                <div class="ywzwbt">
+
+                                                                                                    <a id="ywzwa" href=" http://www.baidu.com/s?wd=rt+rs+rd&tn=SE_hldp01010_6r0gix1f" onclick="wzhitnew(100);" target="_blank">
+                                                                                                        <div id="ywzwword" class="lf360 xianhua" style="padding-left: 44px;">
+                                                                                                            以文找文
+                                                                                                        </div>
+                                                                                                    </a>
+
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: bottom; font-size: 12px;" width="140">
+                                                                                            <div class="rt360" id="sharediv2">
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td height="10"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="lswzbox" style="padding-top: 10px;">
+                            <div>
+                                <table cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="330" valign="top">
+                                                <div class="lswz" style="height: 300px;">
+                                                    <div class="lstwtop">
+                                                        <div class="lswztit">
+                                                            <div class=" lf360">
+                                                                <div class="titwx1">
+                                                                    类似文章
+                                                                </div>
+                                                            </div>
+                                                            <div class="rt360" style="padding-top: 5px; padding-right: 9px;">
+                                                                <a href=http://www.360doc.com/relevant/46631439_more.shtml  target='_blank'  onclick='wzhitnew(38)'>更多</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modlist2 list">
+                                                            <ul>
+                                                                
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href=http://www.360doc.com/content/12/1021/09/7775902_242727184.shtml target=_blank onclick='wzhitnew(37)'>PowerPC常用指令</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href=http://www.360doc.com/content/08/1125/16/494_2000087.shtml target=_blank onclick='wzhitnew(37)'>PowerPC 体系结构</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href=http://www.360doc.com/content/13/0108/23/11340030_259062752.shtml target=_blank onclick='wzhitnew(37)'>项目九  按键设置液晶电子钟</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href=http://www.360doc.com/content/13/1008/21/13253385_319926171.shtml target=_blank onclick='wzhitnew(37)'>arm架构的独占读写指令ldrex和strex的使...</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href=http://www.360doc.com/content/10/0519/13/39801_28384570.shtml target=_blank onclick='wzhitnew(37)'>关于“无敌删除命令”</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href=http://www.360doc.com/content/11/1022/08/1317564_158122742.shtml target=_blank onclick='wzhitnew(37)'>关于adr与ldr伪指令的疑惑</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href=http://www.360doc.com/content/13/0731/12/13289331_303773120.shtml target=_blank onclick='wzhitnew(37)'>PPC指令集[转]</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href=http://www.360doc.com/content/10/0402/11/1127017_21278571.shtml target=_blank onclick='wzhitnew(37)'>PowerPC汇编指令集</a></span></li>
+                                                                    
+                                                            </ul>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td width="330" valign="top">
+                                                <div class="lswz" style="margin-left: 9px; height: 300px;">
+                                                    <div class="lstwtop">
+                                                        <div class="lswztit">
+                                                            <div class=" lf360">
+                                                                <div class="titwx1">
+                                                                    热搜文章
+                                                                </div>
+                                                            </div>
+                                                            <div class="rt360" style="padding-top: 5px; padding-right: 9px;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="modlist2 list">
+                                                            <ul> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e4%bd%a0%e7%9c%9f%e7%9a%84%e4%ba%86%e8%a7%a3%e4%b8%a4%e4%bc%9a%e5%90%97%ef%bc%9f%e4%b8%80%e5%9b%be%e6%95%99%e4%bd%a0%e7%9c%8b%e4%b8%a4%e4%bc%9a&tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)" >你真的了解两会吗？一图教你看两会</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e7%94%b7%e4%ba%ba%e7%9c%bc%e4%b8%ad%e7%9a%84%e5%a5%b3%e4%ba%ba%e4%b8%8e%e5%a5%b3%e4%ba%ba%e7%9c%bc%e4%b8%ad%e7%9a%84%e7%94%b7%e4%ba%ba%ef%bc%8c%e4%bd%a0%e6%80%8e%e4%b9%88%e7%9c%8b%ef%bc%9f&tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)"  title='男人眼中的女人与女人眼中的男人，你怎么看？' >男人眼中的女人与女人眼中的男人，你怎么...</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e6%84%9f%e6%82%9f%e4%ba%ba%e7%94%9f%3a%e5%a6%82%e6%9e%9c%e6%9c%8b%e5%8f%8b%e8%ae%a9%e4%bd%a0%e7%94%9f%e6%b0%94%2c%e9%82%a3%e8%af%b4%e6%98%8e%e4%bd%a0%e4%bb%8d%e7%84%b6%e5%9c%a8%e6%84%8f%e4%bb%96%e7%9a%84%e5%8f%8b%e6%83%85&tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)"  title='感悟人生:如果朋友让你生气,那说明你仍然在意他的友情' >感悟人生:如果朋友让你生气,那说明你仍然...</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e5%a2%9e%e9%95%bf%e8%b4%a2%e5%af%8c%e5%85%88%e4%bb%8e%e9%98%85%e8%af%bb%e5%bc%80%e5%a7%8b%ef%bc%9a2014%e5%b9%b4%e6%af%94%e5%b0%94%c2%b7%e7%9b%96%e8%8c%a8%e4%b8%80%e5%85%b1%e8%af%bb%e4%ba%86139%e6%9c%ac%e4%b9%a6&tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)"  title='增长财富先从阅读开始：2014年比尔·盖茨一共读了139本书' >增长财富先从阅读开始：2014年比尔·盖茨...</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e8%ae%ba%e5%a6%82%e4%bd%95%e9%ab%98%e5%86%b7%e7%9a%84%e4%bc%aa%e8%a3%85%e6%88%90%e7%88%b1%e8%af%bb%e4%b9%a6%e7%9a%84%e4%ba%ba%ef%bc%9f%ef%bc%81&tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)" >论如何高冷的伪装成爱读书的人？！</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e6%a1%94%e7%9a%ae.%e6%a1%94%e7%9a%ae%e4%bd%a0%e7%9c%9f%e5%a5%bd%2c%e8%83%bd%e4%b8%ba%e8%83%96%e4%ba%ba%e8%a7%a3%e7%83%a6%e6%81%bc%7e%e5%87%8f%e8%82%a5%e8%8d%af%e7%a5%9e%e9%a9%ac%e7%9a%84%2c%e9%80%9a%e9%80%9a%e6%98%af%e6%b5%ae%e4%ba%91%7e&tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)"  title='桔皮.桔皮你真好,能为胖人解烦恼~减肥药神马的,通通是浮云~' >桔皮.桔皮你真好,能为胖人解烦恼~减肥药神...</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e8%ae%a9%e8%87%aa%e5%b7%b1%e5%8f%98%e5%be%97%e6%9b%b4%e7%be%8e%e4%b8%bd%e7%9a%84%e8%af%80%e7%aa%8d%ef%bc%8c%e5%a4%96%e8%a1%a8%e4%b8%8d%e4%bb%a3%e8%a1%a8%e4%b8%80%e5%88%87%ef%bc%8c%e4%bd%86%e7%be%8e%e6%98%af%e4%b8%80%e7%a7%8d%e7%ab%9e%e4%ba%89%e5%8a%9b&tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)"  title='让自己变得更美丽的诀窍，外表不代表一切，但美是一种竞争力' >让自己变得更美丽的诀窍，外表不代表一切...</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e7%b2%be%e7%be%8e%e5%9b%be%e6%96%87%ef%bc%9a%e7%a5%96%e5%ae%97%e7%95%99%e4%b8%8b%e7%9a%84%e5%8f%a4%e8%ae%ad%ef%bc%8c%e5%8d%83%e5%8f%a4%e4%bc%a0%e8%8a%b3+%e4%b8%80%e5%ae%9a%e8%a6%81%e8%ae%b0%e4%bd%8f%e5%93%a6&tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)"  title='精美图文：祖宗留下的古训，千古传芳 一定要记住哦' >精美图文：祖宗留下的古训，千古传芳 一定...</a></span></li></ul>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div style="background-color: #fafafa; width: 670px; height: 317px; margin-top: 10px;">
+                                    <div style=' padding-top:7px; padding-left:12px; height:182px;'> <div style=' height:30px;'><div class='titwx3 lf360'>猜你喜欢</div><div class=' rt360' style=' padding-right:18px;'><img onclick='changefiveart("19999","19999");wzhitnew(62);' src='http://pubimage.360doc.com/wz/hyz.gif' onmouseover='this.src="http://pubimage.360doc.com/wz/hyza.gif"' onmouseout='this.src="http://pubimage.360doc.com/wz/hyz.gif"' width='76' height='24' style='cursor:pointer;' /></div></div><table cellpadding='0' cellspacing='0'><tr id='fivearttdid'><td valign='top' width='131'><div><a onclick='wzhitnew(39);' href='http://www.360doc.com/content/12/1230/16/7700488_257177953.shtml' target='_blank'><img src='http://artpic.360doc.com/13/0828/17/7700488_201308281736550806.jpg' width='114' height='86'/></a></div><div class='lan twentit'><a  onclick='wzhitnew(40);' href='http://www.360doc.com/content/12/1230/16/7700488_257177953.shtml' target='_blank'>人生的语录，句句实在</a></div></td><td valign='top' width='131'><div><a onclick='wzhitnew(39);' href='http://www.360doc.com/content/14/0220/10/7785337_354131286.shtml' target='_blank'><img src='http://artpic.360doc.com/14/0226/00/7785337_201402260010180662.jpg' width='114' height='86'/></a></div><div class='lan twentit'><a  onclick='wzhitnew(40);' href='http://www.360doc.com/content/14/0220/10/7785337_354131286.shtml' target='_blank'>很多事情不必争</a></div></td><td valign='top' width='131'><div><a onclick='wzhitnew(39);' href='http://www.360doc.com/content/14/0321/10/4503649_362383452.shtml' target='_blank'><img src='http://artpic.360doc.com/14/0404/17/362383452_201404041752040120.jpg' width='114' height='86'/></a></div><div class='lan twentit'><a  onclick='wzhitnew(40);' href='http://www.360doc.com/content/14/0321/10/4503649_362383452.shtml' target='_blank'>这些问题你也要搞清楚：一个清华学生...</a></div></td><td valign='top' width='131'><div><a onclick='wzhitnew(39);' href='http://www.360doc.com/content/13/0816/16/11269421_307617521.shtml' target='_blank'><img src='http://artpic.360doc.com/13/0902/11/11269421_201309021144160449.jpg' width='114' height='86'/></a></div><div class='lan twentit'><a  onclick='wzhitnew(40);' href='http://www.360doc.com/content/13/0816/16/11269421_307617521.shtml' target='_blank'>至理名言一百句</a></div></td><td valign='top' width='131'><div><a onclick='wzhitnew(39);' href='http://www.360doc.com/content/14/0421/09/1302411_370744762.shtml' target='_blank'><img src='http://artpic.360doc.com/14/0425/00/1302411_201404250010200422.jpg' width='114' height='86'/></a></div><div class='lan twentit'><a  onclick='wzhitnew(40);' href='http://www.360doc.com/content/14/0421/09/1302411_370744762.shtml' target='_blank'>世界各国国花,真是太美了</a></div></td></tr></table></div>
+                                    <div style="padding-left: 12px;">
+                                        <iframe marginwidth="0" marginheight="0" frameborder="0" scrolling="no" width="650" height="100" src="http://www.360doc.com/ad/artadali4.html?t=2014012301"></iframe>
+                                    </div>
+                                    <div id="adabtest">
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                                <div id="Reflction" style="padding-top: 15px; padding-left: 15px;">
+                                    <div id="360docRefTN">
+                                    </div>
+                                    <div id="360docRefCT">
+                                    </div>
+                                    <div id="360docRefPB" align="center">
+                                    </div>
+                                </div>
+                                <a name="sf"></a>
+                                
+                                <div id="ReflectionPart">
+                                    <div style="height: 206px; margin: 0px 0px;">
+                                        <div class="plbox">
+                                            <div class="plmain">
+                                                <div class="titwx" style="height: 23px;">
+                                                    发表评论：
+                                                </div>
+                                                <textarea name="SendRefTB" id="SendRefTB" style="width: 100%; height: 75px; border: 1px solid #e7e7e7; background-color: #fff; overflow: auto; font-size: 12px;"
+                                                    onfocus="testContent(1);" onblur="testContent(2)"></textarea>
+                                                <div style="text-align: right; padding-right: 3px; padding-top: 6px;">
+                                                    <div class="huifubt">
+                                                        <a id="ImgSendPL" href="javascript:void(0);"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td align="center" valign="top" width="18px"></td>
+                    <td align="left" valign="top" width="252px">
+                        
+
+
+<div style='height: 98px' id="artrightad1">
+ 
+</div>
+
+
+    <div  id="artrightnewarticle" class="remenwz" style="height:219px;"><div class="rementop"><div class="titwx" style=" padding-top:10px; padding-left:24px;">最新文章</div></div><div class="modlist3 list" style=" padding-left:15px;"><ul><li><span><a href=http://www.360doc.com/content/13/0305/20/10857169_269511319.shtml target=_blank onclick='wzhitnew(51)'>如何提升哲学素养</a></span></li><li><span><a href=http://www.360doc.com/content/11/0919/16/2010441_149530613.shtml target=_blank onclick='wzhitnew(51)'>不用背字根 五分钟教你学会五笔输入法</a></span></li><li><span><a href=http://www.360doc.com/content/10/1208/16/4704556_76167984.shtml target=_blank onclick='wzhitnew(51)'>千首完美歌曲播放器 - Qzone日志</a></span></li><li><span><a href=http://www.360doc.com/content/11/0309/15/2415113_99566129.shtml target=_blank onclick='wzhitnew(51)'>还我逻辑分区！Win7安装分区限制解析</a></span></li><li><span><a href=http://www.360doc.com/content/06/0324/10/2778_85289.shtml target=_blank onclick='wzhitnew(51)'>批处理文件简介与编写</a></span></li><li><span><a href=http://www.360doc.com/content/06/0401/21/3123_90125.shtml target=_blank onclick='wzhitnew(51)'>dos批处理命令详解</a></span></li></ul> <div class=" rt360" style=" padding-right:23px;"><a href="http://www.360doc.com/userhome/2415113" target="_blank" onclick="wzhitnew(52);">更多</a></div></div></div>
+
+
+<div class="both" style="padding-top: 10px; height: 260px;">
+   <iframe id="ifartad1" height="250px" width="250px" frameborder="0" scrolling="no"></iframe>
+    <div style="height: 10px;">
+    </div>
+</div>
+
+<div class="remenwz" id="artrighthotarticle">
+    <div class="rementop">
+        <div class="titwx" style="padding-top: 10px; padding-left: 24px;">
+            热门文章</div>
+    </div>
+    <div class="modlist3 list" style="padding-left: 15px;">
+        <ul>
+            
+                    <li><span>
+                        <a href=http://www.360doc.com/content/14/1202/14/1197594_429831081.shtml target=_blank onclick='wzhitnew(55)'>牛B！这才是真正的高手</a></span></li>
+                
+                    <li><span>
+                        <a href=http://www.360doc.com/content/14/0826/08/6026123_404662234.shtml target=_blank onclick='wzhitnew(55)'>身份证的各种知识及神秘X</a></span></li>
+                
+                    <li><span>
+                        <a href=http://www.360doc.com/content/13/1213/14/5511420_336856547.shtml target=_blank onclick='wzhitnew(55)'>最厉害的壮阳酒 ，熬夜大补救【健康知...</a></span></li>
+                
+                    <li><span>
+                        <a href=http://www.360doc.com/content/15/0305/18/7033828_452797315.shtml target=_blank onclick='wzhitnew(55)'>十大风水误区要小心</a></span></li>
+                
+                    <li><span>
+                        <a href=http://www.360doc.com/content/14/0407/09/6772399_366937279.shtml target=_blank onclick='wzhitnew(55)'>60位名家大师书法欣赏（组图）</a></span></li>
+                
+                    <li><span>
+                        <a href=http://www.360doc.com/content/14/0927/16/13783508_412761350.shtml target=_blank onclick='wzhitnew(55)'>【楚说新语】-?想知道这些网络词语的...</a></span></li>
+                
+                    <li><span>
+                        <a href=http://www.360doc.com/content/14/0809/20/14503852_400645480.shtml target=_blank onclick='wzhitnew(55)'>救命三招 四个真的很简单的知识</a></span></li>
+                
+                    <li><span>
+                        <a href=http://www.360doc.com/content/14/1222/23/14567236_435055942.shtml target=_blank onclick='wzhitnew(55)'>不买床了，我家以后就这样装修了</a></span></li>
+                
+                    <li><span>
+                        <a href=http://www.360doc.com/content/14/1010/15/6366174_415806193.shtml target=_blank onclick='wzhitnew(55)'>PS经典实例教程2000例【玩家宝典第二...</a></span></li>
+                
+                    <li><span>
+                        <a href=http://www.360doc.com/content/13/1202/23/9159788_334013786.shtml target=_blank onclick='wzhitnew(55)'>【图文】投资开店七个技巧帮你赚大钱</a></span></li>
+                
+                    <li><span>
+                        <a href=http://www.360doc.com/content/14/0226/10/10068248_355785554.shtml target=_blank onclick='wzhitnew(55)'>中国人至少还要忍受30年雾霾</a></span></li>
+                
+                    <li><span>
+                        <a href=http://www.360doc.com/content/15/0420/21/17753496_464700769.shtml target=_blank onclick='wzhitnew(55)'>【实用】别倒掉  淘米水的9大功效  第...</a></span></li>
+                
+        </ul>
+        <div class=" rt360" style="padding-right: 23px;">
+            <a href="http://www.360doc.com/readroom.html" target="_blank" onclick='wzhitnew(56)'>更多>></a></div>
+    </div>
+</div>
+
+<div class="both" style="padding-top: 10px;">
+    <iframe id="ifartad2" height="250px" width="250px" frameborder="0" scrolling="no"></iframe>
+</div>
+<br />
+
+
+ <iframe id="ifartrightsogou" height="328px" width="250px" frameborder="0" scrolling="no"></iframe>
+
+
+
+<script>
+    function change(pro_name, i) {
+        var pro = document.getElementById(pro_name); 
+        var pro_arr = pro.getElementsByTagName("span");
+
+        for (var m = 0; m < pro_arr.length; m++) {
+            pro_arr[m].className = "unclecked link_black";
+        }
+        pro_arr[i].className = "checked link_bai";
+
+        if (i == 1) {
+            document.getElementById("qh_ul_1").style.display = "";
+            document.getElementById("qh_ul_0").style.display = "none";
+        }
+        else if (i == 0) {
+            document.getElementById("qh_ul_1").style.display = "none";
+            document.getElementById("qh_ul_0").style.display = "";
+        }
+    }
+</script>
+
+                        <div class="both" id="divad5" style="padding-top: 11px; zoom: 1;">
+                            <div id="divad4" style="display: none;">
+                                <div>
+                                    <iframe id="ifartad" height="250px" width="250px" frameborder="0" scrolling="no"></iframe>
+                                </div>
+                                <div class="ggwz">
+                                    <a href="javascript:void(0);" onclick="closead(2);">关闭</a>
+                                </div>
+                                <div style="height: 13px;">
+                                </div>
+                            </div>
+                            <div style="clear: both; display: none;" id="divad6">
+                                <div id="adfloatbaidu">
+                                    <iframe id="ifartadfloadbaidu" height="250px" width="250px" frameborder="0" scrolling="no"></iframe>
+                                </div>
+                                <div class="ggwz">
+                                    <a href="javascript:void(0);" onclick="closead(3);">关闭</a>
+                                </div>
+                                <div style="height: 13px;">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <input type="hidden" id="docarttitle" value="MIPS+%e6%8c%87%e4%bb%a4%e9%9b%86(%e5%85%b131%e6%9d%a1%ef%bc%89" />
+    <input type="hidden" id="artreadroomid" value="0" />
+    <script>var asw='rt+rs+rd'</script>
+    <div id="docdiviframe"></div>
+
+
+    <script language="javascript" type="text/javascript">
+        var appName = navigator.appName.toLowerCase();
+        if (appName.indexOf("microsoft internet explorer") > -1) {
+            document.write("<scr" + "ipt type='text/javascript' src='http://www.360doc.com/js/StickySystemIE20130911.js?t=2015041601'></sc" + "ript>");
+        }
+        else {
+
+            document.write("<scr" + "ipt type='text/javascript' src='http://www.360doc.com/js/StickySystemOther20130911.js?t=2015041601'></sc" + "ript>");
+        }
+    </script>
+
+    <script>GerLookingUserInfo(1,2415113,1,0,'-1',-1,10,0);OutputSource('http%3a%2f%2fwww.mips-in-china.com%2fStudy%2fShowArticle.asp%3fArticleID%3d135');OutputCategory(2415113,3,'%e3%80%8a%e6%8a%80%e6%9c%af%e7%9f%a5%e8%af%86%e3%80%8b');OutputLastNextArt('NAND+Flash+ECC%e7%ae%97%e6%b3%95%e9%95%bf%e5%ba%a6%e8%ae%a1%e7%ae%97+-+skynet000%e7%9a%84%e4%b8%93%e6%a0%8f+-+C...','http://www.360doc.com/content/10/0728/12/2415113_42004794.shtml',0);OutputLastNextArt('flash%e7%9a%84%e7%ae%80%e4%bb%8b%e5%92%8c%e7%89%b9%e7%82%b9%e6%98%af%e4%bb%80%e4%b9%88%e5%95%8a%3f','http://www.360doc.com/content/10/0903/16/2415113_50928977.shtml',1);</script>
+
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd86954201130d615136257dde062a503' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
+    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6857724" src="http://bdimg.share.baidu.com/static/js/bds_s_v2.js?cdnversion=384393"></script>
+
+    <script type="text/javascript">
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date() / 3600000);
+    </script>
+    <!-- Baidu Button END -->
+    <script src="http://bdimg.share.baidu.com/static/js/logger.js?cdnversion=384393"></script>
+
+
+</body>
+</html>
