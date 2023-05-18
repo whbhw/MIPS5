@@ -1,6 +1,6 @@
 module ALU (
     output  reg             [31:0]  alu_res ,
-    output  reg                     zero    ,
+    output  wire                    zero    ,
 
     input   wire    signed  [31:0]  data1   ,
     input   wire    signed  [31:0]  data2   ,
@@ -17,21 +17,14 @@ localparam SLT = 4'b1010;
 localparam SLL = 4'b0000;
 localparam SRL = 4'b1111;
 
+assign zero = (alu_res == 32'd0);
+
 always @(*) begin
     alu_res =   0;
-    zero    =   0;
 
     case (alu_ctrl)
         ADD:    alu_res =   data1   +   data2;
-        SUB:    begin
-            alu_res =   data1   -   data2;
-            if (alu_res==0) begin
-                zero    =   1;
-            end
-            else begin
-                zero    =   0;
-            end
-        end
+        SUB:    alu_res =   data1   -   data2;
 
         AND:    alu_res =   data1   &   data2;
         OR :    alu_res =   data1   |   data2;
@@ -39,7 +32,7 @@ always @(*) begin
         LUI:    alu_res =   {data2[15:0] , 16'b0};
         SLT:    begin
             if (data1 < data2) begin
-                alu_res =   0;
+                alu_res =   1;
             end 
             else               begin
                 alu_res =   0;
