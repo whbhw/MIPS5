@@ -19,17 +19,27 @@ localparam SRL = 4'b1111;
 
 always @(*) begin
     alu_res =   0;
+    zeros   =   0;
 
     case (alu_ctrl)
         ADD:    alu_res =   data1   +   data2;
-        SUB:    alu_res =   data1   -   data2;
+        SUB:    begin
+            alu_res =   data1   -   data2;
+            if (alu_res==0) begin
+                zero    =   1;
+            end
+            else begin
+                zero    =   0;
+            end
+        end
+
         AND:    alu_res =   data1   &   data2;
         OR :    alu_res =   data1   |   data2;
         XOR:    alu_res =   data1   ^   data2;
         LUI:    alu_res =   {data2[15:0] , 16'b0};
         SLT:    begin
             if (data1 < data2) begin
-                alu_res =   1;
+                alu_res =   0;
             end 
             else               begin
                 alu_res =   0;
