@@ -38,3 +38,7 @@
 <https://www.elsevier.com/__data/assets/pdf_file/0011/1191377/Appendix-D.PDF>
 ![png](./material/ALUctrl.png)
 ![png](./material/ctrl.png)
+
+## ins的类型：
+
+![png](./material/ins分类.png)

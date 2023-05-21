@@ -58,7 +58,7 @@ module CTRL (
             opcode_jal  :   ctrlsignals = 14'b_X_11_0_0_0_X_1_X_0_X_1_0_1;
     
             opcode_rjr  :   begin
-                // 区分R型计算指令和jr指令
+                // 区分R型计算指令和jr指令，jr是将跳转后的指令存在reg中以便返回到正确位置继续执行
                 if (funct == funct_jr) begin
                     // jr指令
                     ctrlsignals = 14'b_X_11_0_0_0_X_0_X_0_X_1_1_0;
