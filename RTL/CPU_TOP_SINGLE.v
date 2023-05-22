@@ -1,0 +1,138 @@
+module CUP_TOP_SINGLE(
+    input   clk     ,
+    input   rst_n
+);
+
+//PC 例化
+wire    [31:0]  pc      ;
+wire    [31:0]  pc_4    ;
+wire    [31:0]  pc_next ;
+
+PC u_pc (
+    .pc         (pc         ),
+    .pc_4       (pc_4       ),
+    .pc_next    (pc_next    ),
+
+    .clk        (clk        ),
+    .rst_n      (rst_n      )
+);
+
+
+//INSTMEM 例化
+wire    [8:0]   address ;
+wire    [31:0]  dout    ;
+
+assign  address =   pc_next[8:0];
+
+INSTMEM u_instmem (
+    .Address    (address   ),
+    .dout       (dout      )
+);
+
+//CTRL 例化
+wire            signext ;   // 符号扩展(1符号,0无符号)
+
+wire    [1:0]   aluop   ;   // alu初步控制编码
+wire            alusrc  ;   // alu输入来源选择
+
+wire            memread ;   // 数据内存读取控制
+wire            memwrite;   // 数据内存写入控制
+wire            memtoreg;   // 数据寄存器写入来源选择
+
+wire            regwrite;   // 数据寄存器写入控制
+wire            regdst  ;   // 数据寄存器写入地址来源选择
+
+wire            branch  ;   // 分支指令标志
+wire            branchne;   // bne(1)/beq(0)标志,前提branch有效
+wire            jump    ;   // 跳转指令标志
+wire            jumpr   ;   // jr标志,前提jump有效
+wire            link    ;   // jal标志,前提jump有效
+
+wire    [5:0]   opcode  ;   // 指令opcode部分输入
+wire    [5:0]   funct   ;   // 指令funct部分输入
+
+assign  opcode  =   dout[31:26] ;
+assign  funct   =   dout[5:0]   ;
+
+CTRL u_ctrl (
+    .signext    (signext    ),  // 符号扩展(1符号,0无符号)
+
+    .aluop      (aluop      ),  // alu初步控制编码
+    .alusrc     (alusrc     ),  // alu输入来源选择
+
+    .memread    (memread    ),  // 数据内存读取控制
+    .memwrite   (memwrite   ),  // 数据内存写入控制
+    .memtoreg   (memtoreg   ),  // 数据寄存器写入来源选择
+
+    .regwrite   (regwrite   ),  // 数据寄存器写入控制
+    .regdst     (regdst     ),  // 数据寄存器写入地址来源选择
+
+    .branch     (branch     ),  // 分支指令标志
+    .branchne   (branchne   ),  // bne(1)/beq(0)标志,前提branch有效
+    .jump       (jump       ),  // 跳转指令标志
+    .jumpr      (jumpr      ),  // jr标志,前提jump有效
+    .link       (link       ),  // jal标志,前提jump有效
+
+    .opcode     (opcode     ),  // 指令opcode部分输入
+    .funct      (funct      )   // 指令funct部分输入
+);
+
+
+//RF 例化
+wire    [4:0]   rd1addr ;
+wire    [31:0]  rd1data ;
+wire    [4:0]   rd2addr ;
+wire    [31:0]  rd2data ;
+wire    [4:0]   wraddr  ;
+wire    [31:0]  wrdata  ;
+wire            wren    ;
+
+assign  rd1addr =   dout[25:21];
+assign  rd2addr =   dout[20:16];
+assign  wraddr  =   (link)  ?   (5'd31)  :   ((regdst)  ?   dout[15:1]  :   dout[20:16]);
+assign  wrdata  =
+
+RF u_rf (
+    .rd1addr    (rd1addr   ),
+    .rd1data    (rd1data   ),
+    .rd2addr    (rd2addr   ),
+    .rd2data    (rd2data   ),
+    .wraddr     (wraddr    ),
+    .wrdata     (wrdata    ),
+    .wren       (wren      ),
+    .clk        (clk       ),
+    .rst_n      (rst_n     )
+);
+
+
+//ALU例化
+wire    [3:0]   alu_ctrl;
+
+ALUCTRL u_aluctrl (
+    .alu_ctrl   (alu_ctrl   ),
+    .aluop      (aluop      ),
+    .funct      (funct      )
+);
+
+wire    [31:0]  alu_res ;
+wire            zero    ;
+wire    [31:0]  data1   ;
+wire    [31:0]  data2   ; //立即数通道
+wire    [5:0]   shamt   ;
+wire    [3:0]   alu_ctrl;
+
+assign  data1   =   rd1data ;
+assign  data2   =   (alusrc?)   extend_out  :   rd2data;
+assign  shamt   =   dout[10:6];
+
+ALU u_alu (
+    .alu_res    (alu_res    ),
+    .zero       (zero       ),
+    .data1      (data1      ),
+    .data2      (data2      ),
+    .shamt      (shamt      ),
+    .alu_ctrl   (alu_ctrl   )
+);
+
+
+endmodule
