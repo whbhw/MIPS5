@@ -175,7 +175,7 @@ assign  wrdata  =   (link)  ?   (add_2_out)  :   ((memtoreg)?(dout_mem):(alu_res
 assign  wren_rf =   regwrite;
 
 //ALU
-assign  alu_input   =   (alusrc)    ?   (inst[5:0]) :   ({3'b100,inst[28:26]});
+assign  alu_input   =   (alusrc)    ?   ({3'b100,inst[28:26]})  :   (inst[5:0]);
 
 assign  data1       =   rd1data ;
 assign  data2       =   (alusrc)    ?   extend_out  :   rd2data;
