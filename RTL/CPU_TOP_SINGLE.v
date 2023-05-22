@@ -1,4 +1,4 @@
-module CUP_TOP_SINGLE(
+module CPU_TOP_SINGLE(
     input   clk     ,
     input   rst_n
 );
