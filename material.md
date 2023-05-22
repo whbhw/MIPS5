@@ -39,6 +39,6 @@
 ![png](./material/ALUctrl.png)
 ![png](./material/ctrl.png)
 
-## ins的类型：
+## ins的类型
 
 ![png](./material/ins分类.png)
