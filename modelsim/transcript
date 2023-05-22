@@ -1,14 +1,12 @@
 # Compile of CTRL.v was successful.
 # Compile of ALU.v was successful.
 # Compile of ALUCTRL.v was successful.
+# Compile of PC.v was successful.
+# Compile of RF.v was successful.
+# Compile of EXTEND.v was successful.
+# Compile of INSTMEM.v was successful.
+# Compile of DATAMEM.v was successful.
 # Compile of tb_ALU.v was successful.
+# Compile of tb_CTRL.v was successful.
 # Compile of tb_CPU_TOP_SINGLE.v was successful.
-# 5 compiles, 1 failed with no errors.
-# Error opening C:/Users/dengy/Desktop/MIPS5/testbench/tb_CTRL.v
-# Path name 'C:/Users/dengy/Desktop/MIPS5/testbench/tb_CTRL.v' doesn't exist.
-# Compile of CTRL.v was successful.
-# Compile of ALU.v was successful.
-# Compile of ALUCTRL.v was successful.
-# Compile of tb_ALU.v was successful.
-# Compile of tb_CPU_TOP_SINGLE.v was successful.
-# 5 compiles, 1 failed with no errors.
+# 11 compiles, 0 failed with no errors.
