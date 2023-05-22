@@ -182,7 +182,7 @@ assign  data2       =   (alusrc)    ?   extend_out  :   rd2data;
 assign  shamt       =   inst[10:6];
 
 //DATAMEM
-assign  address_mem =   alu_res ;
+assign  address_mem =   alu_res[10:2];
 assign  din_mem     =   rd2data ;
 assign  wen         =   memwrite;
 
