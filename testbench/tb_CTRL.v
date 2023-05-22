@@ -2,7 +2,7 @@
 `define MODULENAME CTRL
 `define MODULENAMETB(X) TB_CTRL``X
 `define VECNAME "../testbench/tb_CTRL_vec.txt"
-`define ANSNAME "../testbench/tb_CTRL_res.txt"
+`define ANSNAME "../testbench/tb_CTRL_ans.txt"
 `define ENDFLAG 32'hE0F //文档结束符，E0F
 `timescale 1ns/100ps
 module `MODULENAMETB(_SENDER) (
@@ -25,7 +25,7 @@ module `MODULENAMETB(_SENDER) (
         data3 = 32'h00000000;
         counter = 0;
         wait(rst_n == 1'b1);
-        $readmemh(`VECNAME,message); //读取文件中的数据，h表示16进制（一位等价于4位二进制），默认以空格和换行为分隔符
+        $readmemb(`VECNAME,message); //读取文件中的数据，h表示16进制（一位等价于4位二进制），默认以空格和换行为分隔符
         while (message[counter] != `ENDFLAG) begin //message为全部独立的数据文件，读完之后经过while循环拆分每一行的数据，并检测结束符
             @(posedge clk);
             data3 = message[counter];
@@ -70,7 +70,7 @@ module `MODULENAMETB(_RECEIVER) (
     assign  ctrl_res[13:0]  =   {signext,aluop[1:0],alusrc,memread,memwrite,memtoreg,regwrite,regdst,branch,branchne,jump,jumpr,link};
 
     initial begin
-        $readmemh(`ANSNAME,messageans);
+        $readmemb(`ANSNAME,messageans);
         correctflag = 1'b1;
         percorrectflag = 1'b1;
         ready = 1'b0;
@@ -153,9 +153,7 @@ module `MODULENAMETB(_) ();
         branchne,
         jump    ,
         jumpr   ,
-        link    ,
-        opcode  ,
-        funct   
+        link    
     );
     `MODULENAMETB(_CLKGEN)   clock_gen(clk);
     `MODULENAME uut (
