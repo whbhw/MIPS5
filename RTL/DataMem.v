@@ -1,6 +1,6 @@
 `timescale  1ns / 1ps
 
-module DataMem (
+module DATAMEM (
          clk,
          wen,
          Address,
