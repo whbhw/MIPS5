@@ -99,7 +99,6 @@ RF u_rf (
 //EXTEND例化
 wire    [31:0]  extend_out  ;
 wire    [15:0]  extend_in   ;
-wire            signext     ;
 
 EXTEND u_extend (
     .extend_out (extend_out   ),
@@ -122,7 +121,6 @@ wire            zero    ;
 wire    [31:0]  data1   ;
 wire    [31:0]  data2   ; //立即数通道
 wire    [5:0]   shamt   ;
-wire    [3:0]   alu_ctrl;
 
 ALU u_alu (
     .alu_res    (alu_res    ),
@@ -151,7 +149,8 @@ DATAMEM u_datamem (
 //线连接
 
 //组合逻辑计算
-assign  pc_combine  =   {pc_4{31:28},dout[25:0],2'b00};
+wire    [31:0]  pc_combine;
+assign  pc_combine  =   {pc_4[31:28],dout[25:0],2'b00};
 wire    [31:0]  add_2_out;  
 assign  add_2_out   =   pc_4+((link)?(32'd4):({extend_out[29:0],2'b0}));
 
