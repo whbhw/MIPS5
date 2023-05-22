@@ -6,7 +6,8 @@
 # Compile of EXTEND.v was successful.
 # Compile of INSTMEM.v was successful.
 # Compile of DATAMEM.v was successful.
+# Compile of CPU_TOP_SINGLE.v failed with 4 errors.
 # Compile of tb_ALU.v was successful.
 # Compile of tb_CTRL.v was successful.
 # Compile of tb_CPU_TOP_SINGLE.v was successful.
-# 11 compiles, 0 failed with no errors.
+# 12 compiles, 1 failed with 4 errors.
