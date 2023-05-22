@@ -2,7 +2,7 @@
 `define MODULENAME ALU
 `define MODULENAMETB(X) TB_ALU``X
 `define VECNAME "../testbench/tb_ALU_vec.txt"
-`define ANSNAME "../testbench/tb_ALU_res.txt"
+`define ANSNAME "../testbench/tb_ALU_ans.txt"
 `define ENDFLAG 32'hE0F
 `timescale 1ns/100ps
 module `MODULENAMETB(_SENDER) (
