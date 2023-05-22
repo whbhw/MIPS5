@@ -9,6 +9,7 @@
 ```verilog
 module PC (
     output  wire    [31:0]  pc      ,
+    output  wire    [31:0]  pc_4    ,
     input   wire    [31:0]  pc_next ,
 
     input   wire            clk     ,
@@ -21,10 +22,31 @@ module PC (
 ```verilog
 PC xxx (
     .pc         (   ),
+    .pc_4       (   ),
     .pc_next    (   ),
 
     .clk        (   ),
     .rst_n      (   )
+);
+```
+
+### INSTMEM
+
+#### 接口
+
+```verilog
+module INSTMEM (
+    input   wire    [8:0]   Address ,
+    output  wire    [31:0]  dout    
+);
+```
+
+#### 例化
+
+```verilog
+INSTMEM xxx (
+    .Address    (   ),
+    .dout       (   )
 );
 ```
 
@@ -217,5 +239,33 @@ ALUCTRL xxx (
 
     .aluop      (   ),
     .funct      (   )
+);
+```
+
+## MEM
+
+### DATAMEM
+
+#### 接口
+
+```verilog
+module DATAMEM (
+    input   wire            clk     ,
+    input   wire            wen     ,
+    input   wire    [8:0]   Address ,
+    input   wire    [31:0]  din     ,
+    output  wire    [31:0]  dout    
+);
+```
+
+#### 例化
+
+```verilog
+DATAMEM xxx (
+    .clk        (   ),
+    .wen        (   ),
+    .Address    (   ),
+    .din        (   ),
+    .dout       (   )
 );
 ```

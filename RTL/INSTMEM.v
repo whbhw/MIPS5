@@ -1,6 +1,6 @@
 `timescale  1ns / 1ps
 
-module InstructionMem (
+module INSTMEM (
          Address,
          dout
        );

@@ -10,7 +10,7 @@ module RF (
     input   wire            wren    ,
 
     input   wire            clk     ,
-    input   wire            rst_n
+    input   wire            rst_n   
 );
     reg [31:0]  regfile [0:31];
     
