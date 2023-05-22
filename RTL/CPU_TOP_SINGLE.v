@@ -22,7 +22,6 @@ PC u_pc (
 wire    [8:0]   address ;
 wire    [31:0]  dout    ;
 
-assign  address =   pc_next[8:0];
 
 INSTMEM u_instmem (
     .Address    (address   ),
@@ -50,9 +49,6 @@ wire            link    ;   // jal标志,前提jump有效
 
 wire    [5:0]   opcode  ;   // 指令opcode部分输入
 wire    [5:0]   funct   ;   // 指令funct部分输入
-
-assign  opcode  =   dout[31:26] ;
-assign  funct   =   dout[5:0]   ;
 
 CTRL u_ctrl (
     .signext    (signext    ),  // 符号扩展(1符号,0无符号)
@@ -87,10 +83,6 @@ wire    [4:0]   wraddr  ;
 wire    [31:0]  wrdata  ;
 wire            wren    ;
 
-assign  rd1addr =   dout[25:21];
-assign  rd2addr =   dout[20:16];
-assign  wraddr  =   (link)  ?   (5'd31)  :   ((regdst)  ?   dout[15:1]  :   dout[20:16]);
-assign  wrdata  =
 
 RF u_rf (
     .rd1addr    (rd1addr   ),
@@ -104,14 +96,25 @@ RF u_rf (
     .rst_n      (rst_n     )
 );
 
+//EXTEND例化
+wire    [31:0]  extend_out  ;
+wire    [15:0]  extend_in   ;
+wire            signext     ;
+
+EXTEND u_extend (
+    .extend_out (extend_out   ),
+    .extend_in  (extend_in    ),
+    .signext    (signext      )
+);
 
 //ALU例化
 wire    [3:0]   alu_ctrl;
+wire    [5:0]   alu_input;
 
 ALUCTRL u_aluctrl (
     .alu_ctrl   (alu_ctrl   ),
     .aluop      (aluop      ),
-    .funct      (funct      )
+    .funct      (alu_input  )
 );
 
 wire    [31:0]  alu_res ;
@@ -121,10 +124,6 @@ wire    [31:0]  data2   ; //立即数通道
 wire    [5:0]   shamt   ;
 wire    [3:0]   alu_ctrl;
 
-assign  data1   =   rd1data ;
-assign  data2   =   (alusrc?)   extend_out  :   rd2data;
-assign  shamt   =   dout[10:6];
-
 ALU u_alu (
     .alu_res    (alu_res    ),
     .zero       (zero       ),
@@ -133,6 +132,58 @@ ALU u_alu (
     .shamt      (shamt      ),
     .alu_ctrl   (alu_ctrl   )
 );
+
+//DATAMEM例化
+wire            wen         ;
+wire    [8:0]   address_mem ;
+wire    [31:0]  din_mem     ;
+wire    [31:0]  dout_mem    ;
+
+DATAMEM u_datamem (
+    .clk        (clk            ),
+    .wen        (wen            ),
+    .Address    (address_mem    ),
+    .din        (din_mem        ),
+    .dout       (dout_mem       )
+);
+
+
+//线连接
+
+//组合逻辑计算
+wire    [31:0]  pc_combine;  
+assign  pc_combine  =   {pc_4{31:28},dout[25:0],2'b00};
+wire    [31:0]  add_2_out;  
+assign  add_2_out   =   pc_4+((link)?(32'd4):({extend_out[29:0],2'b0}));
+
+//PC
+assign  pc_next =   (jump)  ?   ((jumpr)?(rd1data):(pc_combine))    :   (((zero ^ branchne)&branch)?(add_2_out):(pc_4));
+
+//INSTMEM
+assign  address =   pc_next[8:0]; //insmem实际存储能力是8位地址
+
+//CTRL
+assign  opcode  =   dout[31:26] ;
+assign  funct   =   dout[5:0]   ;
+
+//RF
+assign  rd1addr =   dout[25:21];
+assign  rd2addr =   dout[20:16];
+assign  wraddr  =   (link)  ?   (5'd31)  :   ((regdst)  ?   dout[15:1]  :   dout[20:16]);
+assign  wrdata  =   (link)  ?   (add_2_out)  :   ((memtoreg)?(dout_mem):(alu_res));
+
+//ALU
+assign  alu_input   =   (alusrc)    ?   (dout[5:0]) :   ({3'b100,dout[28:26]});
+
+assign  data1       =   rd1data ;
+assign  data2       =   (alusrc?)   extend_out  :   rd2data;
+assign  shamt       =   dout[10:6];
+
+//DATAMEM
+assign  address_mem =   alu_res ;
+assign  din_mem     =   rd2data ;
+assign  wen         =   memwrite;
+
 
 
 endmodule
