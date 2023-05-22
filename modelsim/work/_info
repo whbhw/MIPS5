@@ -10,7 +10,7 @@ z2
 cModel Technology
 dF:/Users/whb/Documents/MyPrograms/Verilog/UART
 vALU
-Z0 !s110 1684766705
+Z0 !s110 1684767220
 !i10b 1
 !s100 WYXN0Y@f:7z<OU=50?lBn0
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -20,13 +20,13 @@ Z3 dF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/modelsim
 Z4 w1684743016
 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v
 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v
-!i122 173
+!i122 195
 L0 1 47
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1684766705.000000
+Z6 !s108 1684767220.000000
 !s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v|
 !i113 1
@@ -34,7 +34,7 @@ Z7 o-work work
 Z8 tCvgOpt 0
 n@a@l@u
 vALUCTRL
-R0
+Z9 !s110 1684767221
 !i10b 1
 !s100 j@jD^TM5XZ[SIFL:kiEV31
 R1
@@ -44,7 +44,7 @@ R3
 w1684241671
 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALUCTRL.v
 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALUCTRL.v
-!i122 174
+!i122 196
 L0 1 33
 R5
 r1
@@ -68,7 +68,7 @@ R3
 R4
 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CTRL.v
 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CTRL.v
-!i122 172
+!i122 194
 L0 1 81
 R5
 r1
@@ -82,7 +82,7 @@ R7
 R8
 n@c@t@r@l
 vDATAMEM
-Z9 !s110 1684766706
+R9
 !i10b 1
 !s100 1P:Gc3Pm]k`jnUBl?H8T80
 R1
@@ -92,13 +92,13 @@ R3
 w1684752299
 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/DATAMEM.v
 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/DATAMEM.v
-!i122 179
+!i122 201
 L0 3 108
 R5
 r1
 !s85 0
 31
-Z10 !s108 1684766706.000000
+Z10 !s108 1684767221.000000
 !s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/DATAMEM.v|
 !s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/DATAMEM.v|
 !i113 1
@@ -116,7 +116,7 @@ R3
 w1684751732
 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/EXTEND.v
 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/EXTEND.v
-!i122 177
+!i122 199
 L0 1 8
 R5
 r1
@@ -140,7 +140,7 @@ R3
 w1684752398
 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/INSTMEM.v
 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/INSTMEM.v
-!i122 178
+!i122 200
 L0 3 248
 R5
 r1
@@ -164,7 +164,7 @@ R3
 w1684750942
 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/PC.v
 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/PC.v
-!i122 175
+!i122 197
 L0 1 23
 R5
 r1
@@ -188,7 +188,7 @@ R3
 w1684747752
 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/RF.v
 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/RF.v
-!i122 176
+!i122 198
 L0 1 25
 R5
 r1
@@ -202,25 +202,25 @@ R7
 R8
 n@r@f
 vTB_ALU_
-Z11 !s110 1684766707
+Z11 !s110 1684767222
 !i10b 1
 !s100 AAX54IlUBVNGc<K[BBXm91
 R1
 IH?h?@`_^4HkNLa0i1>ibj0
 R2
 R3
-Z12 w1684766707
+Z12 w1684767222
 Z13 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v
 Z14 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v
-!i122 180
+!i122 202
 L0 110 56
 R5
 r1
 !s85 0
 31
-R10
-Z15 !s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v|
-Z16 !s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v|
+Z15 !s108 1684767222.000000
+Z16 !s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v|
+Z17 !s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v|
 !i113 1
 R7
 R8
@@ -236,15 +236,15 @@ R3
 R12
 R13
 R14
-!i122 180
+!i122 202
 L0 98 11
 R5
 r1
 !s85 0
 31
-R10
 R15
 R16
+R17
 !i113 1
 R7
 R8
@@ -260,15 +260,15 @@ R3
 R12
 R13
 R14
-!i122 180
+!i122 202
 L0 49 48
 R5
 r1
 !s85 0
 31
-R10
 R15
 R16
+R17
 !i113 1
 R7
 R8
@@ -284,15 +284,15 @@ R3
 R12
 R13
 R14
-!i122 180
+!i122 202
 L0 8 40
 R5
 r1
 !s85 0
 31
-R10
 R15
 R16
+R17
 !i113 1
 R7
 R8
@@ -306,15 +306,15 @@ Ic]A;AkzMc=5e`doBL;74>1
 R2
 R3
 R12
-Z17 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CPU_TOP_SINGLE.v
-Z18 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CPU_TOP_SINGLE.v
-!i122 182
+Z18 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CPU_TOP_SINGLE.v
+Z19 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CPU_TOP_SINGLE.v
+!i122 204
 L0 96 26
 R5
 r1
 !s85 0
 31
-Z19 !s108 1684766707.000000
+R15
 !s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CPU_TOP_SINGLE.v|
 Z20 !s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CPU_TOP_SINGLE.v|
 !i113 1
@@ -330,15 +330,15 @@ I=fQhK5O^PjFSi4od6O1J31
 R2
 R3
 R12
-R17
 R18
-!i122 182
+R19
+!i122 204
 L0 84 11
 R5
 r1
 !s85 0
 31
-R19
+R15
 Z21 !s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CPU_TOP_SINGLE.v|
 R20
 !i113 1
@@ -354,15 +354,15 @@ IUGR3U=L:7DzWa=zFiF=eG2
 R2
 R3
 R12
-R17
 R18
-!i122 182
+R19
+!i122 204
 L0 42 41
 R5
 r1
 !s85 0
 31
-R19
+R15
 R21
 R20
 !i113 1
@@ -378,15 +378,15 @@ I24SNH^m:QzKEUI=W96nUi2
 R2
 R3
 R12
-R17
 R18
-!i122 182
+R19
+!i122 204
 L0 8 33
 R5
 r1
 !s85 0
 31
-R19
+R15
 R21
 R20
 !i113 1
@@ -404,13 +404,13 @@ R3
 R12
 Z22 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CTRL.v
 Z23 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CTRL.v
-!i122 181
+!i122 203
 L0 115 75
 R5
 r1
 !s85 0
 31
-R19
+R15
 Z24 !s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CTRL.v|
 Z25 !s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CTRL.v|
 !i113 1
@@ -428,13 +428,13 @@ R3
 R12
 R22
 R23
-!i122 181
+!i122 203
 L0 103 11
 R5
 r1
 !s85 0
 31
-R19
+R15
 R24
 R25
 !i113 1
@@ -452,13 +452,13 @@ R3
 R12
 R22
 R23
-!i122 181
+!i122 203
 L0 40 62
 R5
 r1
 !s85 0
 31
-R19
+R15
 R24
 R25
 !i113 1
@@ -476,13 +476,13 @@ R3
 R12
 R22
 R23
-!i122 181
+!i122 203
 L0 8 31
 R5
 r1
 !s85 0
 31
-R19
+R15
 R24
 R25
 !i113 1
