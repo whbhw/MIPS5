@@ -6,8 +6,8 @@ add wave -noupdate -radix hexadecimal -childformat {{{/TB_CPU_TOP_SINGLE_/uut/u_
 add wave -noupdate -radix decimal /TB_CPU_TOP_SINGLE_/uut/pc
 add wave -noupdate -radix decimal /TB_CPU_TOP_SINGLE_/uut/pc_4
 add wave -noupdate -radix decimal /TB_CPU_TOP_SINGLE_/uut/pc_next
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/address
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/dout
+add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/address
+add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/dout
 add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/signext
 add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/aluop
 add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/alusrc
@@ -23,32 +23,32 @@ add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/jumpr
 add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/link
 add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/opcode
 add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/funct
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/rd1addr
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/rd1data
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/rd2addr
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/rd2data
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/wraddr
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/wrdata
+add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/rd1addr
+add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/rd1data
+add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/rd2addr
+add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/rd2data
+add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/wraddr
+add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/wrdata
 add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/wren_rf
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/extend_out
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/extend_in
+add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/extend_out
+add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/extend_in
 add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/alu_ctrl
 add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/alu_input
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/alu_res
+add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/alu_res
 add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/zero
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/data1
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/data2
+add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/data1
+add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/data2
 add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/shamt
 add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/wen
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/address_mem
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/din_mem
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/dout_mem
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/pc_combine
-add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/add_2_out
+add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/address_mem
+add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/din_mem
+add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/dout_mem
+add wave -noupdate -radix decimal /TB_CPU_TOP_SINGLE_/uut/pc_combine
+add wave -noupdate -radix decimal /TB_CPU_TOP_SINGLE_/uut/add_2_out
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {296967 ps} 0}
+WaveRestoreCursors {{Cursor 1} {37808 ps} 0}
 quietly wave cursor active 1
-configure wave -namecolwidth 244
+configure wave -namecolwidth 255
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
 configure wave -signalnamewidth 0
@@ -62,4 +62,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {369674 ps}
+WaveRestoreZoom {0 ps} {366119 ps}
