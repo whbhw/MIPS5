@@ -10,7 +10,7 @@ z2
 cModel Technology
 dF:/Users/whb/Documents/MyPrograms/Verilog/UART
 vALU
-Z0 !s110 1684407269
+Z0 !s110 1684744826
 !i10b 1
 !s100 WYXN0Y@f:7z<OU=50?lBn0
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -20,13 +20,13 @@ Z3 dC:/Users/dengy/Desktop/MIPS5/modelsim
 w1684407254
 8C:/Users/dengy/Desktop/MIPS5/RTL/ALU.v
 FC:/Users/dengy/Desktop/MIPS5/RTL/ALU.v
-!i122 111
+!i122 125
 L0 1 47
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1684407269.000000
+Z5 !s108 1684744826.000000
 !s107 C:/Users/dengy/Desktop/MIPS5/RTL/ALU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/RTL/ALU.v|
 !i113 1
@@ -34,7 +34,7 @@ Z6 o-work work
 Z7 tCvgOpt 0
 n@a@l@u
 vALUCTRL
-Z8 !s110 1684407270
+Z8 !s110 1684744827
 !i10b 1
 !s100 j@jD^TM5XZ[SIFL:kiEV31
 R1
@@ -44,13 +44,13 @@ R3
 w1684327885
 8C:/Users/dengy/Desktop/MIPS5/RTL/ALUCTRL.v
 FC:/Users/dengy/Desktop/MIPS5/RTL/ALUCTRL.v
-!i122 112
+!i122 126
 L0 1 33
 R4
 r1
 !s85 0
 31
-Z9 !s108 1684407270.000000
+Z9 !s108 1684744827.000000
 !s107 C:/Users/dengy/Desktop/MIPS5/RTL/ALUCTRL.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/RTL/ALUCTRL.v|
 !i113 1
@@ -65,10 +65,10 @@ R1
 IoFHDGmdkZNM]]aFGHDY:=1
 R2
 R3
-w1684326981
+w1684669769
 8C:/Users/dengy/Desktop/MIPS5/RTL/CTRL.v
 FC:/Users/dengy/Desktop/MIPS5/RTL/CTRL.v
-!i122 110
+!i122 124
 L0 1 81
 R4
 r1
@@ -89,18 +89,18 @@ R1
 IU>hcfQlDE2Y=S]jWj>M9?1
 R2
 R3
-Z10 w1684407270
+Z10 w1684744827
 Z11 8C:/Users/dengy/Desktop/MIPS5/testbench/tb_ALU.v
 Z12 FC:/Users/dengy/Desktop/MIPS5/testbench/tb_ALU.v
-!i122 113
+!i122 127
 L0 110 56
 R4
 r1
 !s85 0
 31
 R9
-!s107 C:/Users/dengy/Desktop/MIPS5/testbench/tb_ALU.v|
-Z13 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/testbench/tb_ALU.v|
+Z13 !s107 C:/Users/dengy/Desktop/MIPS5/testbench/tb_ALU.v|
+Z14 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/testbench/tb_ALU.v|
 !i113 1
 R6
 R7
@@ -116,15 +116,15 @@ R3
 R10
 R11
 R12
-!i122 113
+!i122 127
 L0 98 11
 R4
 r1
 !s85 0
 31
 R9
-Z14 !s107 C:/Users/dengy/Desktop/MIPS5/testbench/tb_ALU.v|
 R13
+R14
 !i113 1
 R6
 R7
@@ -140,15 +140,15 @@ R3
 R10
 R11
 R12
-!i122 113
+!i122 127
 L0 49 48
 R4
 r1
 !s85 0
 31
 R9
-R14
 R13
+R14
 !i113 1
 R6
 R7
@@ -164,16 +164,112 @@ R3
 R10
 R11
 R12
-!i122 113
+!i122 127
 L0 8 40
 R4
 r1
 !s85 0
 31
 R9
-R14
 R13
+R14
 !i113 1
 R6
 R7
 n@t@b_@a@l@u_@s@e@n@d@e@r
+vTB_CTRL_
+R8
+!i10b 1
+!s100 MS_UNlZ6i>8QfoJ?VCBZK1
+R1
+I:VCiBn62X1gH=7eR;D]dU3
+R2
+R3
+R10
+Z15 8C:/Users/dengy/Desktop/MIPS5/testbench/tb_CTRL.v
+Z16 FC:/Users/dengy/Desktop/MIPS5/testbench/tb_CTRL.v
+!i122 128
+L0 115 75
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/dengy/Desktop/MIPS5/testbench/tb_CTRL.v|
+Z17 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/testbench/tb_CTRL.v|
+!i113 1
+R6
+R7
+n@t@b_@c@t@r@l_
+vTB_CTRL_CLKGEN
+R8
+!i10b 1
+!s100 FE8V^=[]8MHz4mcBo_9`j2
+R1
+I8zej0[mDAlfG`6HbDWJBH0
+R2
+R3
+R10
+R15
+R16
+!i122 128
+L0 103 11
+R4
+r1
+!s85 0
+31
+R9
+Z18 !s107 C:/Users/dengy/Desktop/MIPS5/testbench/tb_CTRL.v|
+R17
+!i113 1
+R6
+R7
+n@t@b_@c@t@r@l_@c@l@k@g@e@n
+vTB_CTRL_RECEIVER
+R8
+!i10b 1
+!s100 @Ei<USBzRL=CzG1GMJl]X2
+R1
+ICkFAUZTE8e:]hhPV]Go4R3
+R2
+R3
+R10
+R15
+R16
+!i122 128
+L0 40 62
+R4
+r1
+!s85 0
+31
+R9
+R18
+R17
+!i113 1
+R6
+R7
+n@t@b_@c@t@r@l_@r@e@c@e@i@v@e@r
+vTB_CTRL_SENDER
+R8
+!i10b 1
+!s100 8>jM?7zTJ29PY0`3HZh4D1
+R1
+I73]lG[<a=PmNZS`E06aaT1
+R2
+R3
+R10
+R15
+R16
+!i122 128
+L0 8 31
+R4
+r1
+!s85 0
+31
+R9
+R18
+R17
+!i113 1
+R6
+R7
+n@t@b_@c@t@r@l_@s@e@n@d@e@r
