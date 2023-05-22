@@ -20,12 +20,12 @@ PC u_pc (
 
 //INSTMEM 例化
 wire    [8:0]   address ;
-wire    [31:0]  dout    ;
+wire    [31:0]  inst    ;
 
 
 INSTMEM u_instmem (
     .Address    (address   ),
-    .dout       (dout      )
+    .dout       (inst      )
 );
 
 //CTRL 例化
@@ -150,9 +150,12 @@ DATAMEM u_datamem (
 
 //组合逻辑计算
 wire    [31:0]  pc_combine;
-assign  pc_combine  =   {pc_4[31:28],dout[25:0],2'b00};
+assign  pc_combine  =   {pc_4[31:28],inst[25:0],2'b00};
 wire    [31:0]  add_2_out;  
 assign  add_2_out   =   pc_4+((link)?(32'd4):({extend_out[29:0],2'b0}));
+
+//EXTEND
+assign  extend_in   =   inst[15:0];
 
 //PC
 assign  pc_next =   (jump)  ?   ((jumpr)?(rd1data):(pc_combine))    :   (((zero ^ branchne)&branch)?(add_2_out):(pc_4));
@@ -161,22 +164,22 @@ assign  pc_next =   (jump)  ?   ((jumpr)?(rd1data):(pc_combine))    :   (((zero 
 assign  address =   pc[10:2]; //insmem实际存储能力是9位地址
 
 //CTRL
-assign  opcode  =   dout[31:26] ;
-assign  funct   =   dout[5:0]   ;
+assign  opcode  =   inst[31:26] ;
+assign  funct   =   inst[5:0]   ;
 
 //RF
-assign  rd1addr =   dout[25:21];
-assign  rd2addr =   dout[20:16];
-assign  wraddr  =   (link)  ?   (5'd31)  :   ((regdst)  ?   dout[15:1]  :   dout[20:16]);
+assign  rd1addr =   inst[25:21];
+assign  rd2addr =   inst[20:16];
+assign  wraddr  =   (link)  ?   (5'd31)  :   ((regdst)  ?   inst[15:11]  :   inst[20:16]);
 assign  wrdata  =   (link)  ?   (add_2_out)  :   ((memtoreg)?(dout_mem):(alu_res));
 assign  wren_rf =   regwrite;
 
 //ALU
-assign  alu_input   =   (alusrc)    ?   (dout[5:0]) :   ({3'b100,dout[28:26]});
+assign  alu_input   =   (alusrc)    ?   (inst[5:0]) :   ({3'b100,inst[28:26]});
 
 assign  data1       =   rd1data ;
 assign  data2       =   (alusrc)    ?   extend_out  :   rd2data;
-assign  shamt       =   dout[10:6];
+assign  shamt       =   inst[10:6];
 
 //DATAMEM
 assign  address_mem =   alu_res ;
