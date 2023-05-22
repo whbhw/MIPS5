@@ -182,6 +182,28 @@ RF xxx (
 );
 ```
 
+### EXTEND
+
+#### 接口
+
+```verilog
+module EXTEND (
+    output  wire    [31:0]  extend_out  ,
+    input   wire    [15:0]  extend_in   ,
+    input   wire            signext     
+);
+```
+
+#### 例化
+
+```verilog
+EXTEND xxx (
+    .extend_out (   ),
+    .extend_in  (   ),
+    .signext    (   )
+);
+```
+
 ## EX
 
 ### ALU
