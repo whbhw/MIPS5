@@ -158,7 +158,7 @@ assign  add_2_out   =   pc_4+((link)?(32'd4):({extend_out[29:0],2'b0}));
 assign  pc_next =   (jump)  ?   ((jumpr)?(rd1data):(pc_combine))    :   (((zero ^ branchne)&branch)?(add_2_out):(pc_4));
 
 //INSTMEM
-assign  address =   pc_next[8:0]; //insmem实际存储能力是8位地址
+assign  address =   pc[10:2]; //insmem实际存储能力是9位地址
 
 //CTRL
 assign  opcode  =   dout[31:26] ;
