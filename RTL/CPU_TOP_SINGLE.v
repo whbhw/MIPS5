@@ -1,4 +1,13 @@
+`define FLAGTEST
+
+`define FINISH_ADDR 32'h00400050
 module CPU_TOP_SINGLE(
+    output  wire            finish  ,
+`ifdef FLAGTEST
+    input   wire    [4:0]   rdtaddr ,
+    output  wire    [31:0]  rdtdata ,
+`endif
+
     input   clk     ,
     input   rst_n
 );
@@ -89,6 +98,12 @@ RF u_rf (
     .rd1data    (rd1data   ),
     .rd2addr    (rd2addr   ),
     .rd2data    (rd2data   ),
+
+`ifdef FLAGTEST
+    .rdtaddr    (rdtaddr   ),
+    .rdtdata    (rdtdata   ),
+`endif
+
     .wraddr     (wraddr    ),
     .wrdata     (wrdata    ),
     .wren       (wren_rf   ),
@@ -189,6 +204,7 @@ assign  address_mem =   alu_res[10:2];
 assign  din_mem     =   rd2data ;
 assign  wen         =   memwrite;
 
-
+// 输出
+assign  finish      =   (pc == `FINISH_ADDR);
 
 endmodule
