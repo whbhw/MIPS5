@@ -38,8 +38,8 @@ always @(*) begin
                 alu_res =   0;
             end
         end
-        SLL:    alu_res =   data1   <<  shamt;
-        SRL:    alu_res =   data1   >>  shamt;
+        SLL:    alu_res =   data2   <<  shamt;
+        SRL:    alu_res =   data2   >>  shamt;
         
         default:        alu_res =   0;
     endcase

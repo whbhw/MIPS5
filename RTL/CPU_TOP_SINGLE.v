@@ -152,7 +152,10 @@ DATAMEM u_datamem (
 wire    [31:0]  pc_combine;
 assign  pc_combine  =   {pc_4[31:28],inst[25:0],2'b00};
 wire    [31:0]  add_2_out;  
-assign  add_2_out   =   pc_4+((link)?(32'd4):({extend_out[29:0],2'b0}));
+// 无slot
+assign  add_2_out   =   pc_4+((link)?(32'd0):({extend_out[29:0],2'b0}));
+// 1个slot
+// assign  add_2_out   =   pc_4+((link)?(32'd4):({extend_out[29:0],2'b0}));
 
 //EXTEND
 assign  extend_in   =   inst[15:0];

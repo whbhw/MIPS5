@@ -17,8 +17,13 @@ module RF (
     assign rd1data = (rd1addr == 5'd0) ? 32'h0 : regfile[rd1addr];
     assign rd2data = (rd2addr == 5'd0) ? 32'h0 : regfile[rd2addr];
 
-    always @(posedge clk) begin
-        if (wren && wraddr != 5'd0) begin
+    always @(posedge clk, negedge rst_n) begin
+        if (!rst_n) begin : rfrst
+            integer i;
+            for (i = 0; i < 32; i = i + 1) begin : rfrstgen
+                regfile[i] <= 32'd0;
+            end
+        end else if (wren && wraddr != 5'd0) begin
             regfile[wraddr] <= wrdata;
         end
     end

@@ -52,8 +52,8 @@ module CTRL (
         casex (opcode)
             opcode_lw   :   ctrlsignals = 14'b_1_00_1_1_0_1_1_0_0_X_0_X_0;
             opcode_sw   :   ctrlsignals = 14'b_1_00_1_0_1_X_0_X_0_X_0_X_X;
-            opcode_beq  :   ctrlsignals = 14'b_X_01_0_0_0_X_0_X_1_0_0_X_0;
-            opcode_bne  :   ctrlsignals = 14'b_X_01_0_0_0_X_0_X_1_1_0_X_0;
+            opcode_beq  :   ctrlsignals = 14'b_1_01_0_0_0_X_0_X_1_0_0_X_0;
+            opcode_bne  :   ctrlsignals = 14'b_1_01_0_0_0_X_0_X_1_1_0_X_0;
             opcode_j    :   ctrlsignals = 14'b_X_11_0_0_0_X_0_X_0_X_1_0_0;
             opcode_jal  :   ctrlsignals = 14'b_X_11_0_0_0_X_1_X_0_X_1_0_1;
     

@@ -10,7 +10,7 @@ module PC (
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            pc_reg  <=  0;
+            pc_reg  <=  32'h_00400000;
         end
         else begin
             pc_reg  <=  pc_next;

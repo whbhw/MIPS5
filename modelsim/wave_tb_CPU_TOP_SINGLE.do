@@ -7,6 +7,7 @@ add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/pc
 add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/pc_4
 add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/pc_next
 add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/address
+add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/inst
 add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/signext
 add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/aluop
 add wave -noupdate /TB_CPU_TOP_SINGLE_/uut/alusrc
@@ -45,7 +46,7 @@ add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/dout_mem
 add wave -noupdate -radix hexadecimal /TB_CPU_TOP_SINGLE_/uut/pc_combine
 add wave -noupdate -radix decimal /TB_CPU_TOP_SINGLE_/uut/add_2_out
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {162217 ps} 0}
+WaveRestoreCursors {{Cursor 1} {956147 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 255
 configure wave -valuecolwidth 100
@@ -61,4 +62,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {366119 ps}
+WaveRestoreZoom {761463 ps} {1127582 ps}

@@ -1,4 +1,5 @@
 `define CYCLE   20
+`define RUNTIME 10200
 `define MODULENAME CPU_TOP_SINGLE
 `define MODULENAMETB(X) TB_CPU_TOP_SINGLE``X
 // `define VECNAME "../testbench/tb_ALU_vec.txt"
@@ -29,7 +30,7 @@ module `MODULENAMETB(_SENDER) (
             // data3 = message[counter];
             // counter = counter + 1;
         // end
-        while (counter < 1000) begin
+        while (counter < `RUNTIME) begin
             @(posedge clk);
             counter = counter + 1;
         end
