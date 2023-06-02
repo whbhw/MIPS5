@@ -310,6 +310,6 @@ DATAMEM xxx (
 |regdst     |       |   1   |     1     |     1     | 数据寄存器写入地址来源选择|
 |branch     |       |   1   |           |           | 分支指令标志              |
 |branchne   |       |   1   |           |           | bne(1)/beq(0)标志,前提branch有效  |
-|jump       |       |       |           |           | 跳转指令标志              |
-|jumpr      |       |       |           |           | jr标志,前提jump有效       |
+|jump       |       |   1   |           |           | 跳转指令标志              |
+|jumpr      |       |   1   |           |           | jr标志,前提jump有效       |
 |link       |       |   1   |     1     |     1     | jal标志,前提jump有效      |
