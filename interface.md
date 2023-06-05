@@ -304,11 +304,20 @@ DATAMEM xxx (
 
 ```verilog
 module FWDPU (
-    input   wire            clk     ,
-    input   wire            wen     ,
-    input   wire    [8:0]   Address ,
-    input   wire    [31:0]  din     ,
-    output  wire    [31:0]  dout    
+    output  wire    [1:0]   fwdrs       ,
+    output  wire    [1:0]   fwdrt       ,
+    output  wire            hzdlu       ,
+
+    input   wire            EX_regread1 ,
+    input   wire            EX_regread2 ,
+    input   wire    [31:0]  EX_inst     ,
+
+    input   wire            MEM_regwrite,
+    input   wire    [4:0]   MEM_wraddr  ,
+    input   wire            MEM_memread ,
+
+    input   wire            WB_regwrite ,
+    input   wire    [4:0]   WB_wraddr   
 );
 ```
 
@@ -316,11 +325,20 @@ module FWDPU (
 
 ```verilog
 FWDPU xxx (
-    .clk        (   ),
-    .wen        (   ),
-    .Address    (   ),
-    .din        (   ),
-    .dout       (   )
+    .fwdrs          (   ),
+    .fwdrt          (   ),
+    .hzdlu          (   ),
+
+    .EX_regread1    (   ),
+    .EX_regread2    (   ),
+    .EX_inst        (   ),
+
+    .MEM_regwrite   (   ),
+    .MEM_wraddr     (   ),
+    .MEM_memread    (   ),
+
+    .WB_regwrite    (   ),
+    .WB_wraddr      (   )
 );
 ```
 
