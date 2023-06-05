@@ -8,6 +8,8 @@ module CTRL (
     output  wire            memwrite,   // 数据内存写入控制
     output  wire            memtoreg,   // 数据寄存器写入来源选择
 
+    output  wire            regread1,   // 数据寄存器读取1标志
+    output  wire            regread2,   // 数据寄存器读取2标志
     output  wire            regwrite,   // 数据寄存器写入控制
     output  wire            regdst  ,   // 数据寄存器写入地址来源选择
 
@@ -40,41 +42,42 @@ module CTRL (
     
     localparam [5:0]    funct_jr        =   6'h08;
     
-    reg [13:0] ctrlsignals;
+    reg [15:0] ctrlsignals;
     assign {
         signext     ,aluop      ,alusrc     ,memread    ,
-        memwrite    ,memtoreg   ,regwrite   ,regdst     ,branch     ,
-        branchne    ,jump       ,jumpr      ,link       }
+        memwrite    ,memtoreg   ,regread1   ,regread2   ,regwrite   ,
+        regdst      ,branch     ,branchne   ,
+        jump       ,jumpr      ,link       }
         = ctrlsignals;
     
     always @(*) begin
-        ctrlsignals = 14'b0;
+        ctrlsignals = 16'b0;
         casex (opcode)
-            opcode_lw   :   ctrlsignals = 14'b_1_00_1_1_0_1_1_0_0_X_0_X_0;
-            opcode_sw   :   ctrlsignals = 14'b_1_00_1_0_1_X_0_X_0_X_0_X_X;
-            opcode_beq  :   ctrlsignals = 14'b_1_01_0_0_0_X_0_X_1_0_0_X_0;
-            opcode_bne  :   ctrlsignals = 14'b_1_01_0_0_0_X_0_X_1_1_0_X_0;
-            opcode_j    :   ctrlsignals = 14'b_X_11_0_0_0_X_0_X_0_X_1_0_0;
-            opcode_jal  :   ctrlsignals = 14'b_X_11_0_0_0_X_1_X_0_X_1_0_1;
+            opcode_lw   :   ctrlsignals = 16'b_1_00_1_1_0_1_101_0_0_X_0_X_0;
+            opcode_sw   :   ctrlsignals = 16'b_1_00_1_0_1_X_100_X_0_X_0_X_X;
+            opcode_beq  :   ctrlsignals = 16'b_1_01_0_0_0_X_110_X_1_0_0_X_0;
+            opcode_bne  :   ctrlsignals = 16'b_1_01_0_0_0_X_110_X_1_1_0_X_0;
+            opcode_j    :   ctrlsignals = 16'b_X_11_0_0_0_X_000_X_0_X_1_0_0;
+            opcode_jal  :   ctrlsignals = 16'b_X_11_0_0_0_X_001_X_0_X_1_0_1;
     
             opcode_rjr  :   begin
                 // 区分R型计算指令和jr指令，jr是将跳转后的指令存在reg中以便返回到正确位置继续执行
                 if (funct == funct_jr) begin
                     // jr指令
-                    ctrlsignals = 14'b_X_11_0_0_0_X_0_X_0_X_1_1_0;
+                    ctrlsignals = 16'b_X_11_0_0_0_X_100_X_0_X_1_1_0;
                 end else begin
                     // R型计算指令
-                    ctrlsignals = 14'b_X_10_0_0_0_0_1_1_0_X_0_X_0;
+                    ctrlsignals = 16'b_X_10_0_0_0_0_111_1_0_X_0_X_0;
                 end
             end
     
             opcode_i    : begin
                 // I型计算指令
-                ctrlsignals = {~opcode[2],13'b_10_1_0_0_0_1_0_0_X_0_X_0};
+                ctrlsignals = {~opcode[2],15'b_10_1_0_0_0_101_0_0_X_0_X_0};
             end
     
             default: 
-                ctrlsignals = 14'b0;
+                ctrlsignals = 16'b0;
         endcase
     end
 

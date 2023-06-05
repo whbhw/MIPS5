@@ -47,6 +47,8 @@ wire            memread ;   // 数据内存读取控制
 wire            memwrite;   // 数据内存写入控制
 wire            memtoreg;   // 数据寄存器写入来源选择
 
+wire            regread1;   // 数据寄存器读取1标志
+wire            regread2;   // 数据寄存器读取2标志
 wire            regwrite;   // 数据寄存器写入控制
 wire            regdst  ;   // 数据寄存器写入地址来源选择
 
@@ -69,6 +71,8 @@ CTRL u_ctrl (
     .memwrite   (memwrite   ),  // 数据内存写入控制
     .memtoreg   (memtoreg   ),  // 数据寄存器写入来源选择
 
+    .regread1   (regread1   ),  // 数据寄存器读取1标志
+    .regread2   (regread2   ),  // 数据寄存器读取2标志
     .regwrite   (regwrite   ),  // 数据寄存器写入控制
     .regdst     (regdst     ),  // 数据寄存器写入地址来源选择
 

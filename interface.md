@@ -67,6 +67,8 @@ module CTRL (
     output  wire            memwrite,   // 数据内存写入控制
     output  wire            memtoreg,   // 数据寄存器写入来源选择
 
+    output  wire            regread1,   // 数据寄存器读取1标志
+    output  wire            regread2,   // 数据寄存器读取2标志
     output  wire            regwrite,   // 数据寄存器写入控制
     output  wire            regdst  ,   // 数据寄存器写入地址来源选择
 
@@ -94,6 +96,8 @@ CTRL xxx (
     .memwrite   (   ),  // 数据内存写入控制
     .memtoreg   (   ),  // 数据寄存器写入来源选择
     
+    .regread1   (   ),  // 数据寄存器读取1标志
+    .regread2   (   ),  // 数据寄存器读取2标志
     .regwrite   (   ),  // 数据寄存器写入控制
     .regdst     (   ),  // 数据寄存器写入地址来源选择
     
@@ -110,17 +114,17 @@ CTRL xxx (
 
 #### 真值表
 
-|inst    |opcode  ||signext |aluop   |alusrc  |memread |memwrite|memtoreg*|regwrite|regdst  |branch  |branchne*|jump    |jumpr   |link    |
-|:--:|:--:|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-|lw |23 ||1 |00    |1  |1  |0  |1  |1  |0  |0  |X  |0  |X  |0  |
-|sw |2b ||1 |00    |1  |0  |1  |X  |0  |X  |0  |X  |0  |X  |X  |
-|beq|04 ||1 |01    |0  |0  |0  |X  |0  |X  |1  |0  |0  |X  |0  |
-|bne|05 ||1 |01    |0  |0  |0  |X  |0  |X  |1  |1  |0  |X  |0  |
-|j  |02 ||X |11    |0  |0  |0  |X  |0  |X  |0  |X  |1  |0  |0  |
-|jal|03 ||X |11    |0  |0  |0  |X  |1  |X  |0  |X  |1  |0  |1  |
-|jr*|00*||X |11    |0  |0  |0  |X  |0  |X  |0  |X  |1  |1  |0  |
-|R* |00*||X |10    |0  |0  |0  |0  |1  |1  |0  |X  |0  |X  |0  |
-|I* |*  ||? |10    |1  |0  |0  |0  |1  |0  |0  |X  |0  |X  |0  |
+|inst    |opcode  ||signext |aluop   |alusrc  |memread |memwrite    |memtoreg*  |regread1   |regread2   |regwrite|regdst  |branch  |branchne*|jump    |jumpr   |link    |
+|:--:|:--:|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|lw |23 ||1 |00    |1  |1  |0  |1  |1   |0  |1  |0  |0  |X  |0  |X  |0  |
+|sw |2b ||1 |00    |1  |0  |1  |X  |1   |0  |0  |X  |0  |X  |0  |X  |X  |
+|beq|04 ||1 |01    |0  |0  |0  |X  |1   |1  |0  |X  |1  |0  |0  |X  |0  |
+|bne|05 ||1 |01    |0  |0  |0  |X  |1   |1  |0  |X  |1  |1  |0  |X  |0  |
+|j  |02 ||X |11    |0  |0  |0  |X  |0   |0  |0  |X  |0  |X  |1  |0  |0  |
+|jal|03 ||X |11    |0  |0  |0  |X  |0   |0  |1  |X  |0  |X  |1  |0  |1  |
+|jr*|00*||X |11    |0  |0  |0  |X  |1   |0  |0  |X  |0  |X  |1  |1  |0  |
+|R* |00*||X |10    |0  |0  |0  |0  |1   |1  |1  |1  |0  |X  |0  |X  |0  |
+|I* |*  ||? |10    |1  |0  |0  |0  |1   |0  |1  |0  |0  |X  |0  |X  |0  |
 
 **注：** jr和R指令须通过funct区分，jr的funct为6'h08
 
@@ -293,6 +297,32 @@ DATAMEM xxx (
 ```
 
 ## 流水线相关接口
+
+### FWDPU
+
+#### 接口
+
+```verilog
+module FWDPU (
+    input   wire            clk     ,
+    input   wire            wen     ,
+    input   wire    [8:0]   Address ,
+    input   wire    [31:0]  din     ,
+    output  wire    [31:0]  dout    
+);
+```
+
+#### 例化
+
+```verilog
+FWDPU xxx (
+    .clk        (   ),
+    .wen        (   ),
+    .Address    (   ),
+    .din        (   ),
+    .dout       (   )
+);
+```
 
 ### 段间寄存器
 
