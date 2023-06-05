@@ -400,7 +400,7 @@ IF_ID xxx (
 
 #### ID/EX寄存器
 
-存储的数据：pc+4、inst、signext 、aluop、alusrc、memread、emwrite、memtoreg、regwrite、regdst、branch、branchne、jump、jumpr、link
+存储的数据：pc+4、inst、signext 、aluop、alusrc、memread、memwrite、memtoreg、regwrite、regdst、branch、branchne、jump、jumpr、link
 
 ##### 接口
 
@@ -413,6 +413,24 @@ module ID_EX (
     input   wire    [8:0]   ID_pc_4     ,
     input   wire    [31:0]  ID_inst     ,
 
+    input   wire            ID_regread1 ,
+    input   wire            ID_regread2 ,
+    input   wire            ID_signext  ,
+    input   wire            ID_aluop    ,
+    input   wire            ID_alusrc   ,
+    input   wire            ID_memread  ,
+    input   wire            ID_memwrite ,
+    input   wire            ID_memtoreg ,
+    input   wire            ID_regwrite ,
+    input   wire            ID_regdst   ,
+    input   wire            ID_branch   ,
+    input   wire            ID_branchne ,
+    input   wire            ID_jump     ,
+    input   wire            ID_jumpr    ,
+    input   wire            ID_link     ,
+
+    output  wire            EX_regread1 ,
+    output  wire            EX_regread2 ,
     output  wire            EX_signext  ,
     output  wire            EX_aluop    ,
     output  wire            EX_alusrc   ,
@@ -441,6 +459,23 @@ ID_EX xxx (
     .flush      (   ),
     .ID_pc_4    (   ),
     .ID_inst    (   ),
+    .ID_regread1(   ),
+    .ID_regread2(   ),
+    .ID_signext (   ),
+    .ID_aluop   (   ),
+    .ID_alusrc  (   ),
+    .ID_memread (   ),
+    .ID_memwrite(   ),
+    .ID_memtoreg(   ),
+    .ID_regwrite(   ),
+    .ID_regdst  (   ),
+    .ID_branch  (   ),
+    .ID_branchne(   ),
+    .ID_jump    (   ),
+    .ID_jumpr   (   ),
+    .ID_link    (   ),
+    .EX_regread1(   ),
+    .EX_regread2(   ),    
     .EX_signext (   ),
     .EX_aluop   (   ),
     .EX_alusrc  (   ),
@@ -459,7 +494,7 @@ ID_EX xxx (
 );
 ```
 
-#### EX/MEM寄存器：
+#### EX/MEM寄存器
 
 存储的数据：pc+4、inst、memread、memwrite、memtoreg、regwrite、regdst、link
 
@@ -474,12 +509,19 @@ module EX_MEM (
     input   wire    [8:0]   EX_pc_4         ,
     input   wire    [31:0]  EX_inst         ,
 
-    output  wire            MEM_memread     ;
-    output  wire            MEM_memwrite    ;
-    output  wire            MEM_memtoreg    ;
-    output  wire            MEM_regwrite    ;
-    output  wire            MEM_regdst      ;
-    output  wire            MEM_link        ;
+    input   wire            EX_memread      ,
+    input   wire            EX_memwrite     ,
+    input   wire            EX_memtoreg     ,
+    input   wire            EX_regwrite     ,
+    input   wire            EX_regdst       ,
+    input   wire            EX_link         ,
+
+    output  wire            MEM_memread     ,
+    output  wire            MEM_memwrite    ,
+    output  wire            MEM_memtoreg    ,
+    output  wire            MEM_regwrite    ,
+    output  wire            MEM_regdst      ,
+    output  wire            MEM_link        ,
     
     output  wire    [8:0]   MEM_pc_4        ,
     output  wire    [31:0]  MEM_inst      
@@ -495,6 +537,12 @@ EX_MEM xxx(
     .flush          (   ),
     .EX_pc_4        (   ),
     .EX_inst        (   ),
+    .EX_memread     (   ),
+    .EX_memwrite    (   ),
+    .EX_memtoreg    (   ),
+    .EX_regwrite    (   ),
+    .EX_regdst      (   ),
+    .EX_link        (   ),
     .MEM_memread    (   ),
     .MEM_memwrite   (   ),
     .MEM_memtoreg   (   ),
@@ -519,6 +567,11 @@ module EX_MEM (
     input   wire    [8:0]   MEM_pc_4    ,
     input   wire    [31:0]  MEM_inst    ,
 
+    input   wire            MEM_memtoreg,
+    input   wire            MEM_regwrite,
+    input   wire            MEM_regdst  ,  
+    input   wire            MEM_link    ,
+
     output  wire            WB_memtoreg ,
     output  wire            WB_regwrite ,
     output  wire            WB_regdst   ,  
@@ -538,6 +591,10 @@ MEM_WB xxx(
     .flush          (   ),
     .MEM_pc_4       (   ),
     .MEM_inst       (   ),
+    .MEM_memtoreg   (   ),
+    .MEM_regwrite   (   ),
+    .MEM_regdst     (   ),
+    .MEM_link       (   ),
     .WB_memtoreg    (   ),
     .WB_regwrite    (   ),
     .WB_regdst      (   ),
