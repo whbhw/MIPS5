@@ -50,6 +50,8 @@ module `MODULENAMETB(_RECEIVER) (
     input            memwrite,   // 数据内存写入控制
     input            memtoreg,   // 数据寄存器写入来源选择
 
+    input            regread1,   // 数据寄存器读取1标志
+    input            regread2,   // 数据寄存器读取2标志
     input            regwrite,   // 数据寄存器写入控制
     input            regdst  ,   // 数据寄存器写入地址来源选择
 
@@ -59,15 +61,15 @@ module `MODULENAMETB(_RECEIVER) (
     input            jumpr   ,   // jr标志,前提jump有效
     input            link        // jal标志,前提jump有效
 );
-    reg [13:0]  messageans[0:10000];
+    reg [15:0]  messageans[0:10000];
     integer     counter;
-    reg [13:0]  ctrl_res_ans;
+    reg [15:0]  ctrl_res_ans;
     reg         correctflag;
     reg         percorrectflag;
     reg         ready;
-    wire[13:0]  ctrl_res;
+    wire[15:0]  ctrl_res;
 
-    assign  ctrl_res[13:0]  =   {signext,aluop[1:0],alusrc,memread,memwrite,memtoreg,regwrite,regdst,branch,branchne,jump,jumpr,link};
+    assign  ctrl_res[15:0]  =   {signext,aluop[1:0],alusrc,memread,memwrite,memtoreg,regread1,regread2,regwrite,regdst,branch,branchne,jump,jumpr,link};
 
     initial begin
         $readmemb(`ANSNAME,messageans);
@@ -121,6 +123,8 @@ module `MODULENAMETB(_) ();
     wire            memread ;
     wire            memwrite;
     wire            memtoreg;
+    wire            regread1;
+    wire            regread2;
     wire            regwrite;
     wire            regdst  ;
     wire            branch  ;
@@ -147,6 +151,8 @@ module `MODULENAMETB(_) ();
         memread ,
         memwrite,
         memtoreg,
+        regread1,
+        regread2,
         regwrite,
         regdst  ,
         branch  ,
@@ -166,6 +172,8 @@ module `MODULENAMETB(_) ();
         .memwrite   (memwrite),  // 数据内存写入控制
         .memtoreg   (memtoreg),  // 数据寄存器写入来源选择
         
+        .regread1   (regread1),  // 数据寄存器读取1标志
+        .regread2   (regread2),  // 数据寄存器读取2标志
         .regwrite   (regwrite),  // 数据寄存器写入控制
         .regdst     (regdst),  // 数据寄存器写入地址来源选择
         
