@@ -364,10 +364,10 @@ FWDPU xxx (
 |jumpr      |       |   1   |           |           | jr标志,前提jump有效       |
 |link       |       |   1   |     1     |     1     | jal标志,前提jump有效      |
 
-
-####IF/ID寄存器：
+#### IF/ID寄存器
 
 存储的数据：pc+4、inst
+
 ##### 接口
 
 ```verilog
@@ -397,9 +397,11 @@ IF_ID xxx (
     .ID_inst    (  )
 );
 ```
-####ID/EX寄存器：
 
-存储的数据：pc+4、inst、signext 、aluop、alusrc、memread、emwrite、memtoreg、regwrite、regdst、branch、branchne、jump、jumpr、link    
+#### ID/EX寄存器
+
+存储的数据：pc+4、inst、signext 、aluop、alusrc、memread、emwrite、memtoreg、regwrite、regdst、branch、branchne、jump、jumpr、link
+
 ##### 接口
 
 ```verilog
@@ -429,6 +431,7 @@ module ID_EX (
     output  wire    [31:0]  EX_inst      
 );
 ```
+
 ##### 例化
 
 ```verilog
@@ -455,9 +458,11 @@ ID_EX xxx (
     .EX_inst    (   )
 );
 ```
-####EX/MEM寄存器：
 
-存储的数据：pc+4、inst、memread、memwrite、memtoreg、regwrite、regdst、link      
+#### EX/MEM寄存器：
+
+存储的数据：pc+4、inst、memread、memwrite、memtoreg、regwrite、regdst、link
+
 ##### 接口
 
 ```verilog
@@ -501,8 +506,10 @@ EX_MEM xxx(
 );
 ```
 
-####MEM_WB寄存器：
-#####接口：
+#### MEM_WB寄存器
+
+##### 接口
+
 ```verilog
 module EX_MEM (
     input   wire            clk         ,
