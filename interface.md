@@ -313,3 +313,179 @@ DATAMEM xxx (
 |jump       |       |   1   |           |           | 跳转指令标志              |
 |jumpr      |       |   1   |           |           | jr标志,前提jump有效       |
 |link       |       |   1   |     1     |     1     | jal标志,前提jump有效      |
+
+
+####IF/ID寄存器：
+
+存储的数据：pc+4、inst
+##### 接口
+
+```verilog
+module IF_ID (
+    input   wire            clk     ,
+    input   wire            stall   ,
+    input   wire            flush   ,
+
+    input   wire    [8:0]   IF_pc_4 ,
+    input   wire    [31:0]  IF_inst,
+    
+    output  wire    [8:0]   ID_pc_4 ,
+    output  wire    [31:0]  ID_inst      
+);
+```
+
+##### 例化
+
+```verilog
+IF_ID xxx (
+    .clk        (  ),
+    .stall      (  ),
+    .flush      (  ),
+    .IF_pc_4    (  ),
+    .IF_inst    (  ),
+    .ID_pc_4    (  ),
+    .ID_inst    (  )
+);
+```
+####ID/EX寄存器：
+
+存储的数据：pc+4、inst、signext 、aluop、alusrc、memread、emwrite、memtoreg、regwrite、regdst、branch、branchne、jump、jumpr、link    
+##### 接口
+
+```verilog
+module ID_EX (
+    input   wire            clk         ,
+    input   wire            stall       ,
+    input   wire            flush       ,
+
+    input   wire    [8:0]   ID_pc_4     ,
+    input   wire    [31:0]  ID_inst     ,
+
+    output  wire            EX_signext  ,
+    output  wire            EX_aluop    ,
+    output  wire            EX_alusrc   ,
+    output  wire            EX_memread  ,
+    output  wire            EX_memwrite ,
+    output  wire            EX_memtoreg ,
+    output  wire            EX_regwrite ,
+    output  wire            EX_regdst   ,
+    output  wire            EX_branch   ,
+    output  wire            EX_branchne ,
+    output  wire            EX_jump     ,
+    output  wire            EX_jumpr    ,
+    output  wire            EX_link     ,
+    
+    output  wire    [8:0]   EX_pc_4     ,
+    output  wire    [31:0]  EX_inst      
+);
+```
+##### 例化
+
+```verilog
+ID_EX xxx (
+    .clk        (   ),
+    .stall      (   ),
+    .flush      (   ),
+    .ID_pc_4    (   ),
+    .ID_inst    (   ),
+    .EX_signext (   ),
+    .EX_aluop   (   ),
+    .EX_alusrc  (   ),
+    .EX_memread (   ),
+    .EX_memwrite(   ),
+    .EX_memtoreg(   ),
+    .EX_regwrite(   ),
+    .EX_regdst  (   ),
+    .EX_branch  (   ),
+    .EX_branchne(   ),
+    .EX_jump    (   ),
+    .EX_jumpr   (   ),
+    .EX_link    (   ),
+    .EX_pc_4    (   ),
+    .EX_inst    (   )
+);
+```
+####EX/MEM寄存器：
+
+存储的数据：pc+4、inst、memread、memwrite、memtoreg、regwrite、regdst、link      
+##### 接口
+
+```verilog
+module EX_MEM (
+    input   wire            clk             ,
+    input   wire            stall           ,
+    input   wire            flush           ,
+
+    input   wire    [8:0]   EX_pc_4         ,
+    input   wire    [31:0]  EX_inst         ,
+
+    output  wire            MEM_memread     ;
+    output  wire            MEM_memwrite    ;
+    output  wire            MEM_memtoreg    ;
+    output  wire            MEM_regwrite    ;
+    output  wire            MEM_regdst      ;
+    output  wire            MEM_link        ;
+    
+    output  wire    [8:0]   MEM_pc_4        ,
+    output  wire    [31:0]  MEM_inst      
+);
+```
+
+##### 例化
+
+```verilog
+EX_MEM xxx(
+    .clk            (   ),
+    .stall          (   ),
+    .flush          (   ),
+    .EX_pc_4        (   ),
+    .EX_inst        (   ),
+    .MEM_memread    (   ),
+    .MEM_memwrite   (   ),
+    .MEM_memtoreg   (   ),
+    .MEM_regwrite   (   ),
+    .MEM_regdst     (   ),
+    .MEM_link       (   ),
+    .MEM_pc_4       (   ),
+    .MEM_inst       (   )
+);
+```
+
+####MEM_WB寄存器：
+#####接口：
+```verilog
+module EX_MEM (
+    input   wire            clk         ,
+    input   wire            stall       ,
+    input   wire            flush       ,
+
+    input   wire    [8:0]   MEM_pc_4    ,
+    input   wire    [31:0]  MEM_inst    ,
+
+    output  wire            WB_memtoreg ,
+    output  wire            WB_regwrite ,
+    output  wire            WB_regdst   ,  
+    output  wire            WB_link     ,
+
+    output  wire    [8:0]   WB_pc_4     ,
+    output  wire    [31:0]  WB_ins
+);
+```
+
+##### 例化
+
+```verilog
+MEM_WB xxx(
+    .clk            (   ),
+    .stall          (   ),
+    .flush          (   ),
+    .MEM_pc_4       (   ),
+    .MEM_inst       (   ),
+    .WB_memtoreg    (   ),
+    .WB_regwrite    (   ),
+    .WB_regdst      (   ),
+    .WB_link        (   ),
+    .WB_pc_4        (   ),
+    .WB_ins         (   ),
+);
+```
