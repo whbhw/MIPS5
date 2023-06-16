@@ -2,15 +2,13 @@
 /*                              CPU_TOP_PIPELINE                              */
 /* -------------------------------------------------------------------------- */
 module CPU_TOP_PIPELINE(
-    input   clk     ,
-    input   rst_n   
+    input   wire        clk     ,
+    input   wire        rst_n   
 );
 
-/* --------------------------- instanciation of PC -------------------------- */
-wire    [8:0]   IF_pc       ;
-wire    [8:0]   IF_pc_4     ;
-wire    [8:0]   IF_pc_next  ;
+`include "CPU_TOP_PIPELINE_wires.vh"
 
+/* --------------------------- instanciation of PC -------------------------- */
 PC u_pc (
     .pc         ( IF_pc     ),
     .pc_4       ( IF_pc_4   ),
@@ -22,8 +20,6 @@ PC u_pc (
 
 
 /* ------------------------ instanciation of INSTMEM ------------------------ */
-wire    [31:0]   IF_inst;
-
 INSTMEM u_instmem (
     .Address    ( IF_pc     ),
     .dout       ( IF_inst   )
@@ -31,14 +27,6 @@ INSTMEM u_instmem (
 
 
 /* ------------------------- instanciation of HZDPU ------------------------- */
-wire    [1:0]   pcop    ;
-wire    [2:0]   flush   ;
-wire            stall   ;
-
-wire            ID_jnjr ;
-wire            EX_bjjr ;
-wire            hzdlu   ;
-
 HZDPU u_hzdpu (
     .pcop       ( pcop      ),
     .flush      ( flush     ),
@@ -49,9 +37,6 @@ HZDPU u_hzdpu (
 );
 
 /* -------------------------- instaciation of IF_ID ------------------------- */
-wire    [8:0]   ID_pc_4 ;
-wire    [31:0]  ID_inst ;
-
 IF_ID u_if_id (
     .clk        ( clk       ),
     .rst_n      ( rst_n     ),
@@ -64,10 +49,6 @@ IF_ID u_if_id (
 );
 
 /* --------------------------- instanciation of RF --------------------------- */
-wire    [31:0]  ID_data1    ;
-wire    [31:0]  ID_data2    ;
-wire    [31:0]  WB_data     ;
-
 RF u_rf (
     .rd1addr    ( ID_inst[25:21]    ),
     .rd1data    ( ID_data1          ),
@@ -84,8 +65,6 @@ RF u_rf (
 );
 
 /* ------------------------- instanciation of EXTEND ------------------------ */
-wire    [31:0]  ID_extend   ;
-
 EXTEND u_extend (
     .extend_out ( ID_extend         ),
     .extend_in  ( ID_inst[15:0]     ),
@@ -93,29 +72,6 @@ EXTEND u_extend (
 );
 
 /* -------------------------- instanciation of CTRL ------------------------- */
-wire            signext ;   // 符号扩展(1符号,0无符号)
-
-wire    [1:0]   aluop   ;   // alu初步控制编码
-wire            alusrc  ;   // alu输入来源选择
-
-wire            memread ;   // 数据内存读取控制
-wire            memwrite;   // 数据内存写入控制
-wire            memtoreg;   // 数据寄存器写入来源选择
-
-wire            regread1;   // 数据寄存器读取1标志
-wire            regread2;   // 数据寄存器读取2标志
-wire            regwrite;   // 数据寄存器写入控制
-wire            regdst  ;   // 数据寄存器写入地址来源选择
-
-wire            branch  ;   // 分支指令标志
-wire            branchne;   // bne(1)/beq(0)标志,前提branch有效
-wire            jump    ;   // 跳转指令标志
-wire            jumpr   ;   // jr标志,前提jump有效
-wire            link    ;   // jal标志,前提jump有效
-
-wire    [5:0]   opcode  ;   // 指令opcode部分输入
-wire    [5:0]   funct   ;   // 指令funct部分输入
-
 CTRL u_ctrl (
     .signext    (signext    ),  // 符号扩展(1符号,0无符号)
 
@@ -143,24 +99,6 @@ CTRL u_ctrl (
 
 
 /* ------------------------- instanciation of ID_EX ------------------------- */
-wire            EX_signext ;
-wire            EX_aluop   ;
-wire            EX_alusrc  ;
-wire            EX_memread ;
-wire            EX_memwrite;
-wire            EX_memtoreg;
-wire            EX_regread1;
-wire            EX_regread2;
-wire            EX_regwrite;
-wire            EX_regdst  ;
-wire            EX_branch  ;
-wire            EX_branchne;
-wire            EX_jump    ;
-wire            EX_jumpr   ;
-wire            EX_link    ;
-wire    [8:0]   EX_pc_4    ;
-wire    [31:0]  EX_inst    ;
-
 ID_EX u_id_ex (
     .clk        (clk        ),
     .rst_n      (rst_n      ),
@@ -208,9 +146,6 @@ ID_EX u_id_ex (
 );
 
 /* ------------------------ instanciation of ALU_CTRL ----------------------- */
-wire    [3:0]   alu_ctrl;
-wire    [5:0]   alu_input; // the input for alu_ctrl
-
 ALUCTRL u_aluctrl (
     .alu_ctrl   (alu_ctrl   ),
     .aluop      (EX_aluop   ),
@@ -218,11 +153,6 @@ ALUCTRL u_aluctrl (
 );
 
 /* -------------------------- instanciation of ALU -------------------------- */
-wire    [31:0]  EX_alu_res ;
-wire            EX_zero    ;
-wire    [31:0]  alu_data1  ;
-wire    [31:0]  alu_data2  ; //立即数通道
-
 ALU u_alu (
     .alu_res    (EX_alu_res     ),
     .zero       (EX_zero        ),
