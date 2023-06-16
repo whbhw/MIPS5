@@ -372,16 +372,26 @@ FWDPU xxx (
 
 ### HZDPU
 
+#### 说明
+
+优先级从高到低
+|Hazard     |段 |处理方式   |
+|:-:        |:-:|:-:        |
+|hzdlu      |EX |pcop = 3<br/>  stall IF_ID ID_EX<br/>  flush EX_MEM    |
+|branch/jr  |EX |pcop = 2<br/>  flush IF_ID ID_EX   |
+|jump(!jr)  |ID |pcop = 1<br/>  flush IF_ID |
+|none       |-- |pcop = 0   |
+
 #### 接口
 
 ```verilog
 module HZDPU (
-    output  wire    [1:0]   pcop        ,
-    output  wire    [2:0]   flush       ,
-    output  wire            stall       ,
+    output  reg     [1:0]   pcop        ,
+    output  reg     [2:0]   flush       ,
+    output  reg             stall       ,
 
     input   wire            ID_jnjr     ,
-    input   wire            EX_jjr      ,
+    input   wire            EX_bjjr     ,
     input   wire            hzdlu       
 );
 ```
@@ -395,7 +405,7 @@ HZDPU xxx (
     .stall      (   ),
 
     .ID_jnjr    (   ),
-    .EX_jjr     (   ),
+    .EX_bjjr    (   ),
     .hzdlu      (   )
 );
 ```
