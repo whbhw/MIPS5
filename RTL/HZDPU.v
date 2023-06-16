@@ -4,7 +4,7 @@ module HZDPU (
     output  reg             stall       ,
 
     input   wire            ID_jnjr     ,
-    input   wire            EX_bjjr      ,
+    input   wire            EX_bjjr     ,
     input   wire            hzdlu       
 );
     always @(*) begin
