@@ -474,6 +474,10 @@ module ID_EX (
     input   wire    [8:0]   ID_pc_4     ,
     input   wire    [31:0]  ID_inst     ,
 
+    input   wire    [31:0]  ID_data1    ,
+    input   wire    [31:0]  ID_data2    ,
+    input   wire    [31:0]  ID_extend   ,
+
     input   wire            ID_signext  ,
     input   wire            ID_aluop    ,
     input   wire            ID_alusrc   ,
@@ -521,6 +525,9 @@ ID_EX xxx (
     .flush      (   ),
     .ID_pc_4    (   ),
     .ID_inst    (   ),
+    .ID_data1   (   ),
+    .ID_data2   (   ),
+    .ID_extend  (   ),
     .ID_signext (   ),
     .ID_aluop   (   ),
     .ID_alusrc  (   ),
