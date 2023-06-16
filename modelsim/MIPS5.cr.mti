@@ -1,4 +1,4 @@
-../RTL/EXTEND.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/EXTEND.v
+../RTL/EXTEND.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/EXTEND.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module EXTEND
 
@@ -15,7 +15,7 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	TB_CPU_TOP_SINGLE_
 
-} {} {}} ../RTL/DATAMEM.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/DATAMEM.v
+} {} {}} ../RTL/DATAMEM.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/DataMem.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module DATAMEM
 
@@ -29,7 +29,7 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	ALUCTRL
 
-} {} {}} ../RTL/ALU.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v
+} {} {}} ../RTL/ALU.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ALU.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module ALU
 
@@ -43,14 +43,14 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	EXTEND
 
-} {} {}} ../RTL/CPU_TOP_SINGLE.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v
+} {} {}} ../RTL/CPU_TOP_SINGLE.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CPU_TOP_SINGLE.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module CPU_TOP_SINGLE
 
 Top level modules:
 	CPU_TOP_SINGLE
 
-} {} {}} ../RTL/PC.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/PC.v
+} {} {}} ../RTL/PC.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/PC.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module PC
 
@@ -64,6 +64,14 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	DATAMEM
 
+} {} {}} C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/IF_ID.v {2 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/IF_ID.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module IF_ID
+** Warning: C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/IF_ID.v(21): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	IF_ID
+
 } {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module ALU
@@ -71,7 +79,7 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	ALU
 
-} {} {}} ../testbench/tb_ALU.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v
+} {} {}} ../testbench/tb_ALU.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_ALU.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module TB_ALU_SENDER
 -- Compiling module TB_ALU_RECEIVER
@@ -81,29 +89,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	TB_ALU_
 
-} {} {}} ../RTL/INSTMEM.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/INSTMEM.v
+} {} {}} ../RTL/INSTMEM.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/INSTMEM.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module INSTMEM
 
 Top level modules:
 	INSTMEM
 
-} {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/PC.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/PC.v
+} {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v {0 vlog\ -work\ work\ -stats=none\ F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v\nModel\ Technology\ ModelSim\ -\ Intel\ FPGA\ Edition\ vlog\ 2020.1\ Compiler\ 2020.02\ Feb\ 28\ 2020\n--\ Compiling\ module\ CUP_TOP_SINGLE\n**\ Error\ (suppressible):\ F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v(102):\ (vlog-2388)\ 'signext'\ already\ declared\ in\ this\ scope\ (CUP_TOP_SINGLE)\ at\ F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v(32).\n**\ Error\ (suppressible):\ F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v(125):\ (vlog-2388)\ 'alu_ctrl'\ already\ declared\ in\ this\ scope\ (CUP_TOP_SINGLE)\ at\ F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v(111).\n**\ Error:\ (vlog-13069)\ F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v(155):\ near\ \",\":\ syntax\ error,\ unexpected\ ',',\ expecting\ '\}'.\n**\ Error:\ (vlog-13069)\ F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v(179):\ near\ \")\":\ syntax\ error,\ unexpected\ ')'.\n\n {6.0 8.0} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/PC.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/PC.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module PC
 
 Top level modules:
 	PC
-
-} {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v {0 vlog\ -work\ work\ -stats=none\ F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v\nModel\ Technology\ ModelSim\ -\ Intel\ FPGA\ Edition\ vlog\ 2020.1\ Compiler\ 2020.02\ Feb\ 28\ 2020\n--\ Compiling\ module\ CUP_TOP_SINGLE\n**\ Error\ (suppressible):\ F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v(102):\ (vlog-2388)\ 'signext'\ already\ declared\ in\ this\ scope\ (CUP_TOP_SINGLE)\ at\ F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v(32).\n**\ Error\ (suppressible):\ F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v(125):\ (vlog-2388)\ 'alu_ctrl'\ already\ declared\ in\ this\ scope\ (CUP_TOP_SINGLE)\ at\ F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v(111).\n**\ Error:\ (vlog-13069)\ F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v(155):\ near\ \",\":\ syntax\ error,\ unexpected\ ',',\ expecting\ '\}'.\n**\ Error:\ (vlog-13069)\ F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v(179):\ near\ \")\":\ syntax\ error,\ unexpected\ ')'.\n\n {6.0 8.0} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module TB_ALU_SENDER
--- Compiling module TB_ALU_RECEIVER
--- Compiling module TB_ALU_CLKGEN
--- Compiling module TB_ALU_
-
-Top level modules:
-	TB_ALU_
 
 } {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/INSTMEM.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/INSTMEM.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -112,7 +110,17 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	INSTMEM
 
-} {} {}} ../testbench/tb_CTRL.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CTRL.v
+} {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TB_ALU_SENDER
+-- Compiling module TB_ALU_RECEIVER
+-- Compiling module TB_ALU_CLKGEN
+-- Compiling module TB_ALU_
+
+Top level modules:
+	TB_ALU_
+
+} {} {}} ../testbench/tb_CTRL.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_CTRL.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module TB_CTRL_SENDER
 -- Compiling module TB_CTRL_RECEIVER
@@ -122,7 +130,7 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	TB_CTRL_
 
-} {} {}} ../RTL/RF.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/RF.v
+} {} {}} ../RTL/RF.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/RF.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module RF
 
@@ -136,14 +144,14 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	RF
 
-} {} {}} ../RTL/CTRL.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CTRL.v
+} {} {}} ../RTL/CTRL.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CTRL.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module CTRL
 
 Top level modules:
 	CTRL
 
-} {} {}} ../testbench/tb_CPU_TOP_SINGLE.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CPU_TOP_SINGLE.v
+} {} {}} ../testbench/tb_CPU_TOP_SINGLE.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_CPU_TOP_SINGLE.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module TB_CPU_TOP_SINGLE_SENDER
 -- Compiling module TB_CPU_TOP_SINGLE_RECEIVER
@@ -153,7 +161,7 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	TB_CPU_TOP_SINGLE_
 
-} {} {}} ../RTL/ALUCTRL.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALUCTRL.v
+} {} {}} ../RTL/ALUCTRL.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ALUCTRL.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module ALUCTRL
 
