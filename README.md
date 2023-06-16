@@ -22,7 +22,7 @@ jal指令由于没有slot，返回时到达下一条指令（PC+4），而非下
 | RF, EXTEND |
 | 单周期结构框图 | CPU_TOP_SINGLE调试 |
 | FWDPU, HZDPU |
-| 流水线结构框图 | CPU_TOP调试 |
+| 流水线结构框图 | CPU_TOP_PIPELINE调试 |
 
 ### dyy
 
@@ -32,4 +32,4 @@ jal指令由于没有slot，返回时到达下一条指令（PC+4），而非下
 | PC |
 | CPU_TOP_SINGLE |
 | 段间寄存器 |
-| CPU_TOP |
+| CPU_TOP_PIPELINE |
