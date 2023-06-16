@@ -391,7 +391,7 @@ module HZDPU (
     output  reg             stall       ,
 
     input   wire            ID_jnjr     ,
-    input   wire            EX_bjjr      ,
+    input   wire            EX_bjjr     ,
     input   wire            hzdlu       
 );
 ```
@@ -405,7 +405,7 @@ HZDPU xxx (
     .stall      (   ),
 
     .ID_jnjr    (   ),
-    .EX_bjjr     (   ),
+    .EX_bjjr    (   ),
     .hzdlu      (   )
 );
 ```
