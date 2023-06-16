@@ -1,8 +1,10 @@
-// NO imexplicit wire
-`default_nettype none
 /* -------------------------------------------------------------------------- */
 /*                              CPU_TOP_PIPELINE                              */
 /* -------------------------------------------------------------------------- */
+
+// NO imexplicit wire
+`default_nettype none
+
 module CPU_TOP_PIPELINE(
     input   wire        clk     ,
     input   wire        rst_n   
@@ -187,5 +189,6 @@ FWDPU u_fwdpu (
 
 
 endmodule
+
 // recover imexplicit wire
 `default_nettype wire
