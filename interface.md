@@ -342,6 +342,36 @@ FWDPU xxx (
 );
 ```
 
+### HZDPU
+
+#### 接口
+
+```verilog
+module HZDPU (
+    output  wire    [1:0]   pcop        ,
+    output  wire    [2:0]   flush       ,
+    output  wire            stall       ,
+
+    input   wire            ID_jnjr     ,
+    input   wire            EX_jjr      ,
+    input   wire            hzdlu       
+);
+```
+
+#### 例化
+
+```verilog
+HZDPU xxx (
+    .pcop       (   ),
+    .flush      (   ),
+    .stall      (   ),
+
+    .ID_jnjr    (   ),
+    .EX_jjr     (   ),
+    .hzdlu      (   )
+);
+```
+
 ### 段间寄存器
 
 #### 各段间寄存器存储控制信号
