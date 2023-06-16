@@ -117,7 +117,7 @@ CTRL xxx (
 |inst    |opcode  ||signext |aluop   |alusrc  |memread |memwrite    |memtoreg*  |regread1   |regread2   |regwrite|regdst  |branch  |branchne*|jump    |jumpr   |link    |
 |:--:|:--:|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 |lw |23 ||1 |00    |1  |1  |0  |1  |1   |0  |1  |0  |0  |X  |0  |X  |0  |
-|sw |2b ||1 |00    |1  |0  |1  |X  |1   |0  |0  |X  |0  |X  |0  |X  |X  |
+|sw |2b ||1 |00    |1  |0  |1  |X  |1   |1  |0  |X  |0  |X  |0  |X  |X  |
 |beq|04 ||1 |01    |0  |0  |0  |X  |1   |1  |0  |X  |1  |0  |0  |X  |0  |
 |bne|05 ||1 |01    |0  |0  |0  |X  |1   |1  |0  |X  |1  |1  |0  |X  |0  |
 |j  |02 ||X |11    |0  |0  |0  |X  |0   |0  |0  |X  |0  |X  |1  |0  |0  |
@@ -299,6 +299,34 @@ DATAMEM xxx (
 ## 流水线相关接口
 
 ### FWDPU
+
+#### 说明
+
+```verilog
+// rs
+// default: rs no forward
+if (EX_regread1 && (EX_inst[25:21]) != 5'd0)) begin
+    if (MEM_regwrite && (MEM_wraddr == EX_inst[25:21])) begin
+        if (MEM_memread) begin
+            // load-use Hazard
+        end else begin
+            // rs forward MEM
+        end
+    end else if (WB_regwrite && (WB_wraddr == EX_inst[25:21])) begin
+        // rs forward WB
+    end
+end
+
+// rt
+// default: rt no forward
+if (EX_regread1 && (EX_inst[20:16]) != 5'd0)) begin
+    if (MEM_regwrite && (MEM_wraddr == EX_inst[20:16])) begin
+        // rt forward MEM
+    end else if (WB_regwrite && (WB_wraddr == EX_inst[20:16])) begin
+        // rt forward WB
+    end
+end
+```
 
 #### 接口
 
