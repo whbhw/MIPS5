@@ -1,3 +1,5 @@
+// NO imexplicit wire
+`default_nettype none
 /* -------------------------------------------------------------------------- */
 /*                              CPU_TOP_PIPELINE                              */
 /* -------------------------------------------------------------------------- */
@@ -185,3 +187,5 @@ FWDPU u_fwdpu (
 
 
 endmodule
+// recover imexplicit wire
+`default_nettype wire
