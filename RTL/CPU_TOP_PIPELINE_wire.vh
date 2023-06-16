@@ -2,8 +2,6 @@
 wire    [8:0]   IF_pc       ;
 wire    [8:0]   IF_pc_4     ;
 wire    [8:0]   IF_pc_next  ;
-
-//
 wire    [31:0]  IF_inst     ;
 
 //
