@@ -7,14 +7,14 @@ module CPU_TOP_PIPELINE(
 );
 
 /* --------------------------- instanciation of PC -------------------------- */
-wire    [8:0]   IF_pc   ;
-wire    [8:0]   IF_pc_4 ;
-wire    [8:0]   pc_next ;
+wire    [8:0]   IF_pc       ;
+wire    [8:0]   IF_pc_4     ;
+wire    [8:0]   IF_pc_next  ;
 
 PC u_pc (
     .pc         ( IF_pc     ),
     .pc_4       ( IF_pc_4   ),
-    .pc_next    ( pc_next   ),
+    .pc_next    ( IF_pc_next),
 
     .clk        ( clk       ),
     .rst_n      ( rst_n     )
@@ -31,7 +31,7 @@ INSTMEM u_instmem (
 
 
 /* ------------------------- instanciation of HZDPU ------------------------- */
-wire            pcop    ;
+wire    [1:0]   pcop    ;
 wire    [2:0]   flush   ;
 wire            stall   ;
 
@@ -44,7 +44,7 @@ HZDPU u_hzdpu (
     .flush      ( flush     ),
     .stall      ( stall     ),
     .ID_jnjr    ( ID_jnjr   ),
-    .EX_jjr     ( EX_bjjr    ),
+    .EX_bjjr    ( EX_bjjr   ),
     .hzdlu      ( hzdlu     )
 );
 
@@ -52,10 +52,7 @@ HZDPU u_hzdpu (
 wire    [8:0]   ID_pc_4 ;
 wire    [31:0]  ID_inst ;
 
-wire            stall   ;
-wire    [2:0]   flush   ;
-
-IF_ID u_if+id (
+IF_ID u_if_id (
     .clk        ( clk       ),
     .rst_n      ( rst_n     ),
     .stall      ( stall     ),
@@ -78,7 +75,7 @@ RF u_rf (
     .rd2addr    ( ID_inst[20:16]    ),
     .rd2data    ( ID_data2          ),
 
-    .wraddr     ( WB_ins[15:11]     ),
+    .wraddr     ( WB_inst[15:11]    ),
     .wrdata     ( WB_data           ),
     .wren       ( WB_regwrite       ),
 
