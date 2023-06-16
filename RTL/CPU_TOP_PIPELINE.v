@@ -6,7 +6,7 @@ module CPU_TOP_PIPELINE(
     input   wire        rst_n   
 );
 
-`include "CPU_TOP_PIPELINE_wires.vh"
+`include "CPU_TOP_PIPELINE_wire.vh"
 
 /* --------------------------- instanciation of PC -------------------------- */
 PC u_pc (
