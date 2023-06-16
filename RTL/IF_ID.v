@@ -10,6 +10,7 @@ module IF_ID (
     output  wire    [8:0]   ID_pc_4 ,
     output  wire    [31:0]  ID_inst      
 );
+parameter NOP = 8'h0000_0020;
 
 reg [40:0]  inner_reg;
 always @(posedge clk or negedge rst_n) begin
@@ -18,7 +19,7 @@ always @(posedge clk or negedge rst_n) begin
     end
     else    begin
         if (flush) begin
-            inner_reg   <=  8'h0000_0020;
+            inner_reg   <=  {9'b0,NOP};
         end
         else if (stall) begin
             inner_reg   <=  inner_reg;
