@@ -1,7 +1,7 @@
 module FWDPU (
-    output  wire    [1:0]   fwdrs       ,
-    output  wire    [1:0]   fwdrt       ,
-    output  wire            hzdlu       ,
+    output  reg     [1:0]   fwdrs       ,
+    output  reg     [1:0]   fwdrt       ,
+    output  reg             hzdlu       ,
 
     input   wire            EX_regread1 ,
     input   wire            EX_regread2 ,
@@ -19,7 +19,7 @@ module FWDPU (
         // default: rs no forward
         fwdrs = 2'd0;
         hzdlu = 1'b0;
-        if (EX_regread1 && (EX_inst[25:21]) != 5'd0)) begin
+        if (EX_regread1 && (EX_inst[25:21] != 5'd0)) begin
             if (MEM_regwrite && (MEM_wraddr == EX_inst[25:21])) begin
                 if (MEM_memread) begin
                     // load-use Hazard
@@ -42,7 +42,7 @@ module FWDPU (
         // rt
         // default: rt no forward
         fwdrt = 2'd0;
-        if (EX_regread1 && (EX_inst[20:16]) != 5'd0)) begin
+        if (EX_regread1 && (EX_inst[20:16] != 5'd0)) begin
             if (MEM_regwrite && (MEM_wraddr == EX_inst[20:16])) begin
                 // rt forward MEM
                 fwdrt = 2'd1;

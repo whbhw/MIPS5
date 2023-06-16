@@ -305,7 +305,7 @@ DATAMEM xxx (
 ```verilog
 // rs
 // default: rs no forward
-if (EX_regread1 && (EX_inst[25:21]) != 5'd0)) begin
+if (EX_regread1 && (EX_inst[25:21] != 5'd0)) begin
     if (MEM_regwrite && (MEM_wraddr == EX_inst[25:21])) begin
         if (MEM_memread) begin
             // load-use Hazard
@@ -319,7 +319,7 @@ end
 
 // rt
 // default: rt no forward
-if (EX_regread1 && (EX_inst[20:16]) != 5'd0)) begin
+if (EX_regread1 && (EX_inst[20:16] != 5'd0)) begin
     if (MEM_regwrite && (MEM_wraddr == EX_inst[20:16])) begin
         // rt forward MEM
     end else if (WB_regwrite && (WB_wraddr == EX_inst[20:16])) begin
@@ -332,9 +332,9 @@ end
 
 ```verilog
 module FWDPU (
-    output  wire    [1:0]   fwdrs       ,
-    output  wire    [1:0]   fwdrt       ,
-    output  wire            hzdlu       ,
+    output  reg     [1:0]   fwdrs       ,
+    output  reg     [1:0]   fwdrt       ,
+    output  reg             hzdlu       ,
 
     input   wire            EX_regread1 ,
     input   wire            EX_regread2 ,
