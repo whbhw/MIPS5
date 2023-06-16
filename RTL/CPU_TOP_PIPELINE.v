@@ -36,7 +36,7 @@ wire    [2:0]   flush   ;
 wire            stall   ;
 
 wire            ID_jnjr ;
-wire            EX_jjr  ;
+wire            EX_bjjr ;
 wire            hzdlu   ;
 
 HZDPU u_hzdpu (
@@ -44,7 +44,7 @@ HZDPU u_hzdpu (
     .flush      ( flush     ),
     .stall      ( stall     ),
     .ID_jnjr    ( ID_jnjr   ),
-    .EX_jjr     ( EX_jjr    ),
+    .EX_jjr     ( EX_bjjr    ),
     .hzdlu      ( hzdlu     )
 );
 
