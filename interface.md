@@ -431,6 +431,7 @@ HZDPU xxx (
 ```verilog
 module IF_ID (
     input   wire            clk     ,
+    input   wire            rst_n   ,
     input   wire            stall   ,
     input   wire            flush   ,
 
@@ -447,6 +448,7 @@ module IF_ID (
 ```verilog
 IF_ID xxx (
     .clk        (  ),
+    .rst_n      (  ),
     .stall      (  ),
     .flush      (  ),
     .IF_pc_4    (  ),
@@ -465,6 +467,7 @@ IF_ID xxx (
 ```verilog
 module ID_EX (
     input   wire            clk         ,
+    input   wire            rst_n       ,
     input   wire            stall       ,
     input   wire            flush       ,
 
@@ -513,6 +516,7 @@ module ID_EX (
 ```verilog
 ID_EX xxx (
     .clk        (   ),
+    .rst_n      (   ),
     .stall      (   ),
     .flush      (   ),
     .ID_pc_4    (   ),
@@ -561,6 +565,7 @@ ID_EX xxx (
 ```verilog
 module EX_MEM (
     input   wire            clk             ,
+    input   wire            rst_n           ,
     input   wire            stall           ,
     input   wire            flush           ,
 
@@ -591,6 +596,7 @@ module EX_MEM (
 ```verilog
 EX_MEM xxx(
     .clk            (   ),
+    .rst_n          (   ),
     .stall          (   ),
     .flush          (   ),
     .EX_pc_4        (   ),
@@ -619,6 +625,7 @@ EX_MEM xxx(
 ```verilog
 module EX_MEM (
     input   wire            clk         ,
+    input   wire            rst_n       ,
     input   wire            stall       ,
     input   wire            flush       ,
 
@@ -645,6 +652,7 @@ module EX_MEM (
 ```verilog
 MEM_WB xxx(
     .clk            (   ),
+    .rst_n          (   ),
     .stall          (   ),
     .flush          (   ),
     .MEM_pc_4       (   ),
