@@ -15,7 +15,7 @@ parameter NOP = 8'h0000_0020;
 reg [40:0]  inner_reg;
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
-        inner_reg   <=  0;
+        inner_reg   <=  {9'b0,NOP};
     end
     else    begin
         if (flush) begin

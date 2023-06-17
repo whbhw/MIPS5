@@ -686,7 +686,7 @@ module MEM_WB (
     output  wire    [8:0]   WB_wraddr   ,
 
     output  wire    [8:0]   WB_pc_4     ,
-    output  wire    [31:0]  WB_ins
+    output  wire    [31:0]  WB_inst     
 );
 ```
 
@@ -712,6 +712,6 @@ MEM_WB xxx(
     .WB_data        (   ),
     .WB_wraddr      (   ),
     .WB_pc_4        (   ),
-    .WB_ins         (   ),
+    .WB_inst        (   ),
 );
 ```

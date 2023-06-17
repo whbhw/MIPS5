@@ -22,32 +22,24 @@ module MEM_WB (
     output  wire    [8:0]   WB_wraddr   ,
 
     output  wire    [8:0]   WB_pc_4     ,
-    output  wire    [31:0]  WB_ins
+    output  wire    [31:0]  WB_inst
 );
 parameter NOP = 8'h0000_0020;
 
 reg [4+32+9+9+31:0]  inner_reg;
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
-        inner_reg   <=  {13'b0,NOP};
+        inner_reg   <=  {'b0,NOP};
     end
     else begin
-        if (flush) begin
-            inner_reg   <=  {(4+32+9+9)'b0,NOP};
+        inner_reg   <=  {MEM_memtoreg,
+                         MEM_regwrite,
+                         MEM_regdst  ,
+                         MEM_link    ,
+                         MEM_wraddr  ,
+                         MEM_pc_4    ,
+                         MEM_inst};
         end
-        else if (stall) begin
-            inner_reg   <=  inner_reg;
-        end
-        else begin
-            inner_reg   <=  {MEM_memtoreg,
-                             MEM_regwrite,
-                             MEM_regdst  ,
-                             MEM_link    ,
-                             MEM_wraddr  ,
-                             MEM_pc_4    ,
-                             MEM_inst};
-        end
-    end
 end
 
 assign  {WB_memtoreg ,
@@ -56,7 +48,7 @@ assign  {WB_memtoreg ,
          WB_link     ,
          WB_wraddr   ,
          WB_pc_4     ,
-         WB_ins}  =   inner_reg;
+         WB_inst}  =   inner_reg;
 
 
 endmodule

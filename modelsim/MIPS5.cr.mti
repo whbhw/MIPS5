@@ -1,4 +1,11 @@
-F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/FWDPU.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/FWDPU.v
+../RTL/EXTEND.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/EXTEND.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module EXTEND
+
+Top level modules:
+	EXTEND
+
+} {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/FWDPU.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/FWDPU.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module FWDPU
 
@@ -15,12 +22,36 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	TB_CPU_TOP_SINGLE_
 
+} {} {}} ../RTL/ID_EX.v {2 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ID_EX.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ID_EX
+** Warning: C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ID_EX.v(55): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ID_EX.v(60): (vlog-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+** Warning: C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ID_EX.v(64): (vlog-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+
+Top level modules:
+	ID_EX
+
+} {} {}} ../RTL/DATAMEM.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/DataMem.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module DATAMEM
+
+Top level modules:
+	DATAMEM
+
 } {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALUCTRL.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALUCTRL.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module ALUCTRL
 
 Top level modules:
 	ALUCTRL
+
+} {} {}} ../RTL/ALU.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ALU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALU
+
+Top level modules:
+	ALU
 
 } {} {}} C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ID_EX.v {2 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ID_EX.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -36,6 +67,38 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	EXTEND
+
+} {} {}} ../RTL/EX_MEM.v {2 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/EX_MEM.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module EX_MEM
+** Warning: C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/EX_MEM.v(33): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/EX_MEM.v(38): (vlog-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+** Warning: C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/EX_MEM.v(42): (vlog-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+
+Top level modules:
+	EX_MEM
+
+} {} {}} ../RTL/IF_ID.v {2 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/IF_ID.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module IF_ID
+** Warning: C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/IF_ID.v(13): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	IF_ID
+
+} {} {}} ../RTL/CPU_TOP_SINGLE.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CPU_TOP_SINGLE.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module CPU_TOP_SINGLE
+
+Top level modules:
+	CPU_TOP_SINGLE
+
+} {} {}} ../RTL/PC.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/PC.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PC
+
+Top level modules:
+	PC
 
 } {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/DATAMEM.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/DATAMEM.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -58,6 +121,23 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	ALU
+
+} {} {}} ../testbench/tb_ALU.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_ALU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TB_ALU_SENDER
+-- Compiling module TB_ALU_RECEIVER
+-- Compiling module TB_ALU_CLKGEN
+-- Compiling module TB_ALU_
+
+Top level modules:
+	TB_ALU_
+
+} {} {}} ../RTL/INSTMEM.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/INSTMEM.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module INSTMEM
+
+Top level modules:
+	INSTMEM
 
 } {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/PC.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/PC.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -83,6 +163,30 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	INSTMEM
 
+} {} {}} C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CPU_TOP_PIPELINE.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CPU_TOP_PIPELINE.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module CPU_TOP_PIPELINE
+
+Top level modules:
+	CPU_TOP_PIPELINE
+
+} {} {}} ../testbench/tb_CTRL.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_CTRL.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TB_CTRL_SENDER
+-- Compiling module TB_CTRL_RECEIVER
+-- Compiling module TB_CTRL_CLKGEN
+-- Compiling module TB_CTRL_
+
+Top level modules:
+	TB_CTRL_
+
+} {} {}} ../RTL/RF.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/RF.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RF
+
+Top level modules:
+	RF
+
 } {} {}} C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/MEM_WB.v {2 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/MEM_WB.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module EX_MEM
@@ -98,6 +202,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	RF
 
+} {} {}} ../RTL/HZDPU.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/HZDPU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module HZDPU
+
+Top level modules:
+	HZDPU
+
 } {} {}} C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/EX_MEM.v {2 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/EX_MEM.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module EX_MEM
@@ -106,12 +217,52 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	EX_MEM
 
+} {} {}} ../RTL/CTRL.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CTRL.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module CTRL
+
+Top level modules:
+	CTRL
+
 } {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/HZDPU.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/HZDPU.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module HZDPU
 
 Top level modules:
 	HZDPU
+
+} {} {}} ../testbench/tb_CPU_TOP_SINGLE.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_CPU_TOP_SINGLE.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TB_CPU_TOP_SINGLE_SENDER
+-- Compiling module TB_CPU_TOP_SINGLE_RECEIVER
+-- Compiling module TB_CPU_TOP_SINGLE_CLKGEN
+-- Compiling module TB_CPU_TOP_SINGLE_
+
+Top level modules:
+	TB_CPU_TOP_SINGLE_
+
+} {} {}} ../RTL/FWDPU.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/FWDPU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module FWDPU
+
+Top level modules:
+	FWDPU
+
+} {} {}} ../RTL/MEM_WB.v {2 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/MEM_WB.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module MEM_WB
+** Warning: C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/MEM_WB.v(27): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/MEM_WB.v(32): (vlog-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+
+Top level modules:
+	MEM_WB
+
+} {} {}} ../RTL/ALUCTRL.v {1 {vlog -work work -stats=none C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ALUCTRL.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALUCTRL
+
+Top level modules:
+	ALUCTRL
 
 } {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CTRL.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CTRL.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

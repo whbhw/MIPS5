@@ -107,7 +107,7 @@ ID_EX u_id_ex (
     .clk        (clk        ),
     .rst_n      (rst_n      ),
     .stall      (stall      ),
-    .flush      (flush[0]   ),
+    .flush      (flush[1]   ),
     .ID_pc_4    (ID_pc_4    ),
     .ID_inst    (ID_inst    ),
     .ID_data1   (ID_data1   ),
@@ -149,7 +149,7 @@ ID_EX u_id_ex (
     .EX_wraddr  (EX_wraddr  ),
     .EX_data1   (EX_data1   ),
     .EX_data2   (EX_data2   ),
-    .ED_extend  (ED_extend  ),
+    .EX_extend  (EX_extend  ),
     .EX_pc_4    (EX_pc_4    ),
     .EX_inst    (EX_inst    )
 );
@@ -250,7 +250,7 @@ MEM_WB u_mwm_wb(
     .WB_data        (WB_data        ),
     .WB_wraddr      (WB_wraddr      ),
     .WB_pc_4        (WB_pc_4        ),
-    .WB_ins         (WB_ins         ),
+    .WB_inst        (WB_inst        )
 );
 
 
@@ -262,8 +262,6 @@ assign  ID_jnjr =   (ID_jump&(!ID_jumpr));
 assign  EX_bjjr =   ((EX_zero^EX_branchne)&(EX_branch))|(EX_jump&EX_jumpr);
 
 //PC
-wire    [31:0]  EX_pc_next;
-wire    [31:0]  ID_pc_next;
 always @(*) begin
     case (pcop)
         2'b00   :   IF_pc_next  =   IF_pc_4;
@@ -276,26 +274,26 @@ end
 
 /* ----------------------------------- ID ----------------------------------- */
 assign  ID_pc_next  =   {ID_pc_4[31:28],(ID_inst<<2)};
-assign  ID_wraddr   =   (link)? 'd31    :   (ID_regdst? ID_inst[15:11] : ID_inst[20:16]);
+assign  ID_wraddr   =   (ID_link)? 'd31    :   (ID_regdst? ID_inst[15:11] : ID_inst[20:16]);
 
 /* ----------------------------------- EX ----------------------------------- */
 reg [31:0]  rs;
 always @(*) begin
     case (fwdrs)
         2'b00   :   rs  =   EX_data1;
-        2'b01   :   rs  =   MEM_datain;
+        2'b01   :   rs  =   MEM_data_in;
         2'b00   :   rs  =   WB_data;
         default :   rs  =   EX_data1;
     endcase
 end
 
-reg [31:0]  rd;
+reg [31:0]  rt;
 always @(*) begin
-    case (fwdrd)
-        2'b00   :   rd  =   EX_data2;
-        2'b01   :   rd  =   MEM_datain;
-        2'b00   :   rd  =   WB_data;
-        default :   rd  =   EX_data2;
+    case (fwdrt)
+        2'b00   :   rt  =   EX_data2;
+        2'b01   :   rt  =   MEM_data_in;
+        2'b00   :   rt  =   WB_data;
+        default :   rt  =   EX_data2;
     endcase
 end
 
@@ -304,15 +302,15 @@ assign  alu_input   =   (!EX_alusrc)? EX_inst[5:0] : {3'b100,EX_inst[28:26]};
 
 //ALU
 assign  alu_data1   =   rs;
-assign  alu_data2   =   (!EX_alusrc)? rd    :   EX_extend;
+assign  alu_data2   =   (!EX_alusrc)? rt    :   EX_extend;
 
 //other signals
 wire [31:0]  t1;
-assign  t1=EX_pc_4+ ((link)?0:(EX_extend<<2));
+assign  t1=EX_pc_4+ ((EX_link)?0:(EX_extend<<2));
 assign  EX_pc_next=(EX_jump&EX_jumpr)? rs : t1;
 
-assign  EX_address  =(link)? t1:EX_alu_res;
-assign  EX_data     =   rd;   
+assign  EX_address  =(EX_link)? t1:EX_alu_res;
+assign  EX_data     =   rt;   
 
 /* ----------------------------------- MEM ----------------------------------- */
 assign  MEM_data =   (WB_memtoreg)? datamem_out : MEM_data_in;
