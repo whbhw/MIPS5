@@ -43,6 +43,9 @@ module ID_EX (
     output  wire            EX_jump     ,
     output  wire            EX_jumpr    ,
     output  wire            EX_link     ,
+    output  wire    [31:0]  EX_data1    ,
+    output  wire    [31:0]  EX_data2    ,
+    output  wire    [31:0]  EX_extend   ,
     output  wire    [8:0]   EX_wraddr   ,
     
     output  wire    [8:0]   EX_pc_4     ,
@@ -51,14 +54,14 @@ module ID_EX (
 
 parameter NOP = 8'h0000_0020;
 
-reg [15+9+9+31:0] inner_reg;
+reg [15+32+32+32+9+9+31:0] inner_reg;
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
-        inner_reg   <=  {24'b0,NOP};
+        inner_reg   <=  {(15+32+32+32+9+9)'b0,NOP};
     end
     else begin
         if (flush) begin
-            inner_reg   <=  {24'b0,9'b0,9'b0,NOP};
+            inner_reg   <=  {,NOP};
         end
         else if (stall) begin
             inner_reg   <=  inner_reg;

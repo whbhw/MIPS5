@@ -1,7 +1,7 @@
 //
 wire    [31:0]  IF_pc      ;
 wire    [31:0]  IF_pc_4    ;
-wire    [31:0]  IF_pc_next ;
+reg     [31:0]  IF_pc_next ;
 wire    [31:0]  IF_inst     ;
 
 //
@@ -14,7 +14,7 @@ wire            EX_bjjr     ;
 wire            hzdlu       ;
 
 //
-wire    [8:0]   ID_pc_4     ;
+wire    [31:0]  ID_pc_4     ;
 wire    [31:0]  ID_inst     ;
 
 //
@@ -45,8 +45,8 @@ wire    [5:0]   ID_opcode      ;   // 指令opcode部分输入
 wire    [5:0]   ID_funct       ;   // 指令funct部分输入
 
 //
-wire    [8:0]   ID_wraddr      ;
-wire    [8:0]   EX_wraddr      ;
+wire    [4:0]   ID_wraddr      ;
+wire    [4:0]   EX_wraddr      ;
 
 wire            EX_signext ;
 wire            EX_aluop   ;
@@ -63,7 +63,10 @@ wire            EX_branchne;
 wire            EX_jump    ;
 wire            EX_jumpr   ;
 wire            EX_link    ;
-wire    [8:0]   EX_pc_4    ;
+wire    [31:0]  EX_data1   ;
+wire    [31:0]  EX_data2   ;
+wire    [31:0]  EX_extend  ;
+wire    [31:0]  EX_pc_4    ;
 wire    [31:0]  EX_inst    ;
 
 //
@@ -86,8 +89,10 @@ wire            MEM_memtoreg;
 wire            MEM_regwrite;
 wire            MEM_regdst  ;
 wire            MEM_link    ;
-wire    [8:0]   MEM_wraddr  ;
-wire    [8:0]   MEM_pc_4    ;
+wire    [31:0]  MEM_data_in   ;
+wire    [31:0]  MEM_address_in;
+wire    [4:0]   MEM_wraddr  ;
+wire    [31:0]  MEM_pc_4    ;
 wire    [31:0]  MEM_inst    ;
 
 
@@ -100,7 +105,7 @@ wire            WB_memtoreg ;
 wire            WB_regwrite ;
 wire            WB_regdst   ;
 wire            WB_link     ;
-wire    [8:0]   WB_wraddr   ;
+wire    [4:0]   WB_wraddr   ;
 wire    [31:0]  WB_data     ;
-wire    [8:0]   WB_pc_4     ;
+wire    [31:0]  WB_pc_4     ;
 wire    [31:0]  WB_ins      ;

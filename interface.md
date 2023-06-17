@@ -520,6 +520,9 @@ module ID_EX (
     output  wire            EX_jump     ,
     output  wire            EX_jumpr    ,
     output  wire            EX_link     ,
+    output  wire    [31:0]  EX_data1    ,
+    output  wire    [31:0]  EX_data2    ,
+    output  wire    [31:0]  EX_extend   ,
     output  wire    [8:0]   EX_wraddr   ,
     
     output  wire    [8:0]   EX_pc_4     ,
@@ -571,6 +574,9 @@ ID_EX xxx (
     .EX_jump    (   ),
     .EX_jumpr   (   ),
     .EX_link    (   ),
+    .EX_data1   (   ),
+    .EX_data2   (   ),
+    .EX_extend  (   ),  
     .EX_wraddr  (   ),
     .EX_pc_4    (   ),
     .EX_inst    (   )
@@ -609,6 +615,8 @@ module EX_MEM (
     output  wire            MEM_regwrite    ,
     output  wire            MEM_regdst      ,
     output  wire            MEM_link        ,
+    output  wire    [31:0]  MEM_data_in     ,
+    output  wire    [31:0]  MEM_address_in  ,
     output  wire    [8:0]   MEM_wraddr      ,
     
     output  wire    [8:0]   MEM_pc_4        ,
@@ -641,6 +649,8 @@ EX_MEM xxx(
     .MEM_regwrite   (   ),
     .MEM_regdst     (   ),
     .MEM_link       (   ),
+    .MEM_data_in    (   ),
+    .MEM_address_in (   ),
     .MEM_wraddr     (   ),
     .MEM_pc_4       (   ),
     .MEM_inst       (   )

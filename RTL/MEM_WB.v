@@ -26,14 +26,14 @@ module MEM_WB (
 );
 parameter NOP = 8'h0000_0020;
 
-reg [4+9+9+31:0]  inner_reg;
+reg [4+32+9+9+31:0]  inner_reg;
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
         inner_reg   <=  {13'b0,NOP};
     end
     else begin
         if (flush) begin
-            inner_reg   <=  {4'b0,9'b0,NOP};
+            inner_reg   <=  {(4+32+9+9)'b0,NOP};
         end
         else if (stall) begin
             inner_reg   <=  inner_reg;

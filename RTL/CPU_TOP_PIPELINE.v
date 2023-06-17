@@ -25,8 +25,8 @@ PC u_pc (
 
 /* ------------------------ instanciation of INSTMEM ------------------------ */
 INSTMEM u_instmem (
-    .Address    ( IF_pc     ),
-    .dout       ( IF_inst   )
+    .Address    ( IF_pc[10:2]   ),
+    .dout       ( IF_inst       )
 );
 
 
@@ -46,8 +46,8 @@ IF_ID u_if_id (
     .rst_n      ( rst_n         ),
     .stall      ( stall         ),
     .flush      ( flush[0]      ),
-    .IF_pc_4    ( IF_pc_4[10:2] ),
-    .IF_inst    ( IF_inst[10:2] ),
+    .IF_pc_4    ( IF_pc_4       ),
+    .IF_inst    ( IF_inst       ),
     .ID_pc_4    ( ID_pc_4       ),
     .ID_inst    ( ID_inst       )
 );
@@ -108,8 +108,8 @@ ID_EX u_id_ex (
     .rst_n      (rst_n      ),
     .stall      (stall      ),
     .flush      (flush[0]   ),
-    .ID_pc_4    (IF_pc_4    ),
-    .ID_inst    (IF_inst    ),
+    .ID_pc_4    (ID_pc_4    ),
+    .ID_inst    (ID_inst    ),
     .ID_data1   (ID_data1   ),
     .ID_data2   (ID_data2   ),
     .ID_extend  (ID_extend  ),
@@ -147,6 +147,9 @@ ID_EX u_id_ex (
     .EX_jumpr   (EX_jumpr   ),
     .EX_link    (EX_link    ),
     .EX_wraddr  (EX_wraddr  ),
+    .EX_data1   (EX_data1   ),
+    .EX_data2   (EX_data2   ),
+    .ED_extend  (ED_extend  ),
     .EX_pc_4    (EX_pc_4    ),
     .EX_inst    (EX_inst    )
 );
@@ -210,11 +213,13 @@ EX_MEM u_ex_mem(
     .MEM_regwrite   (MEM_regwrite   ),
     .MEM_regdst     (MEM_regdst     ),
     .MEM_link       (MEM_link       ),
+    .MEM_data_in    (MEM_data_in    ),
+    .MEM_address_in (MEM_address_in ),
     .MEM_wraddr     (MEM_wraddr     ),
     .MEM_pc_4       (MEM_pc_4       ),
     .MEM_inst       (MEM_inst       )
 );
-endmodule
+
 
 /* ------------------------ instanciation of DATAMEM ------------------------ */
 DATAMEM u_datamem (
@@ -249,5 +254,69 @@ MEM_WB u_mwm_wb(
 );
 
 
+/* ----------------------------- wire connection ---------------------------- */
+
+/* ----------------------------------- IF ----------------------------------- */
+//HZDPU
+assign  ID_jnjr =   (ID_jump&(!ID_jumpr));
+assign  EX_bjjr =   ((EX_zero^EX_branchne)&(EX_branch))|(EX_jump&EX_jumpr);
+
+//PC
+wire    [31:0]  EX_pc_next;
+wire    [31:0]  ID_pc_next;
+always @(*) begin
+    case (pcop)
+        2'b00   :   IF_pc_next  =   IF_pc_4;
+        2'b01   :   IF_pc_next  =   ID_pc_next; 
+        2'b10   :   IF_pc_next  =   EX_pc_next;
+        2'b11   :   IF_pc_next  =   IF_pc;
+        default :   IF_pc_next  =   IF_pc;
+    endcase
+end
+
+/* ----------------------------------- ID ----------------------------------- */
+assign  ID_pc_next  =   {ID_pc_4[31:28],(ID_inst<<2)};
+assign  ID_wraddr   =   (link)? 'd31    :   (ID_regdst? ID_inst[15:11] : ID_inst[20:16]);
+
+/* ----------------------------------- EX ----------------------------------- */
+reg [31:0]  rs;
+always @(*) begin
+    case (fwdrs)
+        2'b00   :   rs  =   EX_data1;
+        2'b01   :   rs  =   MEM_datain;
+        2'b00   :   rs  =   WB_data;
+        default :   rs  =   EX_data1;
+    endcase
+end
+
+reg [31:0]  rd;
+always @(*) begin
+    case (fwdrd)
+        2'b00   :   rd  =   EX_data2;
+        2'b01   :   rd  =   MEM_datain;
+        2'b00   :   rd  =   WB_data;
+        default :   rd  =   EX_data2;
+    endcase
+end
+
+//ALU_CTRL
+assign  alu_input   =   (!EX_alusrc)? EX_inst[5:0] : {3'b100,EX_inst[28:26]};
+
+//ALU
+assign  alu_data1   =   rs;
+assign  alu_data2   =   (!EX_alusrc)? rd    :   EX_extend;
+
+//other signals
+wire [31:0]  t1;
+assign  t1=EX_pc_4+ ((link)?0:(EX_extend<<2));
+assign  EX_pc_next=(EX_jump&EX_jumpr)? rs : t1;
+
+assign  EX_address  =(link)? t1:EX_alu_res;
+assign  EX_data     =   rd;   
+
+/* ----------------------------------- MEM ----------------------------------- */
+assign  MEM_data =   (WB_memtoreg)? datamem_out : MEM_data_in;
+
+endmodule
 // recover imexplicit wire
 `default_nettype wire

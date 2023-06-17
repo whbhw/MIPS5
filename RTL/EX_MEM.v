@@ -23,6 +23,8 @@ module EX_MEM (
     output  wire            MEM_regwrite    ,
     output  wire            MEM_regdst      ,
     output  wire            MEM_link        ,
+    output  wire    [31:0]  MEM_data_in     ,
+    output  wire    [31:0]  MEM_address_in  ,
     output  wire    [8:0]   MEM_wraddr      ,
     
     output  wire    [8:0]   MEM_pc_4        ,
@@ -30,14 +32,14 @@ module EX_MEM (
 );
 parameter NOP = 8'h0000_0020;
 
-reg [6+9+9+31:0]  inner_reg;
+reg [6+32+32+9+9+31:0]  inner_reg;
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
         inner_reg   <=  {15'b0,NOP};
     end
     else begin
         if (flush) begin
-            inner_reg   <=  {6'b0,9'b0,9'b0,NOP};
+            inner_reg   <=  {(6+32+32+9+9)'b0,NOP};
         end
         else if (stall) begin
             inner_reg   <=  inner_reg;
