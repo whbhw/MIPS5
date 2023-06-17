@@ -6,17 +6,17 @@ module IF_ID (
     input   wire            flush   ,
 
     input   wire    [31:0]  IF_pc_4 ,
-    input   wire    [31:0]  IF_inst ,
+    input   wire    [31:0]  IF_inst,
     
     output  wire    [31:0]  ID_pc_4 ,
-    output  wire    [31:0]  ID_inst 
+    output  wire    [31:0]  ID_inst      
 );
-parameter NOP = `INST_NOP;
+parameter NOP = 32'h0000_0020;
 
-reg [63:0]  inner_reg;
+reg [61:0]  inner_reg;
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
-        inner_reg   <=  {`DEFAULT_PC_4,NOP};
+        inner_reg   <=  {32'b0,NOP};
     end
     else    begin
         if (flush) begin
@@ -31,8 +31,8 @@ always @(posedge clk or negedge rst_n) begin
     end
 end
 
-assign  ID_pc_4 =   inner_reg[31+32:32] ;
-assign  ID_inst =   inner_reg[31:0]     ;
+assign  ID_pc_4 =   inner_reg[61:32]  ;
+assign  ID_inst =   inner_reg[31:0]   ;
 
 
 endmodule

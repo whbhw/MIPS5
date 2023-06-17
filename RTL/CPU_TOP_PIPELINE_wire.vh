@@ -52,7 +52,7 @@ wire    [31:0]  EX_pc_next  ;
 wire            EX_bjjr     ;
 wire    [4:0]   EX_wraddr   ;
 wire            EX_signext ;
-wire            EX_aluop   ;
+wire    [1:0]   EX_aluop   ;
 wire            EX_alusrc  ;
 wire            EX_memread ;
 wire            EX_memwrite;
@@ -76,7 +76,7 @@ wire    [31:0]  EX_alu_res ;
 wire            EX_zero    ;
 
 wire    [31:0]  EX_data     ;
-wire    [8:0]   EX_address  ;
+wire    [31:0]  EX_address  ;
 
 wire    [3:0]   alu_ctrl;
 wire    [5:0]   alu_input; // the input for alu_ctrl
