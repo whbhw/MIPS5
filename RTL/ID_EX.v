@@ -4,7 +4,7 @@ module ID_EX (
     input   wire            stall       ,
     input   wire            flush       ,
 
-    input   wire    [8:0]   ID_pc_4     ,
+    input   wire    [31:0]  ID_pc_4     ,
     input   wire    [31:0]  ID_inst     ,
 
     input   wire    [31:0]  ID_data1    ,
@@ -26,42 +26,43 @@ module ID_EX (
     input   wire            ID_jump     ,
     input   wire            ID_jumpr    ,
     input   wire            ID_link     ,
-    input   wire    [8:0]   ID_wraddr   ,
+    input   wire    [4:0]   ID_wraddr   ,
 
-    output  wire            EX_signext  ,
-    output  wire            EX_aluop    ,
-    output  wire            EX_alusrc   ,
-    output  wire            EX_memread  ,
-    output  wire            EX_memwrite ,
-    output  wire            EX_memtoreg ,
-    output  wire            EX_regread1 ,
-    output  wire            EX_regread2 ,
-    output  wire            EX_regwrite ,
-    output  wire            EX_regdst   ,
-    output  wire            EX_branch   ,
-    output  wire            EX_branchne ,
-    output  wire            EX_jump     ,
-    output  wire            EX_jumpr    ,
-    output  wire            EX_link     ,
-    output  wire    [31:0]  EX_data1    ,
-    output  wire    [31:0]  EX_data2    ,
-    output  wire    [31:0]  EX_extend   ,
-    output  wire    [8:0]   EX_wraddr   ,
+    output  wire            EX_signext  , //0
+    output  wire    [1:0]   EX_aluop    , //10
+    output  wire            EX_alusrc   , //1
+    output  wire            EX_memread  , //0
+    output  wire            EX_memwrite , //0
+    output  wire            EX_memtoreg , //0
+    output  wire            EX_regread1 , //1
+    output  wire            EX_regread2 , //0
+    output  wire            EX_regwrite , //1
+    output  wire            EX_regdst   , //0
+    output  wire            EX_branch   , //0
+    output  wire            EX_branchne , //0
+    output  wire            EX_jump     , //0
+    output  wire            EX_jumpr    , //0
+    output  wire            EX_link     , //0
+    output  wire    [31:0]  EX_data1    , //
+    output  wire    [31:0]  EX_data2    , //
+    output  wire    [31:0]  EX_extend   , //
+    output  wire    [4:0]   EX_wraddr   , //
     
-    output  wire    [8:0]   EX_pc_4     ,
+    output  wire    [31:0]  EX_pc_4     ,
     output  wire    [31:0]  EX_inst      
 );
 
-parameter NOP = 8'h0000_0020;
-
-reg [15+32+32+32+9+9+31:0] inner_reg;
+parameter NOP = 32'h0000_0020; //addi R0 R0 0
+parameter CTRL= 16'b0101000101000000;
+//15+32+32+32+5+32+31
+reg [179:0] inner_reg;
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
-        inner_reg   <=  {'b0,NOP};
+        inner_reg   <=  {CTRL,NOP};
     end
     else begin
         if (flush) begin
-            inner_reg   <=  {'b0,NOP};
+            inner_reg   <=  {CTRL,96'b0,5'b0,ID_pc_4,NOP};
         end
         else if (stall) begin
             inner_reg   <=  inner_reg;
@@ -83,6 +84,10 @@ always @(posedge clk or negedge rst_n) begin
                              ID_jumpr    ,
                              ID_link     ,
                              ID_wraddr   ,
+
+                             ID_data1    ,
+                             ID_data2    ,
+                             ID_extend   ,
                              ID_pc_4     ,
                              ID_inst     };
         end
@@ -105,7 +110,11 @@ assign {EX_signext  ,
         EX_jumpr    ,
         EX_link     ,
         EX_wraddr   ,
+
+        EX_data1    ,
+        EX_data2    ,
+        EX_extend   ,
         EX_pc_4     ,
-        EX_inst     }   =   inner_reg;
+        EX_inst       } =   inner_reg;
 
 endmodule
