@@ -1,3 +1,4 @@
+`define "REGDEFAULT.vh"
 module PC (
     output  wire    [31:0]  pc      ,
     output  wire    [31:0]  pc_4    ,
@@ -10,7 +11,7 @@ module PC (
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            pc_reg  <=  32'h_00400000;
+            pc_reg  <=  `DEFAULT_PC;
         end
         else begin
             pc_reg  <=  pc_next;

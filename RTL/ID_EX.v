@@ -1,10 +1,11 @@
+`include "REGDEFAULT.vh"
 module ID_EX (
     input   wire            clk         ,
     input   wire            rst_n       ,
     input   wire            stall       ,
     input   wire            flush       ,
 
-    input   wire    [8:0]   ID_pc_4     ,
+    input   wire    [31:0]  ID_pc_4     ,
     input   wire    [31:0]  ID_inst     ,
 
     input   wire    [31:0]  ID_data1    ,
@@ -26,7 +27,7 @@ module ID_EX (
     input   wire            ID_jump     ,
     input   wire            ID_jumpr    ,
     input   wire            ID_link     ,
-    input   wire    [8:0]   ID_wraddr   ,
+    input   wire    [4:0]   ID_wraddr   ,
 
     output  wire            EX_signext  ,
     output  wire            EX_aluop    ,
@@ -46,15 +47,15 @@ module ID_EX (
     output  wire    [31:0]  EX_data1    ,
     output  wire    [31:0]  EX_data2    ,
     output  wire    [31:0]  EX_extend   ,
-    output  wire    [8:0]   EX_wraddr   ,
+    output  wire    [4:0]   EX_wraddr   ,
     
-    output  wire    [8:0]   EX_pc_4     ,
+    output  wire    [31:0]  EX_pc_4     ,
     output  wire    [31:0]  EX_inst      
 );
 
-parameter NOP = 8'h0000_0020;
+parameter NOP = `INST_NOP;
 
-reg [15+32+32+32+9+9+31:0] inner_reg;
+reg [15+32+32+32+5+32+31:0] inner_reg;
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
         inner_reg   <=  {'b0,NOP};

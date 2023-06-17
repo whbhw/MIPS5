@@ -1,11 +1,20 @@
+`define FLAGTEST
+
+`define FINISH_ADDR 32'h00400050
+
 /* -------------------------------------------------------------------------- */
 /*                              CPU_TOP_PIPELINE                              */
 /* -------------------------------------------------------------------------- */
 
 // NO imexplicit wire
 `default_nettype none
-
 module CPU_TOP_PIPELINE(
+    output  wire            finish  ,
+`ifdef FLAGTEST
+    input   wire    [4:0]   rdtaddr ,
+    output  wire    [31:0]  rdtdata ,
+`endif
+
     input   wire        clk     ,
     input   wire        rst_n   
 );
@@ -59,6 +68,11 @@ RF u_rf (
 
     .rd2addr    ( ID_inst[20:16]    ),
     .rd2data    ( ID_data2          ),
+
+`ifdef FLAGTEST
+    .rdtaddr    (rdtaddr   ),
+    .rdtdata    (rdtdata   ),
+`endif
 
     .wraddr     ( WB_wraddr         ),
     .wrdata     ( WB_data           ),
@@ -314,6 +328,9 @@ assign  EX_data     =   rt;
 
 /* ----------------------------------- MEM ----------------------------------- */
 assign  MEM_data =   (WB_memtoreg)? datamem_out : MEM_data_in;
+
+/* ----------------------------------- out ----------------------------------- */
+assign  finish      =   (WB_pc_4 == `FINISH_ADDR + 32'd4);
 
 endmodule
 // recover imexplicit wire

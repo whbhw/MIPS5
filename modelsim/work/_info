@@ -10,675 +10,771 @@ z2
 cModel Technology
 dF:/Users/whb/Documents/MyPrograms/Verilog/UART
 vALU
-Z0 !s110 1686991931
+Z0 !s110 1686993121
 !i10b 1
 !s100 BAdQC8lEHn3B:6G[jdoz71
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IjeHjTZMDjD=>ND0KDBBmT2
+I>dJ=Lf=fWZZeL^ETnH`Y83
 Z2 VDg1SIo80bB@j0V0VzS_@n1
-Z3 dC:/Users/dengy/Desktop/MIPS5/MIPS5-1/modelsim
-Z4 w1684931953
-8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ALU.v
-FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ALU.v
-!i122 636
+Z3 dF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/modelsim
+w1684809459
+8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v
+FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v
+!i122 674
 L0 1 47
-Z5 OV;L;2020.1;71
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1686991930.000000
-!s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ALU.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ALU.v|
+Z5 !s108 1686993120.000000
+!s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v|
 !i113 1
-Z7 o-work work
-Z8 tCvgOpt 0
+Z6 o-work work
+Z7 tCvgOpt 0
 n@a@l@u
 vALUCTRL
 R0
 !i10b 1
 !s100 j@jD^TM5XZ[SIFL:kiEV31
 R1
-I[OP]Wm[OX38F1SiiIebmB0
+IKL:C<dBUW==a9I;Y:iXbV0
 R2
 R3
-Z9 w1684768011
-8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ALUCTRL.v
-FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ALUCTRL.v
-!i122 637
+w1684241671
+8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALUCTRL.v
+FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALUCTRL.v
+!i122 675
 L0 1 33
-R5
+R4
 r1
 !s85 0
 31
-Z10 !s108 1686991931.000000
-!s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ALUCTRL.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ALUCTRL.v|
+Z8 !s108 1686993121.000000
+!s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALUCTRL.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALUCTRL.v|
 !i113 1
+R6
 R7
-R8
 n@a@l@u@c@t@r@l
 vCPU_TOP_PIPELINE
-Z11 !s110 1686991935
+Z9 !s110 1686993125
 !i10b 1
-!s100 k9VN27NYTDXTFcGik6PF?2
+!s100 Q3RB4z?BV5I?SOTKf8f`m3
 R1
-IDQCHneRG59?_G0<I8GMe60
+I585TVF:En3S2S3`DfSe0B1
 R2
 R3
-w1686991925
-8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CPU_TOP_PIPELINE.v
-FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CPU_TOP_PIPELINE.v
-FC:\Users\dengy\Desktop\MIPS5\MIPS5-1\RTL\CPU_TOP_PIPELINE_wire.vh
-!i122 653
-L0 8 424
-R5
+w1686992914
+8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_PIPELINE.v
+FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_PIPELINE.v
+FF:\Users\whb\Documents\MyPrograms\Verilog\MIPS5\RTL\CPU_TOP_PIPELINE_wire.vh
+!i122 688
+L0 11 438
+R4
 r1
 !s85 0
 31
-!s108 1686991935.000000
-!s107 C:\Users\dengy\Desktop\MIPS5\MIPS5-1\RTL\CPU_TOP_PIPELINE_wire.vh|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CPU_TOP_PIPELINE.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CPU_TOP_PIPELINE.v|
+Z10 !s108 1686993125.000000
+!s107 F:\Users\whb\Documents\MyPrograms\Verilog\MIPS5\RTL\CPU_TOP_PIPELINE_wire.vh|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_PIPELINE.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_PIPELINE.v|
 !i113 1
+R6
 R7
-R8
 n@c@p@u_@t@o@p_@p@i@p@e@l@i@n@e
 vCPU_TOP_SINGLE
-Z12 !s110 1686991932
+Z11 !s110 1686993123
 !i10b 1
 !s100 lBUb:jiR727MH`^ma<4Wh1
 R1
-IfS^g89P3>L7ebJ^F>efEC0
+Ig]]HiQ]AM79aY6@D0^2aD0
 R2
 R3
-w1685955027
-8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CPU_TOP_SINGLE.v
-FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CPU_TOP_SINGLE.v
-!i122 643
+w1685954365
+8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v
+FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v
+!i122 681
 L0 4 211
-R5
+R4
 r1
 !s85 0
 31
-Z13 !s108 1686991932.000000
-!s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CPU_TOP_SINGLE.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CPU_TOP_SINGLE.v|
+Z12 !s108 1686993122.000000
+!s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v|
 !i113 1
+R6
 R7
-R8
 n@c@p@u_@t@o@p_@s@i@n@g@l@e
 vCTRL
-!s110 1686991930
+!s110 1686993120
 !i10b 1
 !s100 j?ZKRB;M1:7ZIX8zJ9Ain0
 R1
-I5CjPf:QDX2N3EaI`;D9h00
+INHgAf_OVfX6?LX[Z[_3eF1
 R2
 R3
-w1686885971
-8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CTRL.v
-FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CTRL.v
-!i122 635
+w1686884546
+8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CTRL.v
+FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CTRL.v
+!i122 673
 L0 1 84
-R5
+R4
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CTRL.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/CTRL.v|
+R5
+!s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CTRL.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CTRL.v|
 !i113 1
+R6
 R7
-R8
 n@c@t@r@l
 vDATAMEM
-R12
+Z13 !s110 1686993122
 !i10b 1
 !s100 1P:Gc3Pm]k`jnUBl?H8T80
 R1
-ITXRoha>a;V8Qele]ge5FR3
+I@8WGUX0;?T^:[ILZmK>Xh2
 R2
 R3
-R9
-8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/DataMem.v
-FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/DataMem.v
-!i122 642
+w1684752299
+8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/DATAMEM.v
+FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/DATAMEM.v
+!i122 680
 L0 3 108
-R5
+R4
 r1
 !s85 0
 31
-R13
-!s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/DataMem.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/DataMem.v|
+R12
+!s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/DATAMEM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/DATAMEM.v|
 !i113 1
+R6
 R7
-R8
 n@d@a@t@a@m@e@m
 vEX_MEM
-Z14 !s110 1686991933
+Z14 !s110 1686993124
 !i10b 1
 !s100 hiU@X>?hhCNjG7UD7ehVT2
 R1
-IA:52W`O86N@4Rf7fFUz0o3
+I7aSP=Kf0jYO:OEMV[U7VC3
 R2
 R3
-w1686990377
-8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/EX_MEM.v
-FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/EX_MEM.v
-!i122 646
+Z15 w1686992106
+8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/EX_MEM.v
+FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/EX_MEM.v
+!i122 684
 L0 1 71
-R5
+R4
 r1
 !s85 0
 31
-Z15 !s108 1686991933.000000
-!s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/EX_MEM.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/EX_MEM.v|
+Z16 !s108 1686993124.000000
+!s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/EX_MEM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/EX_MEM.v|
 !i113 1
+R6
 R7
-R8
 n@e@x_@m@e@m
 vEXTEND
-R12
+R13
 !i10b 1
 !s100 iAdPk^LiTGKd?3j28iHJA1
 R1
-ID^P?YS4dV;<IY?I>gf=fm3
+I9oSY>o5ncD<oGGU_^9a>a0
 R2
 R3
-R9
-8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/EXTEND.v
-FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/EXTEND.v
-!i122 640
+w1684751732
+8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/EXTEND.v
+FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/EXTEND.v
+!i122 678
 L0 1 8
-R5
+R4
 r1
 !s85 0
 31
-R13
-!s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/EXTEND.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/EXTEND.v|
+R12
+!s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/EXTEND.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/EXTEND.v|
 !i113 1
+R6
 R7
-R8
 n@e@x@t@e@n@d
 vFWDPU
-Z16 !s110 1686991934
+R14
 !i10b 1
 !s100 U5cfV>jdJQhEAVN9cCmUP2
 R1
-I:CLD?zm_ZBYH@THaTQ@]92
+IDcK8mnbTT<9WQCi_cDb1:1
 R2
 R3
-w1686886396
-8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/FWDPU.v
-FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/FWDPU.v
-!i122 648
+w1686886279
+8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/FWDPU.v
+FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/FWDPU.v
+!i122 686
 L0 1 56
-R5
+R4
 r1
 !s85 0
 31
-R15
-!s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/FWDPU.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/FWDPU.v|
+R16
+!s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/FWDPU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/FWDPU.v|
 !i113 1
+R6
 R7
-R8
 n@f@w@d@p@u
 vHZDPU
-R16
+R9
 !i10b 1
 !s100 :AgOd6I`Q8l_CoXChojCo0
 R1
-IQRjF@EV>669inWHlWl>0G2
+I]ebdcW8U3<3UP8i66;oTD3
 R2
 R3
-w1686909224
-8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/HZDPU.v
-FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/HZDPU.v
-!i122 649
+w1686901401
+8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/HZDPU.v
+FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/HZDPU.v
+!i122 687
 L0 1 32
-R5
+R4
 r1
 !s85 0
 31
-Z17 !s108 1686991934.000000
-!s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/HZDPU.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/HZDPU.v|
+R10
+!s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/HZDPU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/HZDPU.v|
 !i113 1
+R6
 R7
-R8
 n@h@z@d@p@u
 vID_EX
-R14
+R11
 !i10b 1
 !s100 d0XoZ05GeWB_>fgY<IX1U0
 R1
-IEFV;m<MJ7@M0@76l<1P0[0
+I4b:IbWhT[ZzBCg^0M<eK31
 R2
 R3
-w1686990365
-8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ID_EX.v
-FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ID_EX.v
-!i122 645
+R15
+8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ID_EX.v
+FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ID_EX.v
+!i122 683
 L0 1 111
-R5
+R4
 r1
 !s85 0
 31
-R15
-!s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ID_EX.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/ID_EX.v|
+Z17 !s108 1686993123.000000
+!s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ID_EX.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ID_EX.v|
 !i113 1
+R6
 R7
-R8
 n@i@d_@e@x
 vIF_ID
-R14
+R11
 !i10b 1
 !s100 L;8RHd^6aSIBO0H95G<Xb0
 R1
-I@`]X;m7K^RA;0PWb41g]]0
+I@UXzC9Gjo42c?C1GIO??c3
 R2
 R3
-w1686990409
-8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/IF_ID.v
-FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/IF_ID.v
-!i122 644
+R15
+8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/IF_ID.v
+FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/IF_ID.v
+!i122 682
 L0 1 37
-R5
+R4
 r1
 !s85 0
 31
-R13
-!s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/IF_ID.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/IF_ID.v|
+R17
+!s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/IF_ID.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/IF_ID.v|
 !i113 1
+R6
 R7
-R8
 n@i@f_@i@d
 vINSTMEM
-R12
+R13
 !i10b 1
 !s100 N6N2Mj:LhQ9>C6Sz0k[J<0
 R1
-IVn:1AGm@2;78_3UfY5Pc^3
+IkfhDX1Sg0cEh_W=olW11D0
 R2
 R3
-R9
-8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/INSTMEM.v
-FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/INSTMEM.v
-!i122 641
+w1684752398
+8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/INSTMEM.v
+FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/INSTMEM.v
+!i122 679
 L0 3 248
-R5
+R4
 r1
 !s85 0
 31
-R13
-!s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/INSTMEM.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/INSTMEM.v|
+R12
+!s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/INSTMEM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/INSTMEM.v|
 !i113 1
+R6
 R7
-R8
 n@i@n@s@t@m@e@m
 vMEM_WB
 R14
 !i10b 1
 !s100 oL>RUK7Ve=<bi4ACJUSKX1
 R1
-IoITo1WFCRRVBc7G;_Dl0^3
+IL9h`>UTa>I@NLW]D_<[700
 R2
 R3
-w1686991564
-8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/MEM_WB.v
-FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/MEM_WB.v
-!i122 647
+R15
+8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/MEM_WB.v
+FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/MEM_WB.v
+!i122 685
 L0 1 54
-R5
+R4
 r1
 !s85 0
 31
-R15
-!s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/MEM_WB.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/MEM_WB.v|
+R16
+!s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/MEM_WB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/MEM_WB.v|
 !i113 1
+R6
 R7
-R8
 n@m@e@m_@w@b
 vPC
 R0
 !i10b 1
 !s100 @UZgO5C=XX:kzBzUQFGZQ1
 R1
-I[95U8dgA>okb[_JfZ?cVh1
+I5Y8o=E<5C`n@czDDVf;Ca2
 R2
 R3
-R4
-8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/PC.v
-FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/PC.v
-!i122 638
+w1684807674
+8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/PC.v
+FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/PC.v
+!i122 676
 L0 1 23
-R5
+R4
 r1
 !s85 0
 31
-R10
-!s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/PC.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/PC.v|
-!i113 1
-R7
 R8
+!s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/PC.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/PC.v|
+!i113 1
+R6
+R7
 n@p@c
 vRF
 R0
 !i10b 1
 !s100 PIi2m]^m[dLNPfYPDS_iA1
 R1
-IUbjGS9aYoFSlkloQaG;kO2
+ISnfcDeiHofdIhBQngGoO60
 R2
 R3
-R4
-8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/RF.v
-FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/RF.v
-!i122 639
+w1684823674
+8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/RF.v
+FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/RF.v
+!i122 677
 L0 3 38
-R5
+R4
+r1
+!s85 0
+31
+R8
+!s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/RF.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/RF.v|
+!i113 1
+R6
+R7
+n@r@f
+vTB_ALU_
+R9
+!i10b 1
+!s100 AAX54IlUBVNGc<K[BBXm91
+R1
+IH?h?@`_^4HkNLa0i1>ibj0
+R2
+R3
+Z18 w1686993125
+Z19 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v
+Z20 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v
+!i122 689
+L0 110 56
+R4
 r1
 !s85 0
 31
 R10
-!s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/RF.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/RTL/RF.v|
+Z21 !s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v|
+Z22 !s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_ALU.v|
 !i113 1
+R6
 R7
-R8
-n@r@f
-vTB_ALU_
-R16
-!i10b 1
-!s100 AAX54IlUBVNGc<K[BBXm91
-R1
-I;]Ke]SbPfj]d;S7WIACKa0
-R2
-R3
-Z18 w1686991934
-Z19 8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_ALU.v
-Z20 FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_ALU.v
-!i122 650
-L0 110 56
-R5
-r1
-!s85 0
-31
-R17
-Z21 !s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_ALU.v|
-Z22 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_ALU.v|
-!i113 1
-R7
-R8
 n@t@b_@a@l@u_
 vTB_ALU_CLKGEN
-R16
+R9
 !i10b 1
 !s100 UWT[LX><FK5eDgf1^jB4R0
 R1
-I;Hhj9C@;8XIOJ1dQ_h`=>1
+I1EQT[67BWjoomiZNXLPS^0
 R2
 R3
 R18
 R19
 R20
-!i122 650
+!i122 689
 L0 98 11
-R5
+R4
 r1
 !s85 0
 31
-R17
+R10
 R21
 R22
 !i113 1
+R6
 R7
-R8
 n@t@b_@a@l@u_@c@l@k@g@e@n
 vTB_ALU_RECEIVER
-R16
+R9
 !i10b 1
 !s100 6@cN[H[k:1<OO1EJKm3;:3
 R1
-I3W2l`Ce9hI`_A^_==lRBG0
+IE5EzTj>]h2B?Ve6hGcc1^0
 R2
 R3
 R18
 R19
 R20
-!i122 650
+!i122 689
 L0 49 48
-R5
+R4
 r1
 !s85 0
 31
-R17
+R10
 R21
 R22
 !i113 1
+R6
 R7
-R8
 n@t@b_@a@l@u_@r@e@c@e@i@v@e@r
 vTB_ALU_SENDER
-R16
+R9
 !i10b 1
 !s100 8j;KUM^i7J_1Z0TeNki>b2
 R1
-I=z3Az?F1?R^;n63iSWAJX2
+IgS]9Bo>b]DzB3L4GTCOIi1
 R2
 R3
 R18
 R19
 R20
-!i122 650
+!i122 689
 L0 8 40
-R5
+R4
 r1
 !s85 0
 31
-R17
+R10
 R21
 R22
 !i113 1
+R6
 R7
-R8
 n@t@b_@a@l@u_@s@e@n@d@e@r
+vTB_CPU_TOP_PIPELINE_
+Z23 !s110 1686993126
+!i10b 1
+!s100 NObLlCl=ljH;Kfb69Vmdl0
+R1
+IhWlTO2lAeUS^z2h]Yhb9B3
+R2
+R3
+Z24 w1686993126
+Z25 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CPU_TOP_PIPELINE.v
+Z26 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CPU_TOP_PIPELINE.v
+!i122 692
+Z27 L0 97 37
+R4
+r1
+!s85 0
+31
+Z28 !s108 1686993126.000000
+!s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CPU_TOP_PIPELINE.v|
+Z29 !s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CPU_TOP_PIPELINE.v|
+!i113 1
+R6
+R7
+n@t@b_@c@p@u_@t@o@p_@p@i@p@e@l@i@n@e_
+vTB_CPU_TOP_PIPELINE_CLKGEN
+R23
+!i10b 1
+!s100 KU1bgFG0gNc`AZ<`nbUAJ3
+R1
+IoA7?3_7_SNg=b_c1Z6EII1
+R2
+R3
+R24
+R25
+R26
+!i122 692
+Z30 L0 85 11
+R4
+r1
+!s85 0
+31
+R28
+Z31 !s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CPU_TOP_PIPELINE.v|
+R29
+!i113 1
+R6
+R7
+n@t@b_@c@p@u_@t@o@p_@p@i@p@e@l@i@n@e_@c@l@k@g@e@n
+vTB_CPU_TOP_PIPELINE_RECEIVER
+R23
+!i10b 1
+!s100 OihR0gG8bdNC74Y3@oOom3
+R1
+I^JEjWGW2jg`oZDc636kKb3
+R2
+R3
+R24
+R25
+R26
+!i122 692
+Z32 L0 40 44
+R4
+r1
+!s85 0
+31
+R28
+R31
+R29
+!i113 1
+R6
+R7
+n@t@b_@c@p@u_@t@o@p_@p@i@p@e@l@i@n@e_@r@e@c@e@i@v@e@r
+vTB_CPU_TOP_PIPELINE_SENDER
+R23
+!i10b 1
+!s100 0d;AbeHaomGE;HOm3RlTF0
+R1
+Ia5B:2R9nXeT5[d?Y:lY;_0
+R2
+R3
+R24
+R25
+R26
+!i122 692
+Z33 L0 11 28
+R4
+r1
+!s85 0
+31
+R28
+R31
+R29
+!i113 1
+R6
+R7
+n@t@b_@c@p@u_@t@o@p_@p@i@p@e@l@i@n@e_@s@e@n@d@e@r
 vTB_CPU_TOP_SINGLE_
-R11
+R23
 !i10b 1
 !s100 Cm2zR_gTc50]ORV`<VhQV2
 R1
-IOFX]HT0F<?=B=CHHfEe]]2
+ILD>[Eb[lijY<Ff4CKoF@j1
 R2
 R3
-Z23 w1686991935
-Z24 8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_CPU_TOP_SINGLE.v
-Z25 FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_CPU_TOP_SINGLE.v
-!i122 652
-L0 97 37
-R5
+R24
+Z34 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CPU_TOP_SINGLE.v
+Z35 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CPU_TOP_SINGLE.v
+!i122 691
+R27
+R4
 r1
 !s85 0
 31
-R17
-Z26 !s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_CPU_TOP_SINGLE.v|
-Z27 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_CPU_TOP_SINGLE.v|
+R28
+Z36 !s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CPU_TOP_SINGLE.v|
+Z37 !s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CPU_TOP_SINGLE.v|
 !i113 1
+R6
 R7
-R8
 n@t@b_@c@p@u_@t@o@p_@s@i@n@g@l@e_
 vTB_CPU_TOP_SINGLE_CLKGEN
-R11
+R23
 !i10b 1
 !s100 @iX3PankcKMR[i7Hh]3KR3
 R1
-I_=@hFd8nD4A[K:W2cfAG:3
+II9^B2[jRYOjMaoa8iK1VN2
 R2
 R3
-R23
 R24
-R25
-!i122 652
-L0 85 11
-R5
+R34
+R35
+!i122 691
+R30
+R4
 r1
 !s85 0
 31
-R17
-R26
-R27
+R28
+R36
+R37
 !i113 1
+R6
 R7
-R8
 n@t@b_@c@p@u_@t@o@p_@s@i@n@g@l@e_@c@l@k@g@e@n
 vTB_CPU_TOP_SINGLE_RECEIVER
-R11
+R23
 !i10b 1
 !s100 I`h^g?F2FMZm>oB8_E1ZI0
 R1
-I?Q:H3C@HbXaHRb4@]P??[2
+IO]__G[UoZI7hGR4d_VgH21
 R2
 R3
-R23
 R24
-R25
-!i122 652
-L0 40 44
-R5
+R34
+R35
+!i122 691
+R32
+R4
 r1
 !s85 0
 31
-R17
-R26
-R27
+R28
+R36
+R37
 !i113 1
+R6
 R7
-R8
 n@t@b_@c@p@u_@t@o@p_@s@i@n@g@l@e_@r@e@c@e@i@v@e@r
 vTB_CPU_TOP_SINGLE_SENDER
-R11
+R23
 !i10b 1
 !s100 E_iVb[j8j^PNYhdTO7SlI3
 R1
-IjljB=F[F9^H7]KmRBfL8d2
+IagSi253XQLNDh^lES@HB81
 R2
 R3
-R18
 R24
-R25
-!i122 652
-L0 11 28
-R5
+R34
+R35
+!i122 691
+R33
+R4
 r1
 !s85 0
 31
-R17
-R26
-R27
+R28
+R36
+R37
 !i113 1
+R6
 R7
-R8
 n@t@b_@c@p@u_@t@o@p_@s@i@n@g@l@e_@s@e@n@d@e@r
 vTB_CTRL_
-R16
+R23
 !i10b 1
 !s100 `E=08NfAmcOQF3TiNRdPY1
 R1
-I@86Tbk]S[]^2b2961CAcG1
+IfzKBCSD88bkikJf?8b7JF0
 R2
 R3
-R18
-Z28 8C:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_CTRL.v
-Z29 FC:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_CTRL.v
-!i122 651
+R24
+Z38 8F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CTRL.v
+Z39 FF:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CTRL.v
+!i122 690
 L0 117 81
-R5
+R4
 r1
 !s85 0
 31
-R17
-Z30 !s107 C:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_CTRL.v|
-Z31 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dengy/Desktop/MIPS5/MIPS5-1/testbench/tb_CTRL.v|
+R10
+Z40 !s107 F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CTRL.v|
+Z41 !s90 -reportprogress|300|-work|work|-stats=none|F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/testbench/tb_CTRL.v|
 !i113 1
+R6
 R7
-R8
 n@t@b_@c@t@r@l_
 vTB_CTRL_CLKGEN
-R16
+R23
 !i10b 1
 !s100 l^b5JC@zgYaG8h`YzHSN93
 R1
-I`U;4^DL2NI0GMDXzDf<ER2
+IXP511>DN2O?<7fcL19;mJ3
 R2
 R3
-R18
-R28
-R29
-!i122 651
+R24
+R38
+R39
+!i122 690
 L0 105 11
-R5
+R4
 r1
 !s85 0
 31
-R17
-R30
-R31
+R10
+R40
+R41
 !i113 1
+R6
 R7
-R8
 n@t@b_@c@t@r@l_@c@l@k@g@e@n
 vTB_CTRL_RECEIVER
-R16
+R23
 !i10b 1
 !s100 cV?R0^BHdzK1:_o>koRhZ2
 R1
-Ig><Pa]?@Sg_2@8`MEPz0A2
+IeZ]eHc3Te2^S97Z[Xf?TV3
 R2
 R3
-R18
-R28
-R29
-!i122 651
+R24
+R38
+R39
+!i122 690
 L0 40 64
-R5
+R4
 r1
 !s85 0
 31
-R17
-R30
-R31
+R10
+R40
+R41
 !i113 1
+R6
 R7
-R8
 n@t@b_@c@t@r@l_@r@e@c@e@i@v@e@r
 vTB_CTRL_SENDER
-R16
+R23
 !i10b 1
 !s100 8>jM?7zTJ29PY0`3HZh4D1
 R1
-IDP=zHTJkB_BQAez]]iECU0
+I`=MKfCM;=7>JaZ^X[N^V[0
 R2
 R3
-R18
-R28
-R29
-!i122 651
+R24
+R38
+R39
+!i122 690
 L0 8 31
-R5
+R4
 r1
 !s85 0
 31
-R17
-R30
-R31
+R10
+R40
+R41
 !i113 1
+R6
 R7
-R8
 n@t@b_@c@t@r@l_@s@e@n@d@e@r

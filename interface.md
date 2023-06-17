@@ -445,10 +445,10 @@ module IF_ID (
     input   wire            stall   ,
     input   wire            flush   ,
 
-    input   wire    [8:0]   IF_pc_4 ,
+    input   wire    [31:0]  IF_pc_4 ,
     input   wire    [31:0]  IF_inst,
     
-    output  wire    [8:0]   ID_pc_4 ,
+    output  wire    [31:0]  ID_pc_4 ,
     output  wire    [31:0]  ID_inst      
 );
 ```
@@ -481,7 +481,7 @@ module ID_EX (
     input   wire            stall       ,
     input   wire            flush       ,
 
-    input   wire    [8:0]   ID_pc_4     ,
+    input   wire    [31:0]  ID_pc_4     ,
     input   wire    [31:0]  ID_inst     ,
 
     input   wire    [31:0]  ID_data1    ,
@@ -503,7 +503,7 @@ module ID_EX (
     input   wire            ID_jump     ,
     input   wire            ID_jumpr    ,
     input   wire            ID_link     ,
-    input   wire    [8:0]   ID_wraddr   ,
+    input   wire    [4:0]   ID_wraddr   ,
 
     output  wire            EX_signext  ,
     output  wire            EX_aluop    ,
@@ -523,9 +523,9 @@ module ID_EX (
     output  wire    [31:0]  EX_data1    ,
     output  wire    [31:0]  EX_data2    ,
     output  wire    [31:0]  EX_extend   ,
-    output  wire    [8:0]   EX_wraddr   ,
+    output  wire    [4:0]   EX_wraddr   ,
     
-    output  wire    [8:0]   EX_pc_4     ,
+    output  wire    [31:0]  EX_pc_4     ,
     output  wire    [31:0]  EX_inst      
 );
 ```
@@ -596,7 +596,7 @@ module EX_MEM (
     input   wire            stall           ,
     input   wire            flush           ,
 
-    input   wire    [8:0]   EX_pc_4         ,
+    input   wire    [31:0]  EX_pc_4         ,
     input   wire    [31:0]  EX_inst         ,
 
     input   wire            EX_memread      ,
