@@ -503,6 +503,7 @@ module ID_EX (
     input   wire            ID_jump     ,
     input   wire            ID_jumpr    ,
     input   wire            ID_link     ,
+    input   wire    [8:0]   ID_wraddr   ,
 
     output  wire            EX_signext  ,
     output  wire            EX_aluop    ,
@@ -519,6 +520,7 @@ module ID_EX (
     output  wire            EX_jump     ,
     output  wire            EX_jumpr    ,
     output  wire            EX_link     ,
+    output  wire    [8:0]   EX_wraddr   ,
     
     output  wire    [8:0]   EX_pc_4     ,
     output  wire    [31:0]  EX_inst      
@@ -553,6 +555,7 @@ ID_EX xxx (
     .ID_jump    (   ),
     .ID_jumpr   (   ),
     .ID_link    (   ),
+    .ID_wraddr  (   ),
     .EX_signext (   ),
     .EX_aluop   (   ),
     .EX_alusrc  (   ),
@@ -568,6 +571,7 @@ ID_EX xxx (
     .EX_jump    (   ),
     .EX_jumpr   (   ),
     .EX_link    (   ),
+    .EX_wraddr  (   ),
     .EX_pc_4    (   ),
     .EX_inst    (   )
 );
@@ -595,6 +599,9 @@ module EX_MEM (
     input   wire            EX_regwrite     ,
     input   wire            EX_regdst       ,
     input   wire            EX_link         ,
+    input   wire    [31:0]  EX_data         ,
+    input   wire    [8:0]   EX_address      ,
+    input   wire    [8:0]   EX_wraddr       ,
 
     output  wire            MEM_memread     ,
     output  wire            MEM_memwrite    ,
@@ -602,6 +609,7 @@ module EX_MEM (
     output  wire            MEM_regwrite    ,
     output  wire            MEM_regdst      ,
     output  wire            MEM_link        ,
+    output  wire    [8:0]   MEM_wraddr      ,
     
     output  wire    [8:0]   MEM_pc_4        ,
     output  wire    [31:0]  MEM_inst      
@@ -624,12 +632,16 @@ EX_MEM xxx(
     .EX_regwrite    (   ),
     .EX_regdst      (   ),
     .EX_link        (   ),
+    .EX_data        (   ),
+    .EX_address     (   ),
+    .EX_wraddr      (   ),
     .MEM_memread    (   ),
     .MEM_memwrite   (   ),
     .MEM_memtoreg   (   ),
     .MEM_regwrite   (   ),
     .MEM_regdst     (   ),
     .MEM_link       (   ),
+    .MEM_wraddr     (   ),
     .MEM_pc_4       (   ),
     .MEM_inst       (   )
 );
@@ -640,11 +652,10 @@ EX_MEM xxx(
 ##### 接口
 
 ```verilog
-module EX_MEM (
+module MEM_WB (
     input   wire            clk         ,
     input   wire            rst_n       ,
     input   wire            stall       ,
-    input   wire            flush       ,
 
     input   wire    [8:0]   MEM_pc_4    ,
     input   wire    [31:0]  MEM_inst    ,
@@ -654,10 +665,15 @@ module EX_MEM (
     input   wire            MEM_regdst  ,  
     input   wire            MEM_link    ,
 
+    input   wire    [31:0]  MEM_data    ,
+    input   wire    [8:0]   MEM_wraddr  ,
+
     output  wire            WB_memtoreg ,
     output  wire            WB_regwrite ,
     output  wire            WB_regdst   ,  
     output  wire            WB_link     ,
+    output  wire    [31:0]  WB_data     ,
+    output  wire    [8:0]   WB_wraddr   ,
 
     output  wire    [8:0]   WB_pc_4     ,
     output  wire    [31:0]  WB_ins
@@ -671,17 +687,20 @@ MEM_WB xxx(
     .clk            (   ),
     .rst_n          (   ),
     .stall          (   ),
-    .flush          (   ),
     .MEM_pc_4       (   ),
     .MEM_inst       (   ),
     .MEM_memtoreg   (   ),
     .MEM_regwrite   (   ),
     .MEM_regdst     (   ),
     .MEM_link       (   ),
+    .MEM_data       (   ),
+    .MEM_wraddr     (   ),
     .WB_memtoreg    (   ),
     .WB_regwrite    (   ),
     .WB_regdst      (   ),
     .WB_link        (   ),
+    .WB_data        (   ),
+    .WB_wraddr      (   ),
     .WB_pc_4        (   ),
     .WB_ins         (   ),
 );

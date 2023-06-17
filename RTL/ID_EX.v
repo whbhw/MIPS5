@@ -7,6 +7,10 @@ module ID_EX (
     input   wire    [8:0]   ID_pc_4     ,
     input   wire    [31:0]  ID_inst     ,
 
+    input   wire    [31:0]  ID_data1    ,
+    input   wire    [31:0]  ID_data2    ,
+    input   wire    [31:0]  ID_extend   ,
+
     input   wire            ID_signext  ,
     input   wire            ID_aluop    ,
     input   wire            ID_alusrc   ,
@@ -22,6 +26,7 @@ module ID_EX (
     input   wire            ID_jump     ,
     input   wire            ID_jumpr    ,
     input   wire            ID_link     ,
+    input   wire    [8:0]   ID_wraddr   ,
 
     output  wire            EX_signext  ,
     output  wire            EX_aluop    ,
@@ -38,6 +43,7 @@ module ID_EX (
     output  wire            EX_jump     ,
     output  wire            EX_jumpr    ,
     output  wire            EX_link     ,
+    output  wire    [8:0]   EX_wraddr   ,
     
     output  wire    [8:0]   EX_pc_4     ,
     output  wire    [31:0]  EX_inst      
@@ -45,34 +51,35 @@ module ID_EX (
 
 parameter NOP = 8'h0000_0020;
 
-reg [15+9+31:0] inner_reg;
+reg [15+9+9+31:0] inner_reg;
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
         inner_reg   <=  {24'b0,NOP};
     end
     else begin
         if (flush) begin
-            inner_reg   <=  {24'b0,9'b0,NOP};
+            inner_reg   <=  {24'b0,9'b0,9'b0,NOP};
         end
         else if (stall) begin
             inner_reg   <=  inner_reg;
         end
         else begin
-            inner_reg   <=  {EX_signext  ,
-                             EX_aluop    ,
-                             EX_alusrc   ,
-                             EX_memread  ,
-                             EX_memwrite ,
-                             EX_memtoreg ,
-                             EX_regread1 ,
-                             EX_regread2 ,
-                             EX_regwrite ,
-                             EX_regdst   ,
-                             EX_branch   ,
-                             EX_branchne ,
-                             EX_jump     ,
-                             EX_jumpr    ,
-                             EX_link     ,
+            inner_reg   <=  {ID_signext  ,
+                             ID_aluop    ,
+                             ID_alusrc   ,
+                             ID_memread  ,
+                             ID_memwrite ,
+                             ID_memtoreg ,
+                             ID_regread1 ,
+                             ID_regread2 ,
+                             ID_regwrite ,
+                             ID_regdst   ,
+                             ID_branch   ,
+                             ID_branchne ,
+                             ID_jump     ,
+                             ID_jumpr    ,
+                             ID_link     ,
+                             ID_wraddr   ,
                              ID_pc_4     ,
                              ID_inst     };
         end
@@ -94,6 +101,7 @@ assign {EX_signext  ,
         EX_jump     ,
         EX_jumpr    ,
         EX_link     ,
+        EX_wraddr   ,
         EX_pc_4     ,
         EX_inst     }   =   inner_reg;
 

@@ -1,8 +1,7 @@
-module EX_MEM (
+module MEM_WB (
     input   wire            clk         ,
     input   wire            rst_n       ,
     input   wire            stall       ,
-    input   wire            flush       ,
 
     input   wire    [8:0]   MEM_pc_4    ,
     input   wire    [31:0]  MEM_inst    ,
@@ -12,17 +11,22 @@ module EX_MEM (
     input   wire            MEM_regdst  ,  
     input   wire            MEM_link    ,
 
+    input   wire    [31:0]  MEM_data    ,
+    input   wire    [8:0]   MEM_wraddr  ,
+
     output  wire            WB_memtoreg ,
     output  wire            WB_regwrite ,
     output  wire            WB_regdst   ,  
     output  wire            WB_link     ,
+    output  wire    [31:0]  WB_data     ,
+    output  wire    [8:0]   WB_wraddr   ,
 
     output  wire    [8:0]   WB_pc_4     ,
     output  wire    [31:0]  WB_ins
 );
 parameter NOP = 8'h0000_0020;
 
-reg [4+9+31:0]  inner_reg;
+reg [4+9+9+31:0]  inner_reg;
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
         inner_reg   <=  {13'b0,NOP};
@@ -39,6 +43,7 @@ always @(posedge clk or negedge rst_n) begin
                              MEM_regwrite,
                              MEM_regdst  ,
                              MEM_link    ,
+                             MEM_wraddr  ,
                              MEM_pc_4    ,
                              MEM_inst};
         end
@@ -49,6 +54,7 @@ assign  {WB_memtoreg ,
          WB_regwrite ,
          WB_regdst   ,
          WB_link     ,
+         WB_wraddr   ,
          WB_pc_4     ,
          WB_ins}  =   inner_reg;
 

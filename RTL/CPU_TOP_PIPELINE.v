@@ -42,14 +42,14 @@ HZDPU u_hzdpu (
 
 /* -------------------------- instaciation of IF_ID ------------------------- */
 IF_ID u_if_id (
-    .clk        ( clk       ),
-    .rst_n      ( rst_n     ),
-    .stall      ( stall     ),
-    .flush      ( flush[0]  ),
-    .IF_pc_4    ( IF_pc_4   ),
-    .IF_inst    ( IF_inst   ),
-    .ID_pc_4    ( ID_pc_4   ),
-    .ID_inst    ( ID_inst   )
+    .clk        ( clk           ),
+    .rst_n      ( rst_n         ),
+    .stall      ( stall         ),
+    .flush      ( flush[0]      ),
+    .IF_pc_4    ( IF_pc_4[10:2] ),
+    .IF_inst    ( IF_inst[10:2] ),
+    .ID_pc_4    ( ID_pc_4       ),
+    .ID_inst    ( ID_inst       )
 );
 
 /* --------------------------- instanciation of RF --------------------------- */
@@ -60,7 +60,7 @@ RF u_rf (
     .rd2addr    ( ID_inst[20:16]    ),
     .rd2data    ( ID_data2          ),
 
-    .wraddr     ( WB_inst[15:11]    ),
+    .wraddr     ( WB_wraddr         ),
     .wrdata     ( WB_data           ),
     .wren       ( WB_regwrite       ),
 
@@ -72,33 +72,33 @@ RF u_rf (
 EXTEND u_extend (
     .extend_out ( ID_extend         ),
     .extend_in  ( ID_inst[15:0]     ),
-    .signext    ( signext           )
+    .signext    ( ID_signext        )
 );
 
 /* -------------------------- instanciation of CTRL ------------------------- */
 CTRL u_ctrl (
-    .signext    (signext    ),  // 符号扩展(1符号,0无符号)
+    .signext    (ID_signext    ),  // 符号扩展(1符号,0无符号)
 
-    .aluop      (aluop      ),  // alu初步控制编码
-    .alusrc     (alusrc     ),  // alu输入来源选择
+    .aluop      (ID_aluop      ),  // alu初步控制编码
+    .alusrc     (ID_alusrc     ),  // alu输入来源选择
 
-    .memread    (memread    ),  // 数据内存读取控制
-    .memwrite   (memwrite   ),  // 数据内存写入控制
-    .memtoreg   (memtoreg   ),  // 数据寄存器写入来源选择
+    .memread    (ID_memread    ),  // 数据内存读取控制
+    .memwrite   (ID_memwrite   ),  // 数据内存写入控制
+    .memtoreg   (ID_memtoreg   ),  // 数据寄存器写入来源选择
 
-    .regread1   (regread1   ),  // 数据寄存器读取1标志
-    .regread2   (regread2   ),  // 数据寄存器读取2标志
-    .regwrite   (regwrite   ),  // 数据寄存器写入控制
-    .regdst     (regdst     ),  // 数据寄存器写入地址来源选择
+    .regread1   (ID_regread1   ),  // 数据寄存器读取1标志
+    .regread2   (ID_regread2   ),  // 数据寄存器读取2标志
+    .regwrite   (ID_regwrite   ),  // 数据寄存器写入控制
+    .regdst     (ID_regdst     ),  // 数据寄存器写入地址来源选择
 
-    .branch     (branch     ),  // 分支指令标志
-    .branchne   (branchne   ),  // bne(1)/beq(0)标志,前提branch有效
-    .jump       (jump       ),  // 跳转指令标志
-    .jumpr      (jumpr      ),  // jr标志,前提jump有效
-    .link       (link       ),  // jal标志,前提jump有效
+    .branch     (ID_branch     ),  // 分支指令标志
+    .branchne   (ID_branchne   ),  // bne(1)/beq(0)标志,前提branch有效
+    .jump       (ID_jump       ),  // 跳转指令标志
+    .jumpr      (ID_jumpr      ),  // jr标志,前提jump有效
+    .link       (ID_link       ),  // jal标志,前提jump有效
 
-    .opcode     (opcode     ),  // 指令opcode部分输入
-    .funct      (funct      )   // 指令funct部分输入
+    .opcode     (ID_opcode     ),  // 指令opcode部分输入
+    .funct      (ID_funct      )   // 指令funct部分输入
 );
 
 
@@ -114,21 +114,22 @@ ID_EX u_id_ex (
     .ID_data2   (ID_data2   ),
     .ID_extend  (ID_extend  ),
 
-    .ID_signext (signext    ),
-    .ID_aluop   (aluop      ),
-    .ID_alusrc  (alusrc     ),
-    .ID_memread (memread    ),
-    .ID_memwrite(memwrite   ),
-    .ID_memtoreg(memtoreg   ),
-    .ID_regread1(regread1   ),
-    .ID_regread2(regread2   ),
-    .ID_regwrite(regwrite   ),
-    .ID_regdst  (regdst     ),
-    .ID_branch  (branch     ),
-    .ID_branchne(branchne   ),
-    .ID_jump    (jump       ),
-    .ID_jumpr   (jumpr      ),
-    .ID_link    (link       ),
+    .ID_signext (ID_signext    ),
+    .ID_aluop   (ID_aluop      ),
+    .ID_alusrc  (ID_alusrc     ),
+    .ID_memread (ID_memread    ),
+    .ID_memwrite(ID_memwrite   ),
+    .ID_memtoreg(ID_memtoreg   ),
+    .ID_regread1(ID_regread1   ),
+    .ID_regread2(ID_regread2   ),
+    .ID_regwrite(ID_regwrite   ),
+    .ID_regdst  (ID_regdst     ),
+    .ID_branch  (ID_branch     ),
+    .ID_branchne(ID_branchne   ),
+    .ID_jump    (ID_jump       ),
+    .ID_jumpr   (ID_jumpr      ),
+    .ID_link    (ID_link       ),
+    .ID_wraddr  (ID_wraddr     ),
     
     .EX_signext (EX_signext ),
     .EX_aluop   (EX_aluop   ),
@@ -145,6 +146,7 @@ ID_EX u_id_ex (
     .EX_jump    (EX_jump    ),
     .EX_jumpr   (EX_jumpr   ),
     .EX_link    (EX_link    ),
+    .EX_wraddr  (EX_wraddr  ),
     .EX_pc_4    (EX_pc_4    ),
     .EX_inst    (EX_inst    )
 );
@@ -186,9 +188,66 @@ FWDPU u_fwdpu (
 
 
 /* ------------------------- instanciation of EX_MEM ------------------------ */
-
-
+EX_MEM u_ex_mem(
+    .clk            (clk            ),
+    .rst_n          (rst_n          ),
+    .stall          (stall          ),
+    .flush          (flush[2]       ),
+    .EX_pc_4        (EX_pc_4        ),
+    .EX_inst        (EX_inst        ),
+    .EX_memread     (EX_memread     ),
+    .EX_memwrite    (EX_memwrite    ),
+    .EX_memtoreg    (EX_memtoreg    ),
+    .EX_regwrite    (EX_regwrite    ),
+    .EX_regdst      (EX_regdst      ),
+    .EX_link        (EX_link        ),
+    .EX_data        (EX_data        ),
+    .EX_address     (EX_address     ),
+    .EX_wraddr      (EX_wraddr      ),
+    .MEM_memread    (MEM_memread    ),
+    .MEM_memwrite   (MEM_memwrite   ),
+    .MEM_memtoreg   (MEM_memtoreg   ),
+    .MEM_regwrite   (MEM_regwrite   ),
+    .MEM_regdst     (MEM_regdst     ),
+    .MEM_link       (MEM_link       ),
+    .MEM_wraddr     (MEM_wraddr     ),
+    .MEM_pc_4       (MEM_pc_4       ),
+    .MEM_inst       (MEM_inst       )
+);
 endmodule
+
+/* ------------------------ instanciation of DATAMEM ------------------------ */
+DATAMEM u_datamem (
+    .clk        (rst_n          ),
+    .wen        (MEM_memwrite   ),
+    .Address    (EX_address     ),
+    .din        (EX_data        ),
+    .dout       (datamem_out    )
+);
+
+/* ------------------------- instanciation of MEM_WB ------------------------ */
+MEM_WB u_mwm_wb(
+    .clk            (clk            ),
+    .rst_n          (rst_n          ),
+    .stall          (stall          ),
+    .MEM_pc_4       (MEM_pc_4       ),
+    .MEM_inst       (MEM_inst       ),
+    .MEM_memtoreg   (MEM_memtoreg   ),
+    .MEM_regwrite   (MEM_regwrite   ),
+    .MEM_regdst     (MEM_regdst     ),
+    .MEM_link       (MEM_link       ),
+    .MEM_data       (MEM_data       ),
+    .MEM_wraddr     (MEM_wraddr     ),
+    .WB_memtoreg    (WB_memtoreg    ),
+    .WB_regwrite    (WB_regwrite    ),
+    .WB_regdst      (WB_regdst      ),
+    .WB_link        (WB_link        ),
+    .WB_data        (WB_data        ),
+    .WB_wraddr      (WB_wraddr      ),
+    .WB_pc_4        (WB_pc_4        ),
+    .WB_ins         (WB_ins         ),
+);
+
 
 // recover imexplicit wire
 `default_nettype wire
