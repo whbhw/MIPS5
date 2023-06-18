@@ -27,7 +27,8 @@ module RF (
     assign rdtdata = (rdtaddr == 5'd0) ? 32'h0 : regfile[rdtaddr];
 `endif
 
-    always @(posedge clk, negedge rst_n) begin
+    // always @(posedge clk, negedge rst_n) begin
+    always @(negedge clk, negedge rst_n) begin
         if (!rst_n) begin : rfrst
             integer i;
             for (i = 0; i < 32; i = i + 1) begin : rfrstgen

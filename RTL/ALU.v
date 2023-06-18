@@ -4,7 +4,7 @@ module ALU (
 
     input   wire    signed  [31:0]  data1   ,
     input   wire    signed  [31:0]  data2   ,
-    input   wire            [5:0]   shamt   ,
+    input   wire            [4:0]   shamt   ,
     input   wire            [3:0]   alu_ctrl
 );
 localparam ADD = 4'b0001;

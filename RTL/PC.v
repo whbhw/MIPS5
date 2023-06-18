@@ -1,4 +1,4 @@
-`define "REGDEFAULT.vh"
+`include "REGDEFAULT.vh"
 module PC (
     output  wire    [31:0]  pc      ,
     output  wire    [31:0]  pc_4    ,

@@ -117,7 +117,7 @@ CTRL xxx (
 |inst    |opcode  ||signext |aluop   |alusrc  |memread |memwrite    |memtoreg*  |regread1   |regread2   |regwrite|regdst  |branch  |branchne*|jump    |jumpr   |link    |
 |:--:|:--:|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 |lw |23 ||1 |00    |1  |1  |0  |1  |1   |0  |1  |0  |0  |X  |0  |X  |0  |
-|sw |2b ||1 |00    |1  |0  |1  |X  |1   |1  |0  |X  |0  |X  |0  |X  |X  |
+|sw |2b ||1 |00    |1  |0  |1  |X  |1   |1  |0  |X  |0  |X  |0  |X  |0  |
 |beq|04 ||1 |01    |0  |0  |0  |X  |1   |1  |0  |X  |1  |0  |0  |X  |0  |
 |bne|05 ||1 |01    |0  |0  |0  |X  |1   |1  |0  |X  |1  |1  |0  |X  |0  |
 |j  |02 ||X |11    |0  |0  |0  |X  |0   |0  |0  |X  |0  |X  |1  |0  |0  |
@@ -225,7 +225,7 @@ module ALU (
 
     input   wire    [31:0]  data1   ,
     input   wire    [31:0]  data2   , //立即数通道
-    input   wire    [5:0]   shamt   ,
+    input   wire    [4:0]   shamt   ,
     input   wire    [3:0]   alu_ctrl
 );
 ```
@@ -308,7 +308,7 @@ DATAMEM xxx (
 if (EX_regread1 && (EX_inst[25:21] != 5'd0)) begin
     if (MEM_regwrite && (MEM_wraddr == EX_inst[25:21])) begin
         if (MEM_memread) begin
-            // load-use Hazard
+            // rs load-use Hazard
         end else begin
             // rs forward MEM
         end
@@ -321,7 +321,11 @@ end
 // default: rt no forward
 if (EX_regread1 && (EX_inst[20:16] != 5'd0)) begin
     if (MEM_regwrite && (MEM_wraddr == EX_inst[20:16])) begin
-        // rt forward MEM
+        if (MEM_memread) begin
+            // rt load-use Hazard
+        end else begin
+            // rt forward MEM
+        end
     end else if (WB_regwrite && (WB_wraddr == EX_inst[20:16])) begin
         // rt forward WB
     end
@@ -489,7 +493,7 @@ module ID_EX (
     input   wire    [31:0]  ID_extend   ,
 
     input   wire            ID_signext  ,
-    input   wire            ID_aluop    ,
+    input   wire    [1:0]   ID_aluop    ,
     input   wire            ID_alusrc   ,
     input   wire            ID_memread  ,
     input   wire            ID_memwrite ,
@@ -505,25 +509,25 @@ module ID_EX (
     input   wire            ID_link     ,
     input   wire    [4:0]   ID_wraddr   ,
 
-    output  wire            EX_signext  ,
-    output  wire            EX_aluop    ,
-    output  wire            EX_alusrc   ,
-    output  wire            EX_memread  ,
-    output  wire            EX_memwrite ,
-    output  wire            EX_memtoreg ,
-    output  wire            EX_regread1 ,
-    output  wire            EX_regread2 ,
-    output  wire            EX_regwrite ,
-    output  wire            EX_regdst   ,
-    output  wire            EX_branch   ,
-    output  wire            EX_branchne ,
-    output  wire            EX_jump     ,
-    output  wire            EX_jumpr    ,
-    output  wire            EX_link     ,
-    output  wire    [31:0]  EX_data1    ,
-    output  wire    [31:0]  EX_data2    ,
-    output  wire    [31:0]  EX_extend   ,
-    output  wire    [4:0]   EX_wraddr   ,
+    output  wire            EX_signext  ,   // 0
+    output  wire    [1:0]   EX_aluop    ,   // 10
+    output  wire            EX_alusrc   ,   // 0
+    output  wire            EX_memread  ,   // 0
+    output  wire            EX_memwrite ,   // 0
+    output  wire            EX_memtoreg ,   // 0
+    output  wire            EX_regread1 ,   // 1
+    output  wire            EX_regread2 ,   // 1
+    output  wire            EX_regwrite ,   // 0 (add->1)
+    output  wire            EX_regdst   ,   // 1
+    output  wire            EX_branch   ,   // 0
+    output  wire            EX_branchne ,   // 0
+    output  wire            EX_jump     ,   // 0
+    output  wire            EX_jumpr    ,   // 0
+    output  wire            EX_link     ,   // 0
+    output  wire    [31:0]  EX_data1    ,   // 0
+    output  wire    [31:0]  EX_data2    ,   // 0
+    output  wire    [31:0]  EX_extend   ,   // 0
+    output  wire    [4:0]   EX_wraddr   ,   // 0
     
     output  wire    [31:0]  EX_pc_4     ,
     output  wire    [31:0]  EX_inst      
@@ -599,15 +603,15 @@ module EX_MEM (
     input   wire    [31:0]  EX_pc_4         ,
     input   wire    [31:0]  EX_inst         ,
 
-    input   wire            EX_memread      ,
-    input   wire            EX_memwrite     ,
-    input   wire            EX_memtoreg     ,
-    input   wire            EX_regwrite     ,
-    input   wire            EX_regdst       ,
-    input   wire            EX_link         ,
+    input   wire            EX_memread      ,   // 0
+    input   wire            EX_memwrite     ,   // 0
+    input   wire            EX_memtoreg     ,   // 0
+    input   wire            EX_regwrite     ,   // 0 (add->1)
+    input   wire            EX_regdst       ,   // 1
+    input   wire            EX_link         ,   // 0
     input   wire    [31:0]  EX_data         ,
-    input   wire    [8:0]   EX_address      ,
-    input   wire    [8:0]   EX_wraddr       ,
+    input   wire    [31:0]  EX_address      ,
+    input   wire    [4:0]   EX_wraddr       ,
 
     output  wire            MEM_memread     ,
     output  wire            MEM_memwrite    ,
@@ -617,9 +621,9 @@ module EX_MEM (
     output  wire            MEM_link        ,
     output  wire    [31:0]  MEM_data_in     ,
     output  wire    [31:0]  MEM_address_in  ,
-    output  wire    [8:0]   MEM_wraddr      ,
+    output  wire    [4:0]   MEM_wraddr      ,
     
-    output  wire    [8:0]   MEM_pc_4        ,
+    output  wire    [31:0]  MEM_pc_4        ,
     output  wire    [31:0]  MEM_inst      
 );
 ```
@@ -665,9 +669,9 @@ EX_MEM xxx(
 module MEM_WB (
     input   wire            clk         ,
     input   wire            rst_n       ,
-    input   wire            stall       ,
+    input   wire            stall       ,   // 无效
 
-    input   wire    [8:0]   MEM_pc_4    ,
+    input   wire    [31:0]  MEM_pc_4    ,
     input   wire    [31:0]  MEM_inst    ,
 
     input   wire            MEM_memtoreg,
@@ -676,17 +680,17 @@ module MEM_WB (
     input   wire            MEM_link    ,
 
     input   wire    [31:0]  MEM_data    ,
-    input   wire    [8:0]   MEM_wraddr  ,
+    input   wire    [4:0]   MEM_wraddr  ,
 
-    output  wire            WB_memtoreg ,
-    output  wire            WB_regwrite ,
-    output  wire            WB_regdst   ,  
-    output  wire            WB_link     ,
+    output  wire            WB_memtoreg ,   // 0
+    output  wire            WB_regwrite ,   // 0 (add->1)
+    output  wire            WB_regdst   ,   // 1
+    output  wire            WB_link     ,   // 0
     output  wire    [31:0]  WB_data     ,
-    output  wire    [8:0]   WB_wraddr   ,
+    output  wire    [4:0]   WB_wraddr   ,
 
-    output  wire    [8:0]   WB_pc_4     ,
-    output  wire    [31:0]  WB_inst     
+    output  wire    [31:0]  WB_pc_4     ,
+    output  wire    [31:0]  WB_inst
 );
 ```
 

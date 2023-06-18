@@ -60,7 +60,7 @@ module `MODULENAMETB(_RECEIVER) (
     always @(posedge clk, negedge rst_n) begin
         if (!rst_n) begin
             ready <= 1'b0;
-        end else if (!finish) begin
+        end else if (!(finish===1'b1)) begin
             ready <= 1'b0;
         end else if (!ready) begin
             ready <= 1'b1;

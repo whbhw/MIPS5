@@ -139,7 +139,7 @@ wire    [31:0]  alu_res ;
 wire            zero    ;
 wire    [31:0]  data1   ;
 wire    [31:0]  data2   ; //立即数通道
-wire    [5:0]   shamt   ;
+wire    [4:0]   shamt   ;
 
 ALU u_alu (
     .alu_res    (alu_res    ),

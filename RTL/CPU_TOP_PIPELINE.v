@@ -1,6 +1,8 @@
 `define FLAGTEST
 
 `define FINISH_ADDR 32'h00400050
+`define FINISH_ADDR_PC_4 32'h00400054
+`define FINISH_INST 32'h1000ffff
 
 /* -------------------------------------------------------------------------- */
 /*                              CPU_TOP_PIPELINE                              */
@@ -9,14 +11,14 @@
 // NO imexplicit wire
 `default_nettype none
 module CPU_TOP_PIPELINE(
-    output  wire            finish  ,
+    output  reg             finish  ,
 `ifdef FLAGTEST
     input   wire    [4:0]   rdtaddr ,
     output  wire    [31:0]  rdtdata ,
 `endif
 
-    input   wire        clk     ,
-    input   wire        rst_n   
+    input   wire            clk     ,
+    input   wire            rst_n   
 );
 
 `include "CPU_TOP_PIPELINE_wire.vh"
@@ -191,8 +193,8 @@ FWDPU u_fwdpu (
     .fwdrt          (fwdrt  ),
     .hzdlu          (hzdlu  ),
 
-    .EX_regread1    (EX_inst[25:21] ),
-    .EX_regread2    (EX_inst[20:16] ),
+    .EX_regread1    (EX_regread1    ),
+    .EX_regread2    (EX_regread2    ),
     .EX_inst        (EX_inst        ),
 
     .MEM_regwrite   (MEM_regwrite   ),
@@ -237,10 +239,10 @@ EX_MEM u_ex_mem(
 
 /* ------------------------ instanciation of DATAMEM ------------------------ */
 DATAMEM u_datamem (
-    .clk        (rst_n          ),
+    .clk        (clk            ),
     .wen        (MEM_memwrite   ),
-    .Address    (EX_address     ),
-    .din        (EX_data        ),
+    .Address    (MEM_address_in[10:2]),
+    .din        (MEM_data_in    ),
     .dout       (datamem_out    )
 );
 
@@ -287,16 +289,18 @@ always @(*) begin
 end
 
 /* ----------------------------------- ID ----------------------------------- */
-assign  ID_pc_next  =   {ID_pc_4[31:28],(ID_inst<<2)};
+assign  ID_opcode   =   ID_inst[31:26];
+assign  ID_funct    =   ID_inst[5:0];
+assign  ID_pc_next  =   {ID_pc_4[31:28],(ID_inst[25:0]<<2)};
 assign  ID_wraddr   =   (ID_link)? 'd31    :   (ID_regdst? ID_inst[15:11] : ID_inst[20:16]);
 
 /* ----------------------------------- EX ----------------------------------- */
 reg [31:0]  rs;
 always @(*) begin
     case (fwdrs)
-        2'b00   :   rs  =   EX_data1;
-        2'b01   :   rs  =   MEM_data_in;
-        2'b00   :   rs  =   WB_data;
+        2'd0    :   rs  =   EX_data1;
+        2'd1    :   rs  =   MEM_address_in;
+        2'd2    :   rs  =   WB_data;
         default :   rs  =   EX_data1;
     endcase
 end
@@ -304,9 +308,9 @@ end
 reg [31:0]  rt;
 always @(*) begin
     case (fwdrt)
-        2'b00   :   rt  =   EX_data2;
-        2'b01   :   rt  =   MEM_data_in;
-        2'b00   :   rt  =   WB_data;
+        2'd0    :   rt  =   EX_data2;
+        2'd1    :   rt  =   MEM_address_in;
+        2'd2    :   rt  =   WB_data;
         default :   rt  =   EX_data2;
     endcase
 end
@@ -327,10 +331,34 @@ assign  EX_address  =(EX_link)? t1:EX_alu_res;
 assign  EX_data     =   rt;   
 
 /* ----------------------------------- MEM ----------------------------------- */
-assign  MEM_data =   (WB_memtoreg)? datamem_out : MEM_data_in;
+assign  MEM_data =   (MEM_memtoreg)? datamem_out : MEM_address_in;
 
 /* ----------------------------------- out ----------------------------------- */
-assign  finish      =   (WB_pc_4 == `FINISH_ADDR + 32'd4);
+always @(posedge clk, negedge rst_n) begin
+    if (!rst_n) begin
+        finish <= 1'b0;
+    end else if ((WB_pc_4 == `FINISH_ADDR_PC_4) && (WB_inst == `FINISH_INST)) begin
+        finish <= 1'b1;
+    end else begin
+        finish <= finish;
+    end
+end
+
+/* ----------------------------------- cnt ----------------------------------- */
+reg signed  [31:0]  inst_cnt;
+always @(posedge clk, negedge rst_n) begin
+    if (!rst_n) begin
+        inst_cnt <= -32'd4;
+    end else begin
+        if (flush != 3'b000) begin
+            inst_cnt <= inst_cnt + 1'd1 - flush[0] - flush[1] - flush[2];
+        end else if (stall) begin
+            inst_cnt <= inst_cnt;
+        end else begin
+            inst_cnt <= inst_cnt + 1'd1;
+        end
+    end
+end
 
 endmodule
 // recover imexplicit wire

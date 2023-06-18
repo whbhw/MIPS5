@@ -11,12 +11,12 @@ module IF_ID (
     output  wire    [31:0]  ID_pc_4 ,
     output  wire    [31:0]  ID_inst      
 );
-parameter NOP = 32'h0000_0020;
+parameter NOP = `NOP_INST;
 
-reg [61:0]  inner_reg;
+reg [63:0]  inner_reg;
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
-        inner_reg   <=  {32'b0,NOP};
+        inner_reg   <=  {`DEFAULT_PC_4,NOP};
     end
     else    begin
         if (flush) begin
@@ -31,7 +31,7 @@ always @(posedge clk or negedge rst_n) begin
     end
 end
 
-assign  ID_pc_4 =   inner_reg[61:32]  ;
+assign  ID_pc_4 =   inner_reg[63:32]  ;
 assign  ID_inst =   inner_reg[31:0]   ;
 
 

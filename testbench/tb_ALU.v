@@ -11,14 +11,14 @@ module `MODULENAMETB(_SENDER) (
 
     output  reg [31:0]  data1   ,
     output  reg [31:0]  data2   , //立即数通道
-    output  [5:0]   shamt   ,
+    output  [4:0]   shamt   ,
     output  [1:0]   aluop   ,
     output  [5:0]   funct   
 );
     reg     [31:0]  data3;
     wire    [17:0]  nu;
     // 000AFFSS
-    assign {nu[17:6],nu[5:4],aluop,nu[3:2],funct,nu[1:0],shamt} = data3;
+    assign {nu[17:6],nu[5:4],aluop,nu[3:2],funct,nu[2:0],shamt} = data3;
 
     integer     counter;
     reg [31:0]   message[0:10000];
@@ -116,7 +116,7 @@ module `MODULENAMETB(_) ();
 
     wire    [31:0]  data1   ;
     wire    [31:0]  data2   ; //立即数通道
-    wire    [5:0]   shamt   ;
+    wire    [4:0]   shamt   ;
     wire    [1:0]   aluop   ;
     wire    [5:0]   funct   ;
 
