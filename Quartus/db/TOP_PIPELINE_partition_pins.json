@@ -1,0 +1,169 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "finish",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[7]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[8]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[9]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[10]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[11]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[12]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[13]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[14]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[15]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[16]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[17]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[18]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[19]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[20]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[21]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[22]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[23]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[24]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[25]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[26]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[27]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[28]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[29]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[30]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtdata[31]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtaddr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtaddr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtaddr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtaddr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rdtaddr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst_n",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

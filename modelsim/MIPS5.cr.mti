@@ -65,12 +65,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	EXTEND
 
-} {} {}} ../RTL/IF_ID.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/IF_ID.v
+} {} {}} ../RTL/CPU_TOP_SINGLE.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module IF_ID
+-- Compiling module CPU_TOP_SINGLE
 
 Top level modules:
-	IF_ID
+	CPU_TOP_SINGLE
 
 } {} {}} ../RTL/EX_MEM.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/EX_MEM.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -79,12 +79,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	EX_MEM
 
-} {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/DATAMEM.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/DATAMEM.v
+} {} {}} ../RTL/IF_ID.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/IF_ID.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module DATAMEM
+-- Compiling module IF_ID
 
 Top level modules:
-	DATAMEM
+	IF_ID
 
 } {} {}} ../RTL/PC.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/PC.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -93,12 +93,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	PC
 
-} {} {}} ../RTL/CPU_TOP_SINGLE.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_SINGLE.v
+} {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/DATAMEM.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/DATAMEM.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module CPU_TOP_SINGLE
+-- Compiling module DATAMEM
 
 Top level modules:
-	CPU_TOP_SINGLE
+	DATAMEM
 
 } {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/ALU.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -251,20 +251,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	TB_CPU_TOP_SINGLE_
 
-} {} {}} ../RTL/CPU_TOP_PIPELINE.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_PIPELINE.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module CPU_TOP_PIPELINE
-
-Top level modules:
-	CPU_TOP_PIPELINE
-
-} {} {}} ../RTL/MEM_WB.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/MEM_WB.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module MEM_WB
-
-Top level modules:
-	MEM_WB
-
 } {} {}} F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CTRL.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CTRL.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module CTRL
@@ -278,5 +264,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	ALUCTRL
+
+} {} {}} ../RTL/MEM_WB.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/MEM_WB.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module MEM_WB
+
+Top level modules:
+	MEM_WB
+
+} {} {}} ../RTL/CPU_TOP_PIPELINE.v {1 {vlog -work work -stats=none F:/Users/whb/Documents/MyPrograms/Verilog/MIPS5/RTL/CPU_TOP_PIPELINE.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module CPU_TOP_PIPELINE
+
+Top level modules:
+	CPU_TOP_PIPELINE
 
 } {} {}}

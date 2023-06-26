@@ -76,9 +76,18 @@ RF u_rf (
     .rdtdata    (rdtdata   ),
 `endif
 
-    .wraddr     ( WB_wraddr         ),
-    .wrdata     ( WB_data           ),
-    .wren       ( WB_regwrite       ),
+    // use MEM(before entering MEM_WB reg), 
+    // instead of WB(after entering MEM_WB reg), 
+    // because DDR RF(write) is a kind of reg, 
+    // it still starts writing at WB start posedge, 
+    // and ends writing at WB middle negedge. 
+    .wraddr     ( MEM_wraddr        ),
+    .wrdata     ( MEM_data          ),
+    .wren       ( MEM_regwrite      ),
+
+    // .wraddr     ( WB_wraddr         ),
+    // .wrdata     ( WB_data           ),
+    // .wren       ( WB_regwrite       ),
 
     .clk        ( clk               ),
     .rst_n      ( rst_n             )
