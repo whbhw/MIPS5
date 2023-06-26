@@ -292,7 +292,7 @@ end
 assign  ID_opcode   =   ID_inst[31:26];
 assign  ID_funct    =   ID_inst[5:0];
 assign  ID_pc_next  =   {ID_pc_4[31:28],(ID_inst[25:0]<<2)};
-assign  ID_wraddr   =   (ID_link)? 'd31    :   (ID_regdst? ID_inst[15:11] : ID_inst[20:16]);
+assign  ID_wraddr   =   (ID_link)? 5'd31    :   (ID_regdst? ID_inst[15:11] : ID_inst[20:16]);
 
 /* ----------------------------------- EX ----------------------------------- */
 reg [31:0]  rs;
