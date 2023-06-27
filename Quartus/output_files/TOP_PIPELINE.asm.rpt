@@ -1,5 +1,5 @@
 Assembler report for TOP_PIPELINE
-Mon Jun 26 14:21:33 2023
+Tue Jun 27 17:53:06 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Jun 26 14:21:33 2023 ;
+; Assembler Status      ; Successful - Tue Jun 27 17:53:06 2023 ;
 ; Revision Name         ; TOP_PIPELINE                          ;
 ; Top-level Entity Name ; CPU_TOP_PIPELINE                      ;
 ; Family                ; Cyclone V                             ;
@@ -105,14 +105,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Jun 26 14:21:21 2023
+    Info: Processing started: Tue Jun 27 17:52:51 2023
 Info: Command: quartus_asm --read_settings_files=on --write_settings_files=off MIPS5 -c TOP_PIPELINE
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4993 megabytes
-    Info: Processing ended: Mon Jun 26 14:21:34 2023
-    Info: Elapsed time: 00:00:13
+    Info: Processing ended: Tue Jun 27 17:53:06 2023
+    Info: Elapsed time: 00:00:15
     Info: Total CPU time (on all processors): 00:00:13
 
 

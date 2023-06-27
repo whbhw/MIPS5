@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TOP_PIPELINE
-Mon Jun 26 14:16:42 2023
+Tue Jun 27 17:42:56 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -54,7 +54,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Jun 26 14:16:42 2023       ;
+; Analysis & Synthesis Status     ; Successful - Tue Jun 27 17:42:56 2023       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; TOP_PIPELINE                                ;
 ; Top-level Entity Name           ; CPU_TOP_PIPELINE                            ;
@@ -548,7 +548,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:16     ;
+; Top            ; 00:00:15     ;
 +----------------+--------------+
 
 
@@ -558,7 +558,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Jun 26 14:16:16 2023
+    Info: Processing started: Tue Jun 27 17:42:30 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS5 -c TOP_PIPELINE
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -626,9 +626,9 @@ Info (21057): Implemented 25763 device resources after synthesis - the final res
     Info (21059): Implemented 33 output pins
     Info (21061): Implemented 25723 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4994 megabytes
-    Info: Processing ended: Mon Jun 26 14:16:42 2023
+    Info: Peak virtual memory: 4998 megabytes
+    Info: Processing ended: Tue Jun 27 17:42:56 2023
     Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:35
+    Info: Total CPU time (on all processors): 00:00:34
 
 
